@@ -58,20 +58,25 @@ export default function Home() {
             repeatDelay: 1,
             ease: "linear"
           }}
-          className="flex relative bg-red-500"> Welcome to Aguinaldo Home...
+          className="flex relative"> Welcome to Aguinaldo Home...
       </motion.div>
+     </div>
+
+     {/* Menu */}
+
+     <div className= "mt-10 flex justify-around text-3xl font-extralight">
+      <span className="cursor-pointer hover:text-4xl duration-200"> Profile </span>
+      <span className="cursor-pointer hover:text-4xl duration-200"> Resume </span>
+      <span className="cursor-pointer hover:text-4xl duration-200"> Jobs </span>
      </div>
 
      {/* P2  */}
 
-    <span> 
+    <span className="font-extralight flex flex-col absolute mt-[20%]"> 
       
-      
-    <p>Analista de Dados e MIS com dois anos de experiência em manipulação, análise e visualização de dados.</p>
-    <p>Especialista em Python, MSSQL, Business Intelligence (BI) e R.</p>
-    <p>Além de desenvolvedor Web, dominando React Next, Node.js e Tailwind.</p>
-
-
+      <p>Analista de Dados e MIS com dois anos de experiência em manipulação, análise e visualização de dados.</p>
+      <p>Especialista em Python, MSSQL, Business Intelligence (BI) e R.</p>
+      <p>Além de desenvolvedor Web, dominando React Next, Node.js e Tailwind.</p>
 
     </span>
 
