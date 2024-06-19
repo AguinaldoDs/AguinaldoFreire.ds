@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { DiVim } from "react-icons/di";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import { useInView } from "framer-motion";
 
 const linkLinkedin = () => {
   window.open('https://www.linkedin.com/in/aguinaldo-freire-95bb5a181/', '_blank');
@@ -57,9 +58,24 @@ export default function Home() {
             repeatDelay: 1,
             ease: "linear"
           }}
-          className="flex relative"> Welcome to Aguinaldo Home...
+          className="flex relative bg-red-500"> Welcome to Aguinaldo Home...
       </motion.div>
      </div>
+
+     {/* P2  */}
+
+    <span> 
+      
+      
+    <p>Analista de Dados e MIS com dois anos de experiência em manipulação, análise e visualização de dados.</p>
+    <p>Especialista em Python, MSSQL, Business Intelligence (BI) e R.</p>
+    <p>Além de desenvolvedor Web, dominando React Next, Node.js e Tailwind.</p>
+
+
+
+    </span>
+
+
     </main>
   );
 }
