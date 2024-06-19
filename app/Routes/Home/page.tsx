@@ -1,24 +1,30 @@
 'use client'
 
 import { motion } from "framer-motion";
+import { DiVim } from "react-icons/di";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 const linkLinkedin = () => {
   window.open('https://www.linkedin.com/in/aguinaldo-freire-95bb5a181/', '_blank');
 };
+const arrayPontinhos = [".", ".", "."].map((value, indice) => {
+  return (
+    <motion.div
+    className="text-8xl"
+    initial={{opacity: 0}}
+    animate={{opacity: [0,1,0]}}
+    transition={{
+                  repeat: Infinity,
+                  repeatType: 'loop', 
+                  duration: 0.2,
+    }}  
+    > {value} </motion.div>
+  )});
 
 export default function Home() {
-  const arrayPontinhos = [".", ".", "."].map((_, indice) => {
-    return (
-      <motion.div> testando </motion.div>
-    )})};
-
   return (
     <main className="bg-gray-950 h-[2000px] w-full">
-      <div className="flex justify-center items-center mt-10">
-        {arrayPontinhos}
-      </div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -39,10 +45,21 @@ export default function Home() {
       </motion.div>
 
       {/* welcome */}
-      <div className="flex mt-0 p-10 w-full h-auto font-bold text-9xl bg-red-500">
-        {/* <div className="flex relative"> Welcome to my portfolio</div> */}
-        <motion.div className="bg-slate-700"></motion.div>
-      </div>
+      <div className="flex mt-0 p-10 w-full h-auto font-bold text-9xl">
+        <motion.div 
+          initial={{opacity: 0}}
+          animate={{opacity: [1,0,1]}}
+          exit={{opacity:0}}
+          
+          transition={{
+            repeat: 1,
+            duration: 1.5,
+            repeatDelay: 1,
+            ease: "linear"
+          }}
+          className="flex relative"> Welcome to Aguinaldo Home...
+      </motion.div>
+     </div>
     </main>
   );
 }
