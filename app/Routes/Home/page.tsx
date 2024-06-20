@@ -74,7 +74,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-      {/* Menu */}
+{/* Menu */}
       <div className="mt-20 flex justify-around text-3xl font-extralight">
         <span 
           className="cursor-pointer hover:text-4xl duration-200" 
@@ -86,12 +86,22 @@ export default function Home() {
         <span className="cursor-pointer hover:text-4xl duration-200"> Jobs </span>
       </div>
 
-      {/* P2 */}
-      <span className="font-extralight flex flex-col absolute mt-[20%]"> 
+{/* P2 */}
+{/* fotinha 3x4 aqui */}
+
+{/* descrição alt */}
+      <div className="font-extralight flex mt-[20%] bg-slate-600 w-full h-auto"> 
+      <motion.div
+          className="flex bg-red-400 w-[30%] h-60 justify-center items-center"
+          >
+            testando
+      </motion.div>
+        <div  className="font-extralight flex relative flex-col ml-10 mt-[50%] -translate-y-[50%]">
         <p>Analista de Dados e MIS com dois anos de experiência em manipulação, análise e visualização de dados.</p>
         <p>Especialista em Python, MSSQL, Business Intelligence (BI) e R.</p>
         <p>Além de desenvolvedor Web, dominando React Next, Node.js e Tailwind.</p>
-      </span>
+        </div>
+      </div>
     </main>
   );
 }
