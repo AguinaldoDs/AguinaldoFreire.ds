@@ -110,10 +110,13 @@ export default function Home() {
 
 
 {/* Resume */}
+
+      <div className="flex relative mt-[10%] h-1 items-center">
         <motion.div
-        className="flex relative mt-[25%]">
-            testando testando
+        className="flex absolute bg-white w-[70%] h-[2px] rounded-3xl left-2">
         </motion.div>
+        <span className="flex relative ml-[75%] font-mono text-5xl border-solid border-[1px] border-red-400"> Resume </span>
+      </div> 
 
     </main>
   );
