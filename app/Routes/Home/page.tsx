@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from "framer-motion";
-import { DiVim } from "react-icons/di";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import Path from "../../Components/Path"
 
 const linkLinkedin = () => {
   window.open('https://www.linkedin.com/in/aguinaldo-freire-95bb5a181/', '_blank');
@@ -113,10 +113,15 @@ export default function Home() {
 
       <div className="flex relative mt-[10%] h-1 items-center">
         <motion.div
-        className="flex absolute bg-white w-[70%] h-[2px] rounded-3xl left-2">
+        className="flex absolute bg-white w-[70%] h-[1px] rounded-3xl left-2">
         </motion.div>
-        <span className="flex relative ml-[75%] font-mono text-5xl border-solid border-[1px] border-red-400"> Resume </span>
+        <span className="flex relative ml-[75%] font-extralight text-5xl border-solid 
+        "> Resume </span>
       </div> 
+
+{/* Voo */}
+
+      < Path />
 
     </main>
   );
