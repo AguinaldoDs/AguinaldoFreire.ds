@@ -29,11 +29,19 @@ const arrayPontinhos = [".", ".", "."].map((value, indice) => {
 
 export default function Home() {
   const handleScroll = () => {
-    window.scrollBy({
+    window.scrollTo({
       top: 600,
       behavior: 'smooth'
     });
   };
+
+  const handleScrollResume = () => {
+    window.scrollTo({
+      top: 1150,
+      behavior: 'smooth'
+    });
+  };
+
 
   return (
     <main className="bg-gray-950 h-[2000px] w-full">
@@ -56,7 +64,7 @@ export default function Home() {
         </div>
       </motion.div>
 
-      {/* welcome */}
+{/* welcome */}
       <div className="flex mt-0 p-10 w-full h-auto font-bold text-9xl">
         <motion.div 
           initial={{opacity: 0}}
@@ -76,32 +84,37 @@ export default function Home() {
 
 {/* Menu */}
       <div className="mt-20 flex justify-around text-3xl font-extralight">
-        <span 
-          className="cursor-pointer hover:text-4xl duration-200" 
-          onClick={handleScroll}
-        >
-          Profile 
-        </span>
-        <span className="cursor-pointer hover:text-4xl duration-200"> Resume </span>
+        <span className="cursor-pointer hover:text-4xl duration-200" 
+              onClick={handleScroll}> Profile </span>
+
+        <span className="cursor-pointer hover:text-4xl duration-200"
+              onClick={handleScrollResume}> Resume </span>
+
         <span className="cursor-pointer hover:text-4xl duration-200"> Jobs </span>
       </div>
 
-{/* P2 */}
-{/* fotinha 3x4 aqui */}
+{/* Profile */}
 
-{/* descrição alt */}
-      <div className="font-extralight flex mt-[20%] bg-slate-600 w-full h-auto"> 
+      <div className="font-extralight flex mt-[18%] w-full h-auto justify-center items-center"> 
       <motion.div
-          className="flex bg-red-400 w-[30%] h-60 justify-center items-center"
+          className="flex bg-red-400 w-80 h-80 justify-center items-center rounded-3xl"
           >
-            testando
+            
       </motion.div>
-        <div  className="font-extralight flex relative flex-col ml-10 mt-[50%] -translate-y-[50%]">
+        <div  className="font-extralight flex relative flex-col ml-10 ">
         <p>Analista de Dados e MIS com dois anos de experiência em manipulação, análise e visualização de dados.</p>
         <p>Especialista em Python, MSSQL, Business Intelligence (BI) e R.</p>
         <p>Além de desenvolvedor Web, dominando React Next, Node.js e Tailwind.</p>
         </div>
       </div>
+
+
+{/* Resume */}
+        <motion.div
+        className="flex relative mt-[25%]">
+            testando testando
+        </motion.div>
+
     </main>
   );
 }
