@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import Path from "../../Components/Path"
 
 const linkLinkedin = () => {
   window.open('https://www.linkedin.com/in/aguinaldo-freire-95bb5a181/', '_blank');
@@ -121,7 +120,9 @@ export default function Home() {
 
 {/* Voo */}
 
-      < Path />
+    <div>
+
+    </div>
 
     </main>
   );
