@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import Image from "next/image";
 
 const linkLinkedin = () => {
   window.open('https://www.linkedin.com/in/aguinaldo-freire-95bb5a181/', '_blank');
@@ -34,7 +35,7 @@ export default function Home() {
     });
   };
 
-  const handleScrollResume = () => {
+  const handleScrollAboutme = () => {
     window.scrollTo({
       top: 1150,
       behavior: 'smooth'
@@ -49,7 +50,7 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-gray-950 h-[2000px] w-full">
+    <main className=" bg-gray-950 h-[2000px] w-full">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -93,7 +94,7 @@ export default function Home() {
               onClick={handleScroll}> Profile </span>
 
         <span className="cursor-pointer hover:text-4xl duration-200"
-              onClick={handleScrollResume}> Resume </span>
+              onClick={handleScrollAboutme}> About me </span>
 
         <span className="cursor-pointer hover:text-4xl duration-200"
               onClick={handleScrollJobs}> Jobs </span>
@@ -115,38 +116,56 @@ export default function Home() {
       </div>
 
 
-{/* Resume */}
+{/* About me */}
 
       <div className="flex relative mt-[10%] h-1 items-center">
         <motion.div
         className="flex absolute bg-white w-[70%] h-[1px] rounded-3xl left-2">
         </motion.div>
         <span className="flex relative ml-[75%] font-extralight text-5xl border-solid 
-        "> Resume </span>
+        "> About me </span>
       </div> 
 
-{/* Voo */}
+{/* About me */}
 
-        <span
-         className="bg-red-300"
-          >
-          <p className="bg-red-300 ml-[10%] w-max">
-          <p> Em 2022 inicie minha carreira como Analista de dados </p>
-          <p> em um empresa no ramo de telecobrança, onde desenvolvi </p>
-          <p> grandes habilidades com MSSQL, nela a crianção de procedures, </p>
-          <p> Triggers, Views e trabalhados agendados. Além de Power BI para</p>
-          <p> motagem de DashBoards e transformar de fatos informações </p>
-          <p> cruas dos bancos de dados em informações visuais que auxiliam </p>
-          <p> na tomada de dicisões. Outra grande ferramenta que criei dominio </p>
-          <p> foi com linguagem Python, me permitindo agilizar importações de </p>
-          <p> informações, também me auxiliou na automação de um processo manual </p>
-          <p> que era feito na empresa que custava minutos importantes do meu dia.</p>
-          <p> Com p framework Pyside, consegui montar uma tela de interação que permitia </p>
-          <p> outros Squads fazerem os levantamentos e importações de bases especificas.</p>
-          <p> maior desafio </p>
-          <p> </p>
-          </p>
-        </span>
+  
+          <div className="flex w-max font-medium text-[12px] space-y-2 mt-10
+           justify-cente  ml-[50%] -translate-x-[50%]">
+          <div className=" w-max space-y-1
+           ">
+            
+          <p>Em meados 2022 inicie minha carreira como Analista de dados em</p>
+          <p>uma empresa no ramo de telecobrança, onde desenvolvi grandes</p>
+          <p>habilidades com MSSQL, nela a crianção de procedures, Triggers,</p>
+          <p>Views e trabalhados agendados.</p>
+          <p>&nbsp;</p>
+          <p>Além de Power BI para motagem de DashBoards e transformar de fatos </p>
+          <p> informações cruas dos bancos de dados em informações visuais que  </p>
+          <p>auxiliam na tomada de dicisões.</p>
+          <p>&nbsp;</p>
+          <p>Outra grande ferramenta que criei dominio foi a linguagem Python,</p>
+          <p>permitindo agilizar importações de informações, também me auxiliou</p>
+          <p>na automação de um processo manual que era feito na empresa que</p>
+          <p>custava minutos importantes do meu dia. </p>
+          <p>&nbsp;</p>
+          <p>Meu maior desafio nessa empresa, foi a implantação de um novo cliente</p>
+          <p>do completo zero, fiz a modelagem das ETLs, criação das rotinas e as</p>
+          <p>visões para acompanhamento dos times operacionais. Recebi grandes</p>
+          <p>responsabilidades e consegui fazer todas as entregas usando o método</p>
+          <p>Ágil de prioridades.</p>
+          
+          
+          <div className="cursor-pointer w-[50%] ml-[50%] -translate-x-[50%] bg-red-400 rounded-md 
+                          p-2 justify-cente text-center">
+           About me+ </div>
+           </div>
+{/* 
+      <Image src="/images/img1.png" alt="Exemplo" width={500} height={300} /> */}
+
+
+          </div>
+         
+
 
 
 
