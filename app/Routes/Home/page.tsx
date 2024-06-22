@@ -127,6 +127,26 @@ export default function Home() {
 
 {/* Voo */}
 
+        <span
+         className="bg-red-300"
+          >
+          <p className="bg-red-300 ml-[10%] w-max">
+          <p> Em 2022 inicie minha carreira como Analista de dados </p>
+          <p> em um empresa no ramo de telecobrança, onde desenvolvi </p>
+          <p> grandes habilidades com MSSQL, nela a crianção de procedures, </p>
+          <p> Triggers, Views e trabalhados agendados. Além de Power BI para</p>
+          <p> motagem de DashBoards e transformar de fatos informações </p>
+          <p> cruas dos bancos de dados em informações visuais que auxiliam </p>
+          <p> na tomada de dicisões. Outra grande ferramenta que criei dominio </p>
+          <p> foi com linguagem Python, me permitindo agilizar importações de </p>
+          <p> informações, também me auxiliou na automação de um processo manual </p>
+          <p> que era feito na empresa que custava minutos importantes do meu dia.</p>
+          <p> Com p framework Pyside, consegui montar uma tela de interação que permitia </p>
+          <p> outros Squads fazerem os levantamentos e importações de bases especificas.</p>
+          <p> maior desafio </p>
+          <p> </p>
+          </p>
+        </span>
 
 
 
