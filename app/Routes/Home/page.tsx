@@ -41,6 +41,12 @@ export default function Home() {
     });
   };
 
+  const handleScrollJobs = () => {
+    window.scrollTo({
+      top: 1600,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <main className="bg-gray-950 h-[2000px] w-full">
@@ -89,7 +95,8 @@ export default function Home() {
         <span className="cursor-pointer hover:text-4xl duration-200"
               onClick={handleScrollResume}> Resume </span>
 
-        <span className="cursor-pointer hover:text-4xl duration-200"> Jobs </span>
+        <span className="cursor-pointer hover:text-4xl duration-200"
+              onClick={handleScrollJobs}> Jobs </span>
       </div>
 
 {/* Profile */}
@@ -120,9 +127,9 @@ export default function Home() {
 
 {/* Voo */}
 
-    <div>
 
-    </div>
+
+
 
     </main>
   );
