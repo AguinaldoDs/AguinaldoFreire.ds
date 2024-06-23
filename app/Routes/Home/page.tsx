@@ -50,7 +50,7 @@ export default function Home() {
 
   const handleScrollJobs = () => {
     window.scrollTo({
-      top: 1600,
+      top: 1800,
       behavior: 'smooth'
     });
   };
@@ -59,9 +59,11 @@ export default function Home() {
   const { ref: ref2, inView: inView2 } = useInView({ triggerOnce: true });
   const { ref: ref3, inView: inView3 } = useInView({ triggerOnce: true });
   const { ref: ref4, inView: inView4 } = useInView({ triggerOnce: true });
+  const { ref: ref5, inView: inView5 } = useInView({ triggerOnce: true });
 
   return (
-    <main className=" bg-gray-950 h-[2000px] w-full">
+    <main className=" bg-gray-950 h-[4000px] w-full">
+      <head> <title> Home </title></head>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -201,13 +203,22 @@ export default function Home() {
             </div>
           </motion.div>
 
+
           <div className="cursor-pointer w-[50%] ml-[50%] -translate-x-[50%] bg-red-400 rounded-md 
             p-2 justify-center text-center hover:bg-red-500 duration-300">
             About me+
           </div>
-          <AboutMe/>
+          
         </div>
-
+        <motion.div
+        ref={ref5}
+        className="flex gap-7"
+        initial={{opacity: 0, x: 50}}
+        animate={inView5 ? {opacity: 1, x: 0} : {opacity: 0, x: 50}}
+        transition={{duration: 1}}
+        >
+        <Image src="/images/t2.png" alt="Exemplo" width={700} height={200} />
+        </motion.div>
       </div>
     </main>
   );
