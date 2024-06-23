@@ -159,8 +159,8 @@ export default function Home() {
                           p-2 justify-cente text-center">
            About me+ </div>
            </div>
-{/* 
-      <Image src="/images/img1.png" alt="Exemplo" width={500} height={300} /> */}
+
+      <Image src="/images/sql.svg" alt="Exemplo" width={60} height={60} /> 
 
 
           </div>

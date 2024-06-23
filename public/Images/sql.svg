@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="60px" viewBox="0 0 60 60" version="1.1">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>002 - SQL Programming</title>
+    <desc>Created with Sketch.</desc>
+    <defs/>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="002---SQL-Programming" transform="translate(1.000000, 1.000000)">
+            <rect id="Rectangle-path" fill="#FFB600" fill-rule="nonzero" x="11" y="21" width="36" height="16" rx="2"/>
+            <rect id="Rectangle-path" fill="#FFE100" fill-rule="nonzero" x="11" y="21" width="33" height="16" rx="2"/>
+            <path d="M24,2 L24,10 L0,10 L0,2 C0.00329480111,0.896798134 0.896798134,0.00329480111 2,0 L22,0 C23.1032019,0.00329480111 23.9967052,0.896798134 24,2 Z" id="Shape" fill="#FFB600" fill-rule="nonzero"/>
+            <path d="M24,8 L24,14 C23.9967052,15.1032019 23.1032019,15.9967052 22,16 L2,16 C0.896798134,15.9967052 0.00329480111,15.1032019 0,14 L0,8 L24,8 Z" id="Shape" fill="#FFB600" fill-rule="nonzero"/>
+            <rect id="Rectangle-path" fill="#FFB600" fill-rule="nonzero" x="0" y="42" width="58" height="16" rx="2"/>
+            <rect id="Rectangle-path" fill="#FFE100" fill-rule="nonzero" x="0" y="42" width="55" height="16" rx="2"/>
+            <path d="M58,2 L58,10 L34,10 L34,2 C34.0032948,0.896798134 34.8967981,0.00329480111 36,0 L56,0 C57.1032019,0.00329480111 57.9967052,0.896798134 58,2 Z" id="Shape" fill="#FFB600" fill-rule="nonzero"/>
+            <path d="M58,8 L58,14 C57.9967052,15.1032019 57.1032019,15.9967052 56,16 L36,16 C34.8967981,15.9967052 34.0032948,15.1032019 34,14 L34,8 L58,8 Z" id="Shape" fill="#FFB600" fill-rule="nonzero"/>
+            <path d="M21,2 L21,10 L0,10 L0,2 C0.00329480111,0.896798134 0.896798134,0.00329480111 2,0 L19,0 C20.1032019,0.00329480111 20.9967052,0.896798134 21,2 Z" id="Shape" fill="#FFE100" fill-rule="nonzero"/>
+            <path d="M21,8 L21,14 C20.9967052,15.1032019 20.1032019,15.9967052 19,16 L2,16 C0.896798134,15.9967052 0.00329480111,15.1032019 0,14 L0,8 L21,8 Z" id="Shape" fill="#FFE100" fill-rule="nonzero"/>
+            <path d="M55,2 L55,10 L34,10 L34,2 C34.0032948,0.896798134 34.8967981,0.00329480111 36,0 L53,0 C54.1032019,0.00329480111 54.9967052,0.896798134 55,2 Z" id="Shape" fill="#FFE100" fill-rule="nonzero"/>
+            <path d="M55,8 L55,14 C54.9967052,15.1032019 54.1032019,15.9967052 53,16 L36,16 C34.8967981,15.9967052 34.0032948,15.1032019 34,14 L34,8 L55,8 Z" id="Shape" fill="#FFE100" fill-rule="nonzero"/>
+            <path d="M2,16 L5,16 C3.89679813,15.9967052 3.0032948,15.1032019 3,14 L3,2 C3.0032948,0.896798134 3.89679813,0.00329480111 5,0 L2,0 C0.896798134,0.00329480111 0.00329480111,0.896798134 -4.4408921e-16,2 L-4.4408921e-16,14 C0.00329480111,15.1032019 0.896798134,15.9967052 2,16 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"/>
+            <path d="M2,58 L5,58 C3.89679813,57.9967052 3.0032948,57.1032019 3,56 L3,44 C3.0032948,42.8967981 3.89679813,42.0032948 5,42 L2,42 C0.896798134,42.0032948 0.00329480111,42.8967981 0,44 L0,56 C0.00329480111,57.1032019 0.896798134,57.9967052 2,58 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"/>
+            <path d="M13,37 L16,37 C14.8967981,36.9967052 14.0032948,36.1032019 14,35 L14,23 C14.0032948,21.8967981 14.8967981,21.0032948 16,21 L13,21 C11.8967981,21.0032948 11.0032948,21.8967981 11,23 L11,35 C11.0032948,36.1032019 11.8967981,36.9967052 13,37 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"/>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="11" y="21" width="36" height="16" rx="2"/>
+            <path d="M22,27 C22,25.8954305 21.1045695,25 20,25 C18.9107991,25.0362502 18.0362502,25.9107991 18,27 C18,29 22,29 22,31 C21.9637498,32.0892009 21.0892009,32.9637498 20,33 C18.8954305,33 18,32.1045695 18,31" id="Shape" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <ellipse id="Oval" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" cx="29" cy="29" rx="3" ry="4"/>
+            <path d="M30,31 L32,33" id="Shape" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M36,25 L36,32 C36,32.5522847 36.4477153,33 37,33 L40,33" id="Shape" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="0" y="0" width="24" height="16" rx="2"/>
+            <polygon id="Shape" fill="#FFFFFF" fill-rule="nonzero" points="2 41 15 41 56 41 56 43 15 43 2 43"/>
+            <path d="M7,42 C7,41.4477153 6.55228475,41 6,41 L2,41 L2,43 L6,43 C6.55228475,43 7,42.5522847 7,42 Z" id="Shape" fill="#000000" fill-rule="nonzero"/>
+            <path d="M56,43 L56,41 L14,41 C13.4477153,41 13,41.4477153 13,42 C13,42.5522847 13.4477153,43 14,43 L56,43 Z" id="Shape" fill="#000000" fill-rule="nonzero"/>
+            <path d="M10,41 C9.73527314,41.0038804 9.48174298,41.107435 9.29,41.29 L9.17,41.44 C9.13212275,41.4957271 9.10185535,41.5562619 9.08,41.62 C9.05111232,41.6766624 9.03088731,41.7373375 9.02,41.8 C9.0088692,41.8661445 9.00218753,41.9329612 9,42 C9.00388039,42.2647269 9.10743496,42.518257 9.29,42.71 C9.38560709,42.8003968 9.49761868,42.871677 9.62,42.92 C9.99297365,43.0708766 10.4197788,42.9886481 10.71,42.71 C10.8003968,42.6143929 10.871677,42.5023813 10.92,42.38 C10.971241,42.2597777 10.99842,42.1306773 11,42 C11.0027011,41.7339647 10.8982118,41.4780384 10.7100867,41.2899133 C10.5219616,41.1017882 10.2660353,40.9972989 10,41 Z" id="Shape" fill="#000000" fill-rule="nonzero"/>
+            <path d="M56,42 C57.1045695,42 58,42.8954305 58,44 L58,56 C58,57.1045695 57.1045695,58 56,58 L2,58 C0.8954305,58 2.22044605e-16,57.1045695 0,56 L0,44 C-1.11022302e-16,42.8954305 0.8954305,42 2,42" id="Shape" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M0,8 L24,8" id="Shape" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect id="Rectangle-path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x="34" y="0" width="24" height="16" rx="2"/>
+            <path d="M34,8 L58,8" id="Shape" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M29,37 L29,42" id="Shape" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M47,28 L50,28 C51.1045695,28 52,27.1045695 52,26 L52,16" id="Shape" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11,28 L8,28 C6.8954305,28 6,27.1045695 6,26 L6,16" id="Shape" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline id="Shape" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="25 52 22 50 25 48"/>
+            <polyline id="Shape" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="33 52 36 50 33 48"/>
+            <path d="M30,46 L28,54" id="Shape" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="4" cy="12" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="8" cy="12" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="12" cy="12" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="42" cy="52" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="46" cy="52" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="50" cy="52" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="8" cy="52" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="12" cy="52" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="16" cy="52" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="4" cy="4" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="8" cy="4" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="12" cy="4" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="38" cy="12" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="42" cy="12" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="46" cy="12" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="38" cy="4" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="42" cy="4" r="1"/>
+            <circle id="Oval" fill="#000000" fill-rule="nonzero" cx="46" cy="4" r="1"/>
+        </g>
+    </g>
+</svg>
