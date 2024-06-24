@@ -5,7 +5,6 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
-import AboutMe from "@/app/Components/AboutMePlus";
 
 const linkLinkedin = () => {
   window.open('https://www.linkedin.com/in/aguinaldo-freire-95bb5a181/', '_blank');
@@ -63,7 +62,7 @@ export default function Home() {
 
   return (
     <main className=" bg-gray-950 h-[4000px] w-full">
-      <head> <title> Home </title></head>
+       <title> Home </title>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -210,15 +209,9 @@ export default function Home() {
           </div>
           
         </div>
-        <motion.div
-        ref={ref5}
-        className="flex gap-7"
-        initial={{opacity: 0, x: 50}}
-        animate={inView5 ? {opacity: 1, x: 0} : {opacity: 0, x: 50}}
-        transition={{duration: 1}}
-        >
-        <Image src="/images/t2.png" alt="Exemplo" width={700} height={200} />
-        </motion.div>
+
+        <Image src="/images/AboutMe1.svg" alt="Exemplo" width={700} height={200}
+         />
       </div>
     </main>
   );
