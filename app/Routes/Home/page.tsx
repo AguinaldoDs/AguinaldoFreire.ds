@@ -1,10 +1,19 @@
 'use client'
-
-import { motion } from "framer-motion";
+// bibliotecas react
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import AboutMe from "@/app/Components/AboutMePlus";
+import { FiChevronDown } from "react-icons/fi"; 
 import { useState } from "react";
+
+// biblioteca externa
+import { motion } from "framer-motion";
+
+//componentes
+import AboutMe from "@/app/Components/AboutMe"
+import AboutMePlus from "@/app/Components/AboutMePlus";
+
+
+//--------------------------------------------------------------------------------//
 
 // Links dos Icones
 const linkLinkedin = () => {
@@ -15,8 +24,6 @@ const linkGitHub = () => {
   window.open('https://github.com/AguinaldoDs', '_blank');
 };
 //
-
-
 
 
 const arrayPontinhos = [".", ".", "."].map((value, indice) => {
@@ -37,8 +44,15 @@ const arrayPontinhos = [".", ".", "."].map((value, indice) => {
   );
 });
 
+
+
 // Posição que o menu vai levar (Profile, About me, Jobs)
 export default function Home() {
+
+  
+// Valida About me
+const [validABM, setABM] = useState(true)
+
   const handleScroll = () => {
     window.scrollTo({
       top: 600,
@@ -60,13 +74,14 @@ export default function Home() {
     });
   };
 
-// Valida About me
-const [validAboutMe, setValidAboutMe] = useState(false)
+
+
   return (
 
     
     <main className=" bg-gray-950 h-[4000px] w-full">
        <title> Home </title>
+      
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -131,9 +146,25 @@ const [validAboutMe, setValidAboutMe] = useState(false)
 
 {/* About me */}
 
-{validAboutMe ? 
-      <AboutMe /> : null
-}
+
+       { validABM ? <AboutMe/> : <AboutMePlus/> }
+       <motion.div 
+        onClick={()=> {setABM(false)}}
+        whileInView={{opacity:[0,1,0]}}
+        transition={{
+            repeat:Infinity,
+            repeatType: 'loop',
+            duration:1.5
+          }}
+
+        className="flex flex-col relative ml-[50%] -translate-x-[50%] text-sm font-extralight
+                    cursor-pointer justify-center items-center"
+                    >
+        About me+
+        <FiChevronDown size={16} />
+      </motion.div>
+
+
     </main>
   );
 }

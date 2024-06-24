@@ -7,20 +7,10 @@ import { useState } from "react";
 
 // Valida aparição dos elementos 
 
-export default function AboutMePlus(){
+export default function AboutMe(){
 return(
 <main className=" bg-gray-950 w-full">
   <div className="flex relative mt-[10%] h-1 items-center">
-
-  <motion.div
-        className="flex gap-7"
-        initial={{opacity: 0, x: 50}}
-        whileInView={{opacity: 1, x: 0}}
-        transition={{duration: 1}}
-        >
-        <Image src="/images/AboutMe1.svg" alt="Exemplo" width={700} height={200} />
-        </motion.div>
-
         <motion.div className="flex absolute bg-white w-[70%] h-[1px] rounded-3xl left-2">
         </motion.div>
         <span className="flex relative ml-[75%] font-extralight text-5xl border-solid">
@@ -96,7 +86,14 @@ return(
 
           
         </div>
-     
+        <motion.div
+        className="flex gap-7"
+        initial={{opacity: 0, x: 50}}
+        whileInView={{opacity: 1, x: 0}}
+        transition={{duration: 1}}
+        >
+        <Image src="/images/AboutMe1.svg" alt="Exemplo" width={700} height={200} />
+        </motion.div>
       </div>
 
 </main>)
