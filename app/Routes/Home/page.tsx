@@ -2,7 +2,7 @@
 // bibliotecas react
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import { FiChevronDown,FiChevronUp  } from "react-icons/fi"; 
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { useState } from "react";
 
 // biblioteca externa
@@ -31,15 +31,15 @@ const arrayPontinhos = [".", ".", "."].map((value, indice) => {
     <motion.div
       key={indice}
       className="text-8xl"
-      initial={{opacity: 0}}
-      animate={{opacity: [0, 1, 0]}}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: [0, 1, 0] }}
       transition={{
         repeat: Infinity,
         repeatType: 'loop',
         duration: 0.2,
       }}
-    > 
-      {value} 
+    >
+      {value}
     </motion.div>
   );
 });
@@ -49,14 +49,26 @@ const arrayPontinhos = [".", ".", "."].map((value, indice) => {
 // Posição que o menu vai levar (Profile, About me, Jobs)
 export default function Home() {
 
-  
-// Valida About me
-const [validABM, setABM] = useState(true)
-const alterABM = () => {
-  setABM(prevState => !prevState);
-};
+// TROCAR PRA TRUE DEPOIS
 
+// TROCAR PRA TRUE DEPOIS
 
+// TROCAR PRA TRUE DEPOIS
+
+  // Valida About me
+  const [validABM, setABM] = useState(false)
+  const alterABM = () => {
+    setABM(valueABM => !valueABM);
+    if(!validABM){
+      handleScrollAboutme()
+    }
+  };
+
+// TROCAR PRA TRUE DEPOIS
+
+// TROCAR PRA TRUE DEPOIS
+
+// TROCAR PRA TRUE DEPOIS
 
   const handleScroll = () => {
     window.scrollTo({
@@ -87,8 +99,8 @@ const alterABM = () => {
 
   return (
     <main className=" bg-gray-950 h-[4000px] w-full">
-       <title> Home </title>
-      
+      <title> Home </title>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -108,12 +120,12 @@ const alterABM = () => {
         </div>
       </motion.div>
 
-{/* welcome */}
+      {/* welcome */}
       <div className="flex mt-0 p-10 w-full h-auto font-bold text-9xl">
-        <motion.div 
-          initial={{opacity: 0}}
-          animate={{opacity: [1, 0, 1]}}
-          exit={{opacity: 0}}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [1, 0, 1] }}
+          exit={{ opacity: 0 }}
           transition={{
             repeat: 1,
             duration: 1.5,
@@ -126,20 +138,20 @@ const alterABM = () => {
         </motion.div>
       </div>
 
-{/* Menu */}
+      {/* Menu */}
       <div className="mt-20 flex justify-around text-3xl font-extralight">
-        <span className="cursor-pointer hover:text-4xl duration-200" 
-              onClick={handleScroll}> Profile </span>
+        <span className="cursor-pointer hover:text-4xl duration-200"
+          onClick={handleScroll}> Profile </span>
 
         <span className="cursor-pointer hover:text-4xl duration-200"
-              onClick={handleScrollAboutme}> About me </span>
+          onClick={handleScrollAboutme}> About me </span>
 
         <span className="cursor-pointer hover:text-4xl duration-200"
-              onClick={gambiarraScrollJob}> Jobs </span>
+          onClick={gambiarraScrollJob}> Jobs </span>
       </div>
 
-{/* Profile */}
-      <div className="font-extralight flex mt-[18%] w-full h-auto justify-center items-center"> 
+      {/* Profile */}
+      <div className="font-extralight flex mt-[18%] w-full h-auto justify-center items-center">
         <motion.div
           className="flex bg-red-400 w-80 h-80 justify-center items-center rounded-3xl"
         >
@@ -151,36 +163,36 @@ const alterABM = () => {
         </div>
       </div>
 
-{/* About me */}
+      {/* About me */}
 
       <div>
-       <AboutMe/>
+        <AboutMe />
 
-      <motion.div
-       initial={{opacity:0}}
-       whileInView={{opacity: 1}}
-       transition={{
-        duration:1.0
-       }}
-      >
-      { validABM ? null : <AboutMePlus/> }
-      </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 1.0
+          }}
+        >
+          {validABM ? null : <AboutMePlus />}
+        </motion.div>
 
-       <motion.div 
-        onClick={alterABM}
-        whileInView={{opacity:[0,1,0]}}
-        transition={{
-            repeat:Infinity,
+        <motion.div
+          onClick={alterABM}
+          whileInView={{ opacity: [0, 1, 0] }}
+          transition={{
+            repeat: Infinity,
             repeatType: 'loop',
-            duration:1.5
+            duration: 1.5
           }}
 
-        className="flex flex-col relative ml-[50%] -translate-x-[50%] text-sm font-extralight
+          className="flex flex-col relative ml-[50%] -translate-x-[50%] text-sm font-extralight
                     cursor-pointer justify-center items-center"
-                    >
-        About me+
-        { validABM ? <FiChevronDown size={16} /> : <FiChevronUp size={16} />}
-      </motion.div>
+        >
+          About me+
+          {validABM ? <FiChevronDown size={16} /> : <FiChevronUp size={16} />}
+        </motion.div>
       </div>
 
     </main>

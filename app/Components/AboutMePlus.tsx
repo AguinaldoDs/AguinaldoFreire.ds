@@ -25,39 +25,44 @@ export default function AboutMePlus(){
 
 return(
 <main className=" bg-gray-950 w-full">
-  <div className="flex relative mt-[10%] h-1 items-center">
+  <div className="flex relative mt-[7%] h-1 items-center">
 
-  <motion.div
-        className="flex gap-7"
+  
+      <span className="flex relative font-extralight text-5xl border-solid ml-6">
+          About me
+      </span>   
+        <motion.div className="flex relative bg-white w-[70%] h-[1px] rounded-3xl left-2 ml-10">
+        </motion.div>
+      
+      </div> 
+ 
+      <div className="flex w-max font-medium text-[12px] space-y-2 mt-6 justify-center
+       ml-[50%] -translate-x-[50%]">
+             <motion.div
+        className="flex gap-16"
         initial={{opacity: 0, x: 50}}
         whileInView={{opacity: 1, x: 0}}
         transition={{duration: 1}}
+        
         >
-        <Image src="/images/AboutMe1.svg" alt="Exemplo" width={700} height={200} />
+        <Image src="/images/pp1.svg" alt="Exemplo" width={500} height={200} />
         </motion.div>
 
-        <motion.div className="flex absolute bg-white w-[70%] h-[1px] rounded-3xl left-2">
-        </motion.div>
-        <span className="flex relative ml-[75%] font-extralight text-5xl border-solid">
-          About me
-        </span> 
-      </div> 
-      <div className="flex w-max font-medium text-[12px] space-y-2 mt-6 justify-center
-       ml-[50%] -translate-x-[50%]">
-        <div className="w-max space-y-1 mt-12">
+        <div className="w-max space-y-1 mt-20 justify-center items-center">
           <motion.div
-            className="flex gap-7"
+            className="flex gap-7 mt-20"
             initial={{opacity: 0, x: -50}}
             whileInView={{opacity: 1, x: 0}}
             transition={{duration: 1}}
             
           >
-            <Image src="/images/sql.svg" alt="Exemplo" width={60} height={60} />
+            <Image src="/images/js.svg" alt="Exemplo" width={60} height={60} />
             <div>
-              <p>Em meados 2022 inicie minha carreira como Analista de dados em</p>
-              <p>uma empresa no ramo de telecobrança, onde desenvolvi grandes</p>
-              <p>habilidades com MSSQL, nela a crianção de procedures, Triggers,</p>
-              <p>Views e trabalhados agendados.</p>
+            <p>No final de 2023, iniciei meus estudos no desenvolvimento web.</p>
+            <p>Comecei aprendendo os fundamentos de HTML, CSS e JavaScript.</p>
+            <p>Utilizando essas habilidades, consegui entregar meu primeiro site para a empresa.</p>
+            <p>Essa solução ajudou a resolver um grande problema de processos manuais.</p>
+
             </div>
           </motion.div>
           <p>&nbsp;</p>
@@ -68,11 +73,12 @@ return(
             whileInView={{opacity: 1, x: 0}}
             transition={{duration: 1}}
           >
-            <Image src="/images/bi.svg" alt="Exemplo" width={60} height={60} />
+            <Image src="/images/node.svg" alt="Exemplo" width={60} height={60} />
             <div>
-              <p>Além de Power BI para motagem de DashBoards e transformar de fatos</p>
-              <p> informações cruas dos bancos de dados em informações visuais que </p>
-              <p>auxiliam na tomada de dicisões.</p>
+              <p> No intuito da melhoria desse site, comecei estudos em Node.js </p>
+              <p> para a criação de APIs, onde enriqueceu muito meus conhecimentos </p>
+              <p> permitindo a integração com bancos de dados e melhorando ainda </p>
+              <p> mais a experiência do usuario. </p>
             </div>
           </motion.div>
           <p>&nbsp;</p>
@@ -83,17 +89,18 @@ return(
             whileInView={{opacity: 1, x: 0}}
             transition={{duration: 1}}
           >
-            <Image src="/images/py2.svg" alt="Exemplo" width={60} height={60} />
+            <Image src="/images/react.svg" alt="Exemplo" width={60} height={60} />
             <div>
-              <p>Outra grande ferramenta que criei dominio foi a linguagem Python,</p>
-              <p>permitindo agilizar importações de informações, também me auxiliou</p>
-              <p>na automação de um processo manual que era feito na empresa que</p>
-              <p>custava minutos importantes do meu dia. </p>
+              <p> Sempre no intuito de melhorar, comecei os aprendizados </p>
+              <p> em React Next + Tailwind. </p>
+              <p> Um biblioteca muito poderos, que permitiu refazer o site </p>
+              <p> entregue em qualidade muito melhor. Além, de permitir a </p>
+              <p> a modelagem desse Portfolio.</p>
             </div>
           </motion.div>
           <p>&nbsp;</p>
 
-          <motion.div
+          {/* <motion.div
             className="flex gap-7"
             initial={{opacity: 0, x: 50}}
             whileInView={{opacity: 1, x: 0}}
@@ -107,7 +114,7 @@ return(
               <p>responsabilidades e consegui fazer todas as entregas usando o método</p>
               <p>Ágil de prioridades.</p>
             </div>
-          </motion.div>
+          </motion.div> */}
 
           
         </div>
