@@ -86,8 +86,6 @@ const alterABM = () => {
 
 
   return (
-
-    
     <main className=" bg-gray-950 h-[4000px] w-full">
        <title> Home </title>
       
@@ -157,7 +155,16 @@ const alterABM = () => {
 
       <div>
        <AboutMe/>
+
+      <motion.div
+       initial={{opacity:0}}
+       whileInView={{opacity: 1}}
+       transition={{
+        duration:1.0
+       }}
+      >
       { validABM ? null : <AboutMePlus/> }
+      </motion.div>
 
        <motion.div 
         onClick={alterABM}
