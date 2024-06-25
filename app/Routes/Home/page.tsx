@@ -2,7 +2,7 @@
 // bibliotecas react
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import { FiChevronDown } from "react-icons/fi"; 
+import { FiChevronDown,FiChevronUp  } from "react-icons/fi"; 
 import { useState } from "react";
 
 // biblioteca externa
@@ -52,6 +52,11 @@ export default function Home() {
   
 // Valida About me
 const [validABM, setABM] = useState(true)
+const alterABM = () => {
+  setABM(prevState => !prevState);
+};
+
+
 
   const handleScroll = () => {
     window.scrollTo({
@@ -74,6 +79,10 @@ const [validABM, setABM] = useState(true)
     });
   };
 
+  const gambiarraScrollJob = () => {
+    handleScrollJobs()
+    setABM(true)
+  }
 
 
   return (
@@ -128,7 +137,7 @@ const [validABM, setABM] = useState(true)
               onClick={handleScrollAboutme}> About me </span>
 
         <span className="cursor-pointer hover:text-4xl duration-200"
-              onClick={handleScrollJobs}> Jobs </span>
+              onClick={gambiarraScrollJob}> Jobs </span>
       </div>
 
 {/* Profile */}
@@ -146,10 +155,12 @@ const [validABM, setABM] = useState(true)
 
 {/* About me */}
 
+      <div>
+       <AboutMe/>
+      { validABM ? null : <AboutMePlus/> }
 
-       { validABM ? <AboutMe/> : <AboutMePlus/> }
        <motion.div 
-        onClick={()=> {setABM(false)}}
+        onClick={alterABM}
         whileInView={{opacity:[0,1,0]}}
         transition={{
             repeat:Infinity,
@@ -161,9 +172,9 @@ const [validABM, setABM] = useState(true)
                     cursor-pointer justify-center items-center"
                     >
         About me+
-        <FiChevronDown size={16} />
+        { validABM ? <FiChevronDown size={16} /> : <FiChevronUp size={16} />}
       </motion.div>
-
+      </div>
 
     </main>
   );

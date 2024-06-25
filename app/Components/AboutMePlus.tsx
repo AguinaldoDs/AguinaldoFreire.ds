@@ -4,10 +4,25 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import { useEffect } from "react";
+
+
+
+const handleScroll = () => {
+  window.scrollTo({
+    top: 1750,
+    behavior: 'smooth'
+  });
+};
+
 
 // Valida aparição dos elementos 
 
 export default function AboutMePlus(){
+  useEffect(() => {
+    handleScroll();
+  }, []);
+
 return(
 <main className=" bg-gray-950 w-full">
   <div className="flex relative mt-[10%] h-1 items-center">
