@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 //componentes
 import AboutMe from "@/app/Components/AboutMe"
 import AboutMePlus from "@/app/Components/AboutMePlus";
+import Carousel from "@/app/Components/Carrossel";
 
 
 //--------------------------------------------------------------------------------//
@@ -56,7 +57,7 @@ export default function Home() {
 // TROCAR PRA TRUE DEPOIS
 
   // Valida About me
-  const [validABM, setABM] = useState(false)
+  const [validABM, setABM] = useState(true)
   const alterABM = () => {
     setABM(valueABM => !valueABM);
     if(!validABM){
@@ -99,6 +100,8 @@ export default function Home() {
 
   return (
     <main className=" bg-gray-950 h-[4000px] w-full">
+      
+
       <title> Home </title>
 
       <motion.div
@@ -194,6 +197,9 @@ export default function Home() {
           {validABM ? <FiChevronDown size={16} /> : <FiChevronUp size={16} />}
         </motion.div>
       </div>
+
+
+      <Carousel/>
 
     </main>
   );
