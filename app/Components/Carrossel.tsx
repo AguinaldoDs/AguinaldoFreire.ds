@@ -1,70 +1,37 @@
-'use client'
+// app/Components/Carrossel.tsx
+import { FC } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
-import { motion } from 'framer-motion';
-import React, { useState } from 'react';
-import styled from 'styled-components';
-
-const CarouselContainer = styled.div`
-  overflow: hidden;
-  width: 100%;
-  
-`;
-
-const SlideWrapper = styled.div`
-  display: flex;
-  transition: transform 0.5s ease;
-`;
-
-const Slide = styled.div`
-  flex: 0 0 100%;
-  max-width: 100%;
-`;
-
-const Carousel = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentSlide((currentSlide + 1) % 3);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? 2 : currentSlide - 1);
-  };
-
+const Carrossel: FC = () => {
   return (
-    <div
-    className='justify-center text-center items-center'
+    <Swiper
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      spaceBetween={50}
+      slidesPerView={1}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
     >
-    <CarouselContainer>
-      <SlideWrapper style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-        <Slide>
-          <motion.div
-            className='bg-red-500 w-[50%] h-[450px] ml-[50%] -translate-x-[50%] rounded-3xl
-            justify-center text-center object-center'
-          >
-            Slide 1
-          </motion.div>
-        </Slide>
-        <Slide>
-        <motion.div
-            className='bg-red-500 w-[50%] h-96 ml-[50%] -translate-x-[50%]'
-          >
-            Slide 2
-          </motion.div>
-        </Slide>
-        <Slide>
-        <motion.div
-            className='bg-red-500 w-[50%] h-96 ml-[50%] -translate-x-[50%]'
-          >
-            Slide 3
-          </motion.div>
-        </Slide>
-      </SlideWrapper>
-      <button onClick={prevSlide}>Anterior</button>
-      <button onClick={nextSlide}>Próximo</button>
-    </CarouselContainer>
-    </div>
+      <SwiperSlide><div style={{ background: '', height: '500px' }}
+                        className='flex justify-center items-center'>
+                        <div
+                        className='bg-red-500'
+                        > 
+                            Testando 
+                        </div>  
+                   </div>
+      </SwiperSlide>
+
+      <SwiperSlide><div style={{ background: '', height: '500px' }}>Slide 2</div></SwiperSlide>
+      <SwiperSlide><div style={{ background: '', height: '500px' }}>Slide 3</div></SwiperSlide>
+      <SwiperSlide><div style={{ background: '', height: '500px' }}>Slide 4</div></SwiperSlide>
+    </Swiper>
   );
 };
 
-export default Carousel;
+export default Carrossel;

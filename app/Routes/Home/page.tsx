@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 //componentes
 import AboutMe from "@/app/Components/AboutMe"
 import AboutMePlus from "@/app/Components/AboutMePlus";
-import Carousel from "@/app/Components/Carrossel";
+import Carrossel from "@/app/Components/Carrossel";
 
 
 //--------------------------------------------------------------------------------//
@@ -198,8 +198,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-
-      <Carousel/>
+        <Carrossel/>
 
     </main>
   );
