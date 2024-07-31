@@ -158,11 +158,16 @@ export default function Home() {
         <motion.div
           className="flex bg-red-400 w-80 h-80 justify-center items-center rounded-3xl"
         >
-          <img src="/34.jpeg" alt="tes"
-          className="flex"
+          <motion.img src="/34.jpeg" alt="tes"
+           className="p-4 w-full h-full object-cover rounded-3xl cursor-pointer"
+           
+           whileHover={{x:30,y:10,rotate:10}}
+           exit={{opacity:0}}
+            
           />
 
         </motion.div>
+
         <div className="font-extralight flex relative flex-col ml-10 ">
           <p>Analista de Dados e MIS com dois anos de experiência em manipulação, análise e visualização de dados.</p>
           <p>Especialista em Python, MSSQL, Business Intelligence (BI) e R.</p>
