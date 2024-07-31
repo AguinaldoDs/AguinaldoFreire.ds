@@ -34,3 +34,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignora a pasta public
+public/
+
+# Exceção para arquivos de imagem na pasta public
+!public/*.jpg
+!public/*.png
+!public/*.gif
+

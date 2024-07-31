@@ -150,7 +150,7 @@ export default function Home() {
           onClick={handleScrollAboutme}> About me </span>
 
         <span className="cursor-pointer hover:text-4xl duration-200"
-          onClick={gambiarraScrollJob}> Jobs </span>
+          onClick={gambiarraScrollJob}> Last jobs </span>
       </div>
 
       {/* Profile */}
@@ -158,6 +158,10 @@ export default function Home() {
         <motion.div
           className="flex bg-red-400 w-80 h-80 justify-center items-center rounded-3xl"
         >
+          <img src="/34.jpeg" alt="tes"
+          className="flex"
+          />
+
         </motion.div>
         <div className="font-extralight flex relative flex-col ml-10 ">
           <p>Analista de Dados e MIS com dois anos de experiência em manipulação, análise e visualização de dados.</p>
