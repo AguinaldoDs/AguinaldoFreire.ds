@@ -1,22 +1,30 @@
 'use client'
-// bibliotecas react
+
+// Bibliotecas React
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-// biblioteca externa
-import { motion } from "framer-motion";
+// Biblioteca externa
+import { motion, AnimatePresence } from "framer-motion";
 
-//componentes
-import AboutMe from "@/app/Components/AboutMe"
+// Componentes
+import AboutMe from "@/app/Components/AboutMe";
 import AboutMePlus from "@/app/Components/AboutMePlus";
 import Carrossel from "@/app/Components/Carrossel";
 
-
 //--------------------------------------------------------------------------------//
 
-// Links dos Icones
+// Lista de palavras para alternar
+const homesList = ['Welcome to Aguinaldo space', 
+                    "Bienvenido al espacio de Aguinaldo",
+                    "Bienvenue dans l'espace d'Aguinaldo",
+                    "Willkommen im Raum von Aguinaldo",
+                    "Benvenuto nello spazio di Aguinaldo"
+                  ];
+
+// Links dos Ícones
 const linkLinkedin = () => {
   window.open('https://www.linkedin.com/in/aguinaldo-freire-95bb5a181/', '_blank');
 };
@@ -24,52 +32,21 @@ const linkLinkedin = () => {
 const linkGitHub = () => {
   window.open('https://github.com/AguinaldoDs', '_blank');
 };
-//
 
-
-const arrayPontinhos = [".", ".", "."].map((value, indice) => {
-  return (
-    <motion.div
-      key={indice}
-      className="text-8xl"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: [0, 1, 0] }}
-      transition={{
-        repeat: Infinity,
-        repeatType: 'loop',
-        duration: 0.2,
-      }}
-    >
-      {value}
-    </motion.div>
-  );
-});
-
-
+const linkMail = () => {
+  window.open('https://mail.google.com/mail/?view=cm&fs=1&to=aguinaldofreire.ds@gmail.com','_blank')}
 
 // Posição que o menu vai levar (Profile, About me, Jobs)
 export default function Home() {
 
-// TROCAR PRA TRUE DEPOIS
-
-// TROCAR PRA TRUE DEPOIS
-
-// TROCAR PRA TRUE DEPOIS
-
   // Valida About me
-  const [validABM, setABM] = useState(true)
+  const [validABM, setABM] = useState(true);
   const alterABM = () => {
     setABM(valueABM => !valueABM);
     if(!validABM){
-      handleScrollAboutme()
+      handleScrollAboutme();
     }
   };
-
-// TROCAR PRA TRUE DEPOIS
-
-// TROCAR PRA TRUE DEPOIS
-
-// TROCAR PRA TRUE DEPOIS
 
   const handleScroll = () => {
     window.scrollTo({
@@ -93,15 +70,24 @@ export default function Home() {
   };
 
   const gambiarraScrollJob = () => {
-    handleScrollJobs()
-    setABM(true)
-  }
+    handleScrollJobs();
+    setABM(true);
+  };
 
+  // Estado e função para animar a troca de palavras
+  const [index, setIndex] = useState(0);
+
+  const updateIndex = () => {
+    setIndex((prevIndex) => (prevIndex + 1) % homesList.length);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(updateIndex, 2000); // Troca a palavra a cada 2 segundos
+    return () => clearInterval(interval); // Limpa o intervalo quando o componente desmonta
+  }, []);
 
   return (
     <main className=" bg-gray-950 h-[4000px] w-full">
-      
-
       <title> Home </title>
 
       <motion.div
@@ -117,32 +103,28 @@ export default function Home() {
           <div className="cursor-pointer" onClick={linkLinkedin}>
             <FaLinkedin size={40} />
           </div>
-          <div className="cursor-pointer">
+          <div className="cursor-pointer" onClick={linkMail}>
             <SiGmail size={40} />
           </div>
         </div>
       </motion.div>
 
-      {/* welcome */}
-      <div className="flex mt-0 p-10 w-full h-auto font-bold text-9xl">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [1, 0, 1] }}
-          exit={{ opacity: 0 }}
-          transition={{
-            repeat: 1,
-            duration: 1.5,
-            repeatDelay: 1,
-            ease: "linear"
-          }}
-          className="flex relative"
-        >
-          Welcome to Aguinaldo Home...
-        </motion.div>
+      {/* Welcome */}
+      <div className="flex mt-0 p-10 w-full h-auto font-bold text-8xl">
+          <motion.div
+                key={index}
+                initial={{ y: "20%" }}
+                animate={{ y: "0%" }}
+                exit={{ y: "-10%" }}
+                transition={{ duration: 0.7 }}
+                className="fixed p-10"
+              >
+                {homesList[index]}...
+              </motion.div> 
       </div>
 
       {/* Menu */}
-      <div className="mt-20 flex justify-around text-3xl font-extralight">
+      <div className="fixed flex top-[80%] left-0 w-full text-3xl font-extralight justify-around">
         <span className="cursor-pointer hover:text-4xl duration-200"
           onClick={handleScroll}> Profile </span>
 
@@ -150,11 +132,11 @@ export default function Home() {
           onClick={handleScrollAboutme}> About me </span>
 
         <span className="cursor-pointer hover:text-4xl duration-200"
-          onClick={gambiarraScrollJob}> Last jobs </span>
+          onClick={gambiarraScrollJob}> Jobs & Feedback </span>
       </div>
 
       {/* Profile */}
-      <div className="font-extralight flex mt-[18%] w-full h-auto justify-center items-center">
+      <div className="font-extralight flex mt-[37%] w-full h-auto justify-center items-center">
         <motion.div
           className="flex bg-red-400 w-80 h-80 justify-center items-center rounded-3xl"
         >
@@ -176,7 +158,6 @@ export default function Home() {
       </div>
 
       {/* About me */}
-
       <div>
         <AboutMe />
 

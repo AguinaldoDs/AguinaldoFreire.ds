@@ -10,7 +10,7 @@ import { useEffect } from "react";
 
 const handleScroll = () => {
   window.scrollTo({
-    top: 1750,
+    top: 1765,
     behavior: 'smooth'
   });
 };

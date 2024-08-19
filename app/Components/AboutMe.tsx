@@ -10,7 +10,7 @@ import { useState } from "react";
 export default function AboutMe(){
 return(
 <main className=" bg-gray-950 w-full">
-  <div className="flex relative mt-[7%] h-1 items-center">
+  <div className="flex relative mt-[10%] h-1 items-center">
         <motion.div className="flex absolute bg-white w-[70%] h-[1px] rounded-3xl left-2">
         </motion.div>
         <span className="flex relative ml-[75%] font-extralight text-5xl border-solid">
