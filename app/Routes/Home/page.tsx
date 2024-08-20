@@ -13,8 +13,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import AboutMe from "@/app/Components/AboutMe";
 import AboutMePlus from "@/app/Components/AboutMePlus";
 import Carrossel from "@/app/Components/Carrossel";
+import HoverEffect from "@/app/Components/GhostDiv"
 
-//--------------------------------------------------------------------------------//
+//----------------------------------- ---------------------------------------------//
 
 let br = 'Bem vindo ao espaço do Aguinaldo'
 let eua = 'Welcome to Aguinaldo space'
@@ -119,14 +120,14 @@ export default function Home() {
                 animate={{ y: "0%" }}
                 exit={{ y: "-10%" }}
                 transition={{ duration: 0.7 }}
-                className="fixed p-10"
+                className=" p-10"
               >
                {homesList.br} 
               </motion.div> 
       </div>
 
       {/* Menu */}
-      <div className="fixed flex top-[80%] left-0 w-full text-3xl font-extralight justify-around">
+      <div className=" flex top-[80%] left-0 w-full text-3xl font-extralight justify-around">
         <span className="cursor-pointer hover:text-4xl duration-200"
           onClick={handleScroll}> Profile </span>
 
@@ -190,7 +191,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-        <Carrossel/>
+      <HoverEffect/>
 
     </main>
   );
