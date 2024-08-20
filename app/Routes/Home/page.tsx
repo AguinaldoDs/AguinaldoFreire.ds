@@ -16,13 +16,15 @@ import Carrossel from "@/app/Components/Carrossel";
 
 //--------------------------------------------------------------------------------//
 
+let br = 'Bem vindo ao espaço do Aguinaldo'
+let eua = 'Welcome to Aguinaldo space'
+let spanish = "Bienvenido al espacio de Aguinaldo"
+let germany = "Willkommen im Raum von Aguinaldo"
+let italianokk = "Benvenuto nello spazio di Aguinaldo"
+
 // Lista de palavras para alternar
-const homesList = ['Welcome to Aguinaldo space', 
-                    "Bienvenido al espacio de Aguinaldo",
-                    "Bienvenue dans l'espace d'Aguinaldo",
-                    "Willkommen im Raum von Aguinaldo",
-                    "Benvenuto nello spazio di Aguinaldo"
-                  ];
+const homesList = {'br':br}
+                 // eua,spanish,germany,italianokk];
 
 // Links dos Ícones
 const linkLinkedin = () => {
@@ -78,11 +80,11 @@ export default function Home() {
   const [index, setIndex] = useState(0);
 
   const updateIndex = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % homesList.length);
+    setIndex((prevIndex) => (prevIndex + 1) % Object.keys(homesList).length);
   };
 
   useEffect(() => {
-    const interval = setInterval(updateIndex, 2000); // Troca a palavra a cada 2 segundos
+    const interval = setInterval(updateIndex, 3000); // Troca a palavra a cada 2 segundos
     return () => clearInterval(interval); // Limpa o intervalo quando o componente desmonta
   }, []);
 
@@ -119,7 +121,7 @@ export default function Home() {
                 transition={{ duration: 0.7 }}
                 className="fixed p-10"
               >
-                {homesList[index]}...
+               {homesList.br} 
               </motion.div> 
       </div>
 
