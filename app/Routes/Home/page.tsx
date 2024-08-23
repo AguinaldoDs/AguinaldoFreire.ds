@@ -12,20 +12,10 @@ import { motion, AnimatePresence } from "framer-motion";
 // Componentes
 import AboutMe from "@/app/Components/AboutMe";
 import AboutMePlus from "@/app/Components/AboutMePlus";
-import Carrossel from "@/app/Components/Carrossel";
 import HoverEffect from "@/app/Components/GhostDiv"
 
 //----------------------------------- ---------------------------------------------//
 
-let br = 'Bem vindo ao espaço do Aguinaldo'
-let eua = 'Welcome to Aguinaldo space'
-let spanish = "Bienvenido al espacio de Aguinaldo"
-let germany = "Willkommen im Raum von Aguinaldo"
-let italianokk = "Benvenuto nello spazio di Aguinaldo"
-
-// Lista de palavras para alternar
-const homesList = {'br':br}
-                 // eua,spanish,germany,italianokk];
 
 // Links dos Ícones
 const linkLinkedin = () => {
@@ -37,7 +27,8 @@ const linkGitHub = () => {
 };
 
 const linkMail = () => {
-  window.open('https://mail.google.com/mail/?view=cm&fs=1&to=aguinaldofreire.ds@gmail.com','_blank')}
+  window.open('https://mail.google.com/mail/?view=cm&fs=1&to=aguinaldofreire.ds@gmail.com', '_blank')
+}
 
 // Posição que o menu vai levar (Profile, About me, Jobs)
 export default function Home() {
@@ -46,7 +37,7 @@ export default function Home() {
   const [validABM, setABM] = useState(true);
   const alterABM = () => {
     setABM(valueABM => !valueABM);
-    if(!validABM){
+    if (!validABM) {
       handleScrollAboutme();
     }
   };
@@ -77,29 +68,21 @@ export default function Home() {
     setABM(true);
   };
 
-  // Estado e função para animar a troca de palavras
-  const [index, setIndex] = useState(0);
-
-  const updateIndex = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % Object.keys(homesList).length);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(updateIndex, 3000); // Troca a palavra a cada 2 segundos
-    return () => clearInterval(interval); // Limpa o intervalo quando o componente desmonta
-  }, []);
 
   return (
     <main className=" bg-gray-950 h-[4000px] w-full">
       <title> Home </title>
 
+<div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="flex border-gray-100 border-b-[1px] w-full h-24 justify-end"
+        className="flex fixed bg-gray-900 font-light w-max h-auto p-5 rounded-3xl gap-3
+                  ml-[60%] mt-2"
       >
-        <div className="flex gap-28 mr-5 justify-center items-center">
+        <p className="flex mt-6"> Contact me: </p>
+        <div className="flex gap-20 mr-5 justify-center items-center">
           <div className="cursor-pointer" onClick={linkGitHub}>
             <FaGithub size={40} />
           </div>
@@ -111,19 +94,30 @@ export default function Home() {
           </div>
         </div>
       </motion.div>
-
+      </div>
       {/* Welcome */}
-      <div className="flex mt-0 p-10 w-full h-auto font-bold text-8xl">
-          <motion.div
-                key={index}
-                initial={{ y: "20%" }}
-                animate={{ y: "0%" }}
-                exit={{ y: "-10%" }}
-                transition={{ duration: 0.7 }}
-                className=" p-10"
-              >
-               {homesList.br} 
-              </motion.div> 
+      <div className="flex p-10 w-max h-auto font-extralight">
+        <motion.div
+          initial={{ y: "20%" }}
+          animate={{ y: "0%" }}
+          exit={{ y: "-10%" }}
+          transition={{ duration: 0.7 }}
+          className=" p-10"
+        >
+          <p
+            className="text-8xl"
+          > Welcome!</p>
+          <p
+            className="mt-5 text-purple-700"
+          >Im Aguinaldo,</p>
+          <span
+            className="mt-5 text-purple-700"
+          > Data Analyst and Scientist in
+            <span 
+            className=""
+            > Brazil🇧🇷</span>
+          </span>
+        </motion.div>
       </div>
 
       {/* Menu */}
@@ -144,11 +138,11 @@ export default function Home() {
           className="flex bg-red-400 w-80 h-80 justify-center items-center rounded-3xl"
         >
           <motion.img src="/34.jpeg" alt="tes"
-           className="p-4 w-full h-full object-cover rounded-3xl cursor-pointer"
-           
-           whileHover={{x:30,y:10,rotate:10}}
-           exit={{opacity:0}}
-            
+            className="p-4 w-full h-full object-cover rounded-3xl cursor-pointer"
+
+            whileHover={{ x: 30, y: 10, rotate: 10 }}
+            exit={{ opacity: 0 }}
+
           />
 
         </motion.div>
@@ -191,7 +185,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <HoverEffect/>
+      <HoverEffect />
 
     </main>
   );
