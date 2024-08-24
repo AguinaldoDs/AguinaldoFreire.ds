@@ -73,7 +73,6 @@ export default function Home() {
     <main className=" bg-gray-950 h-[4000px] w-full">
       <title> Home </title>
 
-<div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -94,9 +93,10 @@ export default function Home() {
           </div>
         </div>
       </motion.div>
-      </div>
+
       {/* Welcome */}
-      <div className="flex p-10 w-max h-auto font-extralight">
+    
+      <div className="flex p-10 w-max h-auto font-extralight bg-gray-900 mt-10">
         <motion.div
           initial={{ y: "20%" }}
           animate={{ y: "0%" }}
@@ -108,11 +108,11 @@ export default function Home() {
             className="text-8xl"
           > Welcome!</p>
           <p
-            className="mt-5 text-purple-700"
+            className="mt-5 text-slate-50"
           >Im Aguinaldo,</p>
           <span
-            className="mt-5 text-purple-700"
-          > Data Analyst and Scientist in
+            className="mt-5 text-slate-50"
+          > A 23yo Data Analyst and Scientist in
             <span 
             className=""
             > Brazil🇧🇷</span>
