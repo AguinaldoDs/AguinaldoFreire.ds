@@ -3,28 +3,39 @@
 // Bibliotecas React
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import { FaCog } from 'react-icons/fa'; 
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import { useState, useEffect } from "react";
+import { BsGear } from "react-icons/bs";
 
 // Biblioteca externa
 import { motion, AnimatePresence } from "framer-motion";
 import { Loop } from "framer/core/Loop.js";
+import { useState } from "react";
+
+// Componentes
+import ConfigOptions from './Components/Config'
 
 
 const Home: React.FC = () => {
+
+  // States
+
+
+
+  const [validConfig, setValidConfig] = useState(false)
+  const handleValidConfig = () => {setValidConfig(value => !value)}
+
+
   return (
     <main className='flex flex-col bg-crowshead-950 w-full overflow-y-auto h-dvh'>
       <title>I'm seeing you! 👀</title>
 
 
       {/* CONTACT ME  & CONFIG */}
-      <div>
+      <div className="flex w-full items-center  select-none">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="flex relative font-light w-max h-auto p-2 rounded-2xl gap-3
+          className="flex relative font-light w-maxh-auto p-2 rounded-2xl gap-3
                    mt-2 ml-2">
           <p className="flex mt-6"> Contact me: </p>
           <div className="flex gap-20 mr-5 justify-center items-center">
@@ -39,10 +50,19 @@ const Home: React.FC = () => {
             </div>
           </div>
             </motion.div>
-            <FaCog size={40}>
-          <motion.div>
-        </motion.div>
 
+          <motion.div 
+           className="fixed right-0 mr-4 cursor-pointer"
+           animate={{ rotate: validConfig ? 120 : 0 }}
+           transition={{ duration: 0.5 }}
+           onClick={handleValidConfig}
+          > 
+            <BsGear size={30}/>   
+          </motion.div>
+        
+        <motion.div className="fixed right-0 mr-20 ">
+        {validConfig ? <ConfigOptions/> : null}
+        </motion.div>
 
 
       </div>
@@ -96,7 +116,6 @@ const Home: React.FC = () => {
         <span className="cursor-pointer"
           > Jobs & Feedback </span>
       </motion.div>
-
 
 
       </motion.div>
