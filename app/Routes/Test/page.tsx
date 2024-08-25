@@ -10,19 +10,25 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Loop } from "framer/core/Loop.js";
 import { useState } from "react";
 
-// Componentes
-import ConfigOptions from './Components/Config'
-
 
 const Home: React.FC = () => {
 
+  // Lista de opções de seleção
+  const list = ['Personalizar sistema', 'Acessibilidade'];
+
+
   // States
-
-
-
   const [validConfig, setValidConfig] = useState(false)
+  const [validPersonlizeOption, setValuePersonlizeOption] = useState(false);
+
+  //Handles
   const handleValidConfig = () => {setValidConfig(value => !value)}
 
+  const handleClick = (item: string) => {
+    if (item === "Personalizar sistema") {
+      setValuePersonlizeOption(value => !value);
+    }
+  };
 
   return (
     <main className='flex flex-col bg-crowshead-950 w-full overflow-y-auto h-dvh'>
@@ -40,10 +46,10 @@ const Home: React.FC = () => {
           <p className="flex mt-6"> Contact me: </p>
           <div className="flex gap-20 mr-5 justify-center items-center">
             <div className="cursor-pointer" onClick={()=>{window.open('https://www.linkedin.com/in/aguinaldo-freire-95bb5a181/', '_blank') }}>
-              <FaGithub size={40} />
+              <FaLinkedin size={40} />
             </div>
             <div className="cursor-pointer" onClick={()=>{window.open('https://github.com/AguinaldoDs', '_blank') }}>
-              <FaLinkedin size={40} />
+              < FaGithub size={40} />
             </div>
             <div className="cursor-pointer" onClick={()=>{window.open('https://mail.google.com/mail/?view=cm&fs=1&to=aguinaldofreire.ds@gmail.com', '_blank') }}>
               <SiGmail size={40} />
@@ -61,8 +67,51 @@ const Home: React.FC = () => {
           </motion.div>
         
         <motion.div className="fixed right-0 mr-20 ">
-        {validConfig ? <ConfigOptions/> : null}
-        </motion.div>
+        {/* return options  */}
+        {validConfig ? 
+        <motion.div
+        className="flex flex-col h-max bg-crowshead-900 p-4 rounded-md mt-2"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
+        {list.map((item, index) => (
+          <motion.div
+            key={index}
+            className="text-white mt-2 cursor-pointer"
+            initial={{ opacity: 0, y: 50 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{
+              duration: 0.7,
+              delay: index * 0.2,
+            }}
+            onClick={() => handleClick(item)}
+          >
+            {item}
+          </motion.div>
+        ))}
+      </motion.div> : null}
+      </motion.div>
+
+      {/* ref. options config */}
+      {validPersonlizeOption ? 
+      <motion.div
+      className="flex absolute p-5 bg-black w-[500px] h-[300px] rounded-md font-light text-sm
+      ml-[50%] -translate-x-[50%]
+      mt-[50%] -translate-y-[50%] 
+      z-[1000]"
+      >
+      <div>
+        <h3> Selecione o conjunto de cores do novo tema: </h3>
+        <span> Roxo/Amarelo: </span>
+        <motion.div
+        className="bg-gradient-to-r from-purple-900 to-yellow-500 w-16 rounded-sm"
+        > ‎ </motion.div>
+
+      </div>
+      </motion.div> 
+      : null}
+
 
 
       </div>
@@ -98,14 +147,14 @@ const Home: React.FC = () => {
       <motion.div className=" flex flex-col gap-10 font-light  justify-center items-center">
       <motion.span
       className="cursor-pointer"
-      animate={{
-        x: [0, 2, 0],
-        y:[0,2,0]}}
-      transition={{
-        duration: 3,
-        repeat: Infinity,
-        repeatType: 'loop'}}
-      viewport={{ once: false }}
+      // animate={{
+      //   x: [0, 2, 0],
+      //   y:[0,2,0]}}
+      // transition={{
+      //   duration: 3,
+      //   repeat: Infinity,
+      //   repeatType: 'loop'}}
+      // viewport={{ once: false }}
     >
       Profile
     </motion.span>
