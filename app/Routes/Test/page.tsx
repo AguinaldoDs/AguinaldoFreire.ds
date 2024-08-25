@@ -12,9 +12,8 @@ import { useState } from "react";
 
 
 const Home: React.FC = () => {
-
   // Lista de opções de seleção
-  const list = ['Personalizar sistema', 'Acessibilidade'];
+  const list = ['Personalizar sistema', 'Acessibilidade','Idioma'];
 
 
   // States
@@ -96,16 +95,17 @@ const Home: React.FC = () => {
       {/* ref. options config */}
       {validPersonlizeOption ? 
       <motion.div
-      className="flex absolute p-5 bg-black w-[500px] h-[300px] rounded-md font-light text-sm
+      className="flex absolute p-5 border-solid border-[1px] bg-crowshead-950 w-[500px] h-[300px] rounded-md font-light text-sm
       ml-[50%] -translate-x-[50%]
       mt-[50%] -translate-y-[50%] 
       z-[1000]"
       >
       <div>
         <h3> Selecione o conjunto de cores do novo tema: </h3>
-        <span> Roxo/Amarelo: </span>
+        <span> Azul/Rosa: </span>
         <motion.div
-        className="bg-gradient-to-r from-purple-900 to-yellow-500 w-16 rounded-sm"
+        className="flex h-11 w-[50%] cursor-pointer
+        bg-gradient-conic from-Personalize1_blue to-Personalize1_pink"
         > ‎ </motion.div>
 
       </div>

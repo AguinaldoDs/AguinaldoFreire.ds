@@ -39,6 +39,8 @@ const config: Config = {
         '900': '#534130',
         '950': '#1e1610',
     },
+    'Personalize1_blue': '#003B4A',
+    'Personalize1_pink': '#E66EB2',
     
   }
     },
