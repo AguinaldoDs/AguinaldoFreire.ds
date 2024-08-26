@@ -14,11 +14,14 @@ import { useState } from "react";
 const Home: React.FC = () => {
   // Lista de opções de seleção
   const list = ['Personalizar sistema', 'Acessibilidade','Idioma'];
+  const ColorsThemeWindow = {'default': 'default', 
+                              'Pink': 'Pink'}
 
 
   // States
   const [validConfig, setValidConfig] = useState(false)
   const [validPersonlizeOption, setValuePersonlizeOption] = useState(false);
+  const [colorTheme,setColorTheme] = useState('default')
 
   //Handles
   const handleValidConfig = () => {setValidConfig(value => !value)}
@@ -28,6 +31,14 @@ const Home: React.FC = () => {
       setValuePersonlizeOption(value => !value);
     }
   };
+
+  const handleColorTheme = (value: string) => {
+        setColorTheme(value)
+        console.log(colorTheme)
+  }
+
+
+
 
   return (
     <main className='flex flex-col bg-crowshead-950 w-full overflow-y-auto h-dvh'>
@@ -100,14 +111,20 @@ const Home: React.FC = () => {
       mt-[50%] -translate-y-[50%] 
       z-[1000]"
       >
-      <div>
-        <h3> Selecione o conjunto de cores do novo tema: </h3>
+      <h3> Selecione o conjunto de cores do novo tema: </h3>
+      <div 
+       onClick={() => {handleColorTheme('Pink')}}
+      >
         <span> Azul/Rosa: </span>
+        <div className="flex cursor-pointer"
+        >
         <motion.div
-        className="flex h-11 w-[50%] cursor-pointer
-        bg-gradient-conic from-Personalize1_blue to-Personalize1_pink"
+        className="bg-Personalize1_blue w-5 h-5"
         > ‎ </motion.div>
-
+        <motion.div
+        className="bg-Personalize1_pink w-5 h-5"
+        > ‎ </motion.div>
+        </div>
       </div>
       </motion.div> 
       : null}

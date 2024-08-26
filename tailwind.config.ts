@@ -41,6 +41,10 @@ const config: Config = {
     },
     'Personalize1_blue': '#003B4A',
     'Personalize1_pink': '#E66EB2',
+
+    
+    'Personalize2_orange': '#FF8C19',
+    'Personalize2_black': '#000000',
     
   }
     },
