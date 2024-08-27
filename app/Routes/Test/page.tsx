@@ -4,11 +4,15 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { BsGear } from "react-icons/bs";
+import { useState } from "react";
 
 // Biblioteca externa
 import { motion, AnimatePresence } from "framer-motion";
+import styled from "styled-components";
 import { Loop } from "framer/core/Loop.js";
-import { useState } from "react";
+
+// Componentes
+import DynamicBackground from "./Components/DynamicBgColor";
 
 
 const Home: React.FC = () => {
@@ -41,7 +45,7 @@ const Home: React.FC = () => {
 
 
   return (
-    <main className='flex flex-col bg-crowshead-950 w-full overflow-y-auto h-dvh'>
+    <DynamicBackground className='flex flex-col  w-full overflow-y-auto h-dvh'>
       <title>I'm seeing you! 👀</title>
 
 
@@ -185,7 +189,7 @@ const Home: React.FC = () => {
 
 
       </motion.div>
-    </main>
+    </DynamicBackground>
   );
 };
 
