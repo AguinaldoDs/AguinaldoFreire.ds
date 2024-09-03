@@ -12,11 +12,16 @@ const fadeIn = keyframes`
 
 // Define o componente DynamicBackground com animação e transição
 const DynamicBackground = styled.main`
-  background-color: ${(props) => props.$bgColor || '#534130'};
-  color: ${(props) => props.$textColor || '#f8fafc'};
+  background-color: ${(props) => props.$bgColor || 'black'};
+  color: ${(props) => props.$textColor || '#529552'};
   transition: background-color 0.2s ease; /* Transição suave para a cor de fundo */
   animation: ${fadeIn} 0.1s ease-out; /* Animação de fade-in */
   /* Outras propriedades de estilo podem ser adicionadas aqui */
+
+   #PrincipalColor {
+    color: ${(props) => props.$h1Color || 'white'};
+  }
+
 `;
 
 export default DynamicBackground;

@@ -9,6 +9,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      textDecorationThickness: {
+        'default': '1px', // Espessura padrão do sublinhado
+        'thick': '2px', // Espessura personalizada
+      },
+      textDecorationOffset: {
+        'default': '0px', // Espaço padrão
+        'small': '2px', // Espaço personalizado
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -43,9 +51,23 @@ const config: Config = {
     'Personalize1_blue': '#003B4A',
     'Personalize1_pink': '#E66EB2',
 
-    
     'Personalize2_orange': '#FF8C19',
     'Personalize2_black': '#000000',
+    
+    'woodsmoke': {
+        '50': '#f7f7f8',
+        '100': '#eeeef0',
+        '200': '#d8d9df',
+        '300': '#b6b7c3',
+        '400': '#8f91a1',
+        '500': '#717286',
+        '600': '#5b5d6e',
+        '700': '#4a4a5a',
+        '800': '#40414c',
+        '900': '#383842',
+        '950': '#0c0c0e',
+    },
+    
     
   }
     },

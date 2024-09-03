@@ -20,8 +20,12 @@ const Home: React.FC = () => {
   // States
   const [validConfig, setValidConfig] = useState(false);
   const [validPersonlizeOption, setValuePersonlizeOption] = useState(false);
-  const [colorTheme, setColorTheme] = useState('#534130');
-  const [colorTextTheme, setColorTextTheme] = useState('#f8fafc');
+
+  // Cores e temas 
+  const [colorTheme, setColorTheme] = useState('black');
+  const [colorTextTheme, setColorTextTheme] = useState('white');
+  
+  const [colorH1Theme, setH1ColorTheme] = useState('#529552');
 
   // Manipuladores
   const handleValidConfig = () => {
@@ -36,21 +40,22 @@ const Home: React.FC = () => {
 
   const handleColorTheme = (value: string) => {
     if(value === colorTheme){
-      setColorTheme('#534130')
+      setColorTheme('black')
     }else{
     setColorTheme(value);}
   };
 
   const handleColorTextTheme = (value: string) => {
     if(value === colorTextTheme){
-      setColorTextTheme('#f8fafc')
+      setColorTextTheme('white')
     }else{
       setColorTextTheme(value);}
   };
 
   return (
-    <DynamicBackground className='flex flex-col w-full overflow-y-auto h-dvh' $bgColor={colorTheme} 
-                                                                              $textColor={colorTextTheme}>
+    <DynamicBackground className='flex flex-col w-full overflow-y-auto h-[6000px]' $bgColor={colorTheme} 
+                                                                              $textColor={colorTextTheme}
+                                                                              $h1Color = {colorH1Theme}>
       <title>I'm seeing you! 👀</title>
 
       {/* CONTACT ME & CONFIG */}
@@ -59,12 +64,11 @@ const Home: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="flex relative font-light w-maxh-auto p-2 rounded-lg gap-3 mt-2 ml-5
-                               border-solid bottom-1 "
+          className="flex relative font-light h-auto p-2 rounded-lg gap-3 mt-2
+                               border-solid bottom-1 justify-start w-full"
         >
-          <p className="flex mt-6 p-2 bg-red-100 rounded-l-lg">
-            Connect with Me:</p>
-          <div className="flex gap-20 w-max p-2 -ml-3 justify-between items-center bg-red-100 rounded-t-lg rounded-r-lg">
+          
+          <div className="flex gap-20 w-max p-2 justify-between items-center bg-woodsmoke-950 rounded-t-lg rounded-r-lg">
             <div className="cursor-pointer" onClick={() => { window.open('https://www.linkedin.com/in/aguinaldo-freire-95bb5a181/', '_blank') }}>
               <FaLinkedin size={40} />
             </div>
@@ -75,21 +79,24 @@ const Home: React.FC = () => {
               <SiGmail size={40} />
             </div>
           </div>
-        </motion.div>
 
-        <motion.div
-          className="fixed right-0 mr-4 cursor-pointer"
+          <motion.div
+          id="PrincipalColor"
+          className="flex cursor-pointer"
           animate={{ rotate: validConfig ? 120 : 0 }}
           transition={{ duration: 0.5 }}
           onClick={handleValidConfig}
         >
           <BsGear size={30} />
         </motion.div>
+        </motion.div>
+
+
 
         <AnimatePresence>
           {validConfig && (
             <motion.div
-              className="fixed right-0 mr-20 flex flex-col h-max bg-crowshead-900 p-4 rounded-md mt-2"
+              className="fixed right-0 mr-20 flex flex-col h-max bg-woodsmoke-950 p-4 rounded-md mt-2"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -119,7 +126,7 @@ const Home: React.FC = () => {
             className="fixed inset-0 flex items-center justify-center pointer-events-none z-[1000]"
           >
             <motion.div
-              className="p-5 border-solid border-[1px] bg-crowshead-950 w-[500px] h-[300px] rounded-md font-light text-sm pointer-events-auto"
+              className="p-5 border-solid border-[1px] bg-woodsmoke-950 w-[500px] h-[300px] rounded-md font-light text-sm pointer-events-auto"
             >
               <h3>Selecione o conjunto de cores do novo tema:</h3>
               <div onClick={() => {
@@ -138,9 +145,9 @@ const Home: React.FC = () => {
       </div>
 
       {/* ref.1 (aclopa welcome e opções ) */}
-      <motion.div className="flex ">
+      <motion.div className="flex justify-evenly ">
         {/* Welcome */}
-        <div className="flex p-10 w-max h-auto font-extralight mt-10 ml-5 rounded-lg bg-red-100">
+        <div className="flex p-10 w-max h-auto font-extralight mt-10 rounded-lg bg-woodsmoke-950">
           <motion.div
             initial={{ y: "20%" }}
             animate={{ y: "0%" }}
@@ -148,15 +155,19 @@ const Home: React.FC = () => {
             transition={{ duration: 0.7 }}
             className="p-10"
           >
-            <p className="text-8xl">Welcome!</p>
+            <h1 className="text-8xl" 
+             id="PrincipalColor"
+            >Welcome!</h1>
             <p className="mt-5">I'm Aguinaldo,</p>
             <span className="mt-5">A 23yo Data Analyst and Scientist in Brazil🇧🇷</span>
           </motion.div>
         </div>
 
         {/* Menu */}
-        <motion.div className="flex flex-col gap-10 font-light justify-center items-center ml-[30%]">
-          <motion.span className="cursor-pointer">Profile</motion.span>
+        <motion.div className="flex flex-col mt-10 w-[600px] gap-10 font-light justify-center items-center bg-woodsmoke-950 rounded-lg
+                               underline underline-offset-8 decoration-white decoration-double" 
+                    id="PrincipalColor">
+          <motion.span className="cursor-pointer ">Profile</motion.span>
           <span className="cursor-pointer">About me</span>
           <span className="cursor-pointer">Jobs & Feedback</span>
         </motion.div>
