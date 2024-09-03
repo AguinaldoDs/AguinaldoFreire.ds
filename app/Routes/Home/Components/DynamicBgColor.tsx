@@ -16,12 +16,15 @@ const DynamicBackground = styled.main`
   color: ${(props) => props.$textColor || '#529552'};
   transition: background-color 0.2s ease; /* Transição suave para a cor de fundo */
   animation: ${fadeIn} 0.1s ease-out; /* Animação de fade-in */
-  /* Outras propriedades de estilo podem ser adicionadas aqui */
 
-   #PrincipalColor {
+  #PrincipalColor {
     color: ${(props) => props.$h1Color || 'white'};
   }
 
+ #icon {
+    border-color: ${(props) => props.$h1Color};
+  }
 `;
+
 
 export default DynamicBackground;

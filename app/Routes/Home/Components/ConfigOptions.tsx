@@ -44,22 +44,4 @@ const ConfigOptions: React.FC = () => {
   );
 };
 
-
-// Return to PersonalizeOption
-
-
-const returnPersonalizeWindow: React.FC = () => {
-  return(
-    <div>
-        div para personalizar o contexto da janela!
-    </div>
-  );
-};
-
-
-
-
-
-
-
 export default ConfigOptions;
