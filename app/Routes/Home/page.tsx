@@ -5,7 +5,6 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { BsGear } from "react-icons/bs";
 import { useState, useEffect, useRef } from "react";
-import { useRouter } from 'next/navigation';
 
 // Biblioteca externa
 import { motion, AnimatePresence } from "framer-motion";
@@ -82,7 +81,7 @@ const Home: React.FC = () => {
           transition={{ duration: 1 }}
           className="flex relative font-light h-auto rounded-lg gap-3 border-solid bottom-1
                      justify-start w-full"
-        >
+        > 
           <div className="fixed flex gap-20 w-max ml-9 mt-10 p-2 justify-between items-center rounded-t-lg rounded-r-lg">
             <div
               id="icon"
@@ -236,3 +235,4 @@ const Home: React.FC = () => {
 
 export default Home;
 
+// a
