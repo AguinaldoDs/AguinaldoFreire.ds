@@ -4,7 +4,7 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { BsGear } from "react-icons/bs";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from 'next/navigation';
 
 // Biblioteca externa
@@ -23,8 +23,26 @@ const Home: React.FC = () => {
   const [colorTheme, setColorTheme] = useState('black');
   const [colorTextTheme, setColorTextTheme] = useState('white');
   const [colorH1Theme, setH1ColorTheme] = useState('#529552');
+  const [validKeyinView, setValidKeyinView] = useState(0);
 
   // Manipuladores
+  const targetRef = useRef<HTMLDivElement>(null);
+
+  // Função para rolar até o elemento
+  const scrollToDiv = () => {
+    // if (targetRef.current) {
+    //   targetRef.current.scrollIntoView({ behavior: 'smooth' });
+    //   console.log('scroll acionado')
+    // }
+  };
+
+
+  const handleValidKeyInView = (key: number) => {
+    setValidKeyinView(key);
+    console.log(key)
+  };
+
+
   const handleValidConfig = () => {
     setValidConfig(value => !value);
   };
@@ -47,10 +65,9 @@ const Home: React.FC = () => {
     setH1ColorTheme(value === colorH1Theme ? '#529552' : value);
   };
 
-
   return (
     <DynamicBackground
-      className='flex flex-col w-full h-[6000px] overflow-y-auto'
+      className="flex flex-col w-full h-[6000px] overflow-y-auto"
       $bgColor={colorTheme}
       $textColor={colorTextTheme}
       $h1Color={colorH1Theme}
@@ -58,7 +75,7 @@ const Home: React.FC = () => {
       <title>I'm seeing you! 👀</title>
 
       {/* CONTACT ME & CONFIG */}
-      <div className="flex items-center select-none">
+      <div className="flex items-center select-none ">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -69,17 +86,23 @@ const Home: React.FC = () => {
           <div className="fixed flex gap-20 w-max ml-9 mt-10 p-2 justify-between items-center rounded-t-lg rounded-r-lg">
             <div
               id="icon"
-              className="cursor-pointer border-solid border-b-[1px] p-1" onClick={() => { window.open('https://www.linkedin.com/in/aguinaldo-freire-95bb5a181/', '_blank') }}>
+              className="cursor-pointer border-solid border-b-[1px] p-1"
+              onClick={() => { window.open('https://www.linkedin.com/in/aguinaldo-freire-95bb5a181/', '_blank') }}
+            >
               <FaLinkedin size={40} />
             </div>
             <div
               id="icon"
-              className="cursor-pointer border-solid border-b-[1px] p-1" onClick={() => { window.open('https://github.com/AguinaldoDs', '_blank') }}>
+              className="cursor-pointer border-solid border-b-[1px] p-1"
+              onClick={() => { window.open('https://github.com/AguinaldoDs', '_blank') }}
+            >
               <FaGithub size={40} />
             </div>
             <div
               id="icon"
-              className="cursor-pointer border-solid border-b-[1px] p-1" onClick={() => { window.open('https://mail.google.com/mail/?view=cm&fs=1&to=aguinaldofreire.ds@gmail.com', '_blank') }}>
+              className="cursor-pointer border-solid border-b-[1px] p-1"
+              onClick={() => { window.open('https://mail.google.com/mail/?view=cm&fs=1&to=aguinaldofreire.ds@gmail.com', '_blank') }}
+            >
               <SiGmail size={40} />
             </div>
           </div>
@@ -95,13 +118,11 @@ const Home: React.FC = () => {
           </motion.div>
         </motion.div>
 
-
-
         <AnimatePresence>
           {validConfig && (
             <motion.div
               id="UpOptionConfigs"
-              className={`fixed flex-col text-center right-0 mr-24 mt-[10%] p-2 w-[20%] bg-woodsmoke-950 rounded-lg font-extralight`}
+              className="fixed flex-col text-center right-0 mr-24 mt-[10%] p-2 w-[20%] bg-woodsmoke-950 rounded-lg font-extralight"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -110,7 +131,7 @@ const Home: React.FC = () => {
               {list.map((item, index) => (
                 <motion.div
                   key={index}
-                  className={`mt-2 cursor-pointer`}
+                  className="mt-2 cursor-pointer"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
@@ -145,35 +166,73 @@ const Home: React.FC = () => {
         )}
       </div>
 
+      {/* ref - header: map position */}
+      <div className="fixed flex-col right-0 bottom-0 mb-9 mr-14">
+        {[1, 2, 3, 4, 5].map((number, index) => (
+          <p
+            key={index}
+            id="zzz"
+            className='w-3 h-3 rounded-full mt-2 cursor-pointer'
+             style={{
+              backgroundColor: validKeyinView === number ? 'white' : colorH1Theme
+            }}
+          >
+          </p>
+        ))}
+      </div>
+
       {/* ref.1 (aclopa welcome e opções ) */}
-      <motion.div className="flex justify-evenly h-dvh items-center">
+      <motion.div className="flex justify-evenly h-dvh items-center ">
         {/* Welcome */}
-        <div className="flex p-10 w-max h-[50%] font-extralight rounded-lg bg-woodsmoke-950">
+        <motion.div className="flex p-10 w-max h-[50%] font-extralight rounded-lg bg-woodsmoke-950">
           <motion.div
             initial={{ y: "20%" }}
             animate={{ y: "0%" }}
             exit={{ y: "-10%" }}
             transition={{ duration: 0.7 }}
             className="p-10"
+            whileInView={() => handleValidKeyInView(1)}
+            viewport={{ once: false,  amount: 0.5 }}
           >
-            <h1 className="text-8xl"
-              id="PrincipalColor">Welcome!</h1>
+            <h1 className="text-8xl" id="PrincipalColor">Welcome!</h1>
             <p className="mt-5">I'm Aguinaldo,</p>
             <span className="mt-5">A 23yo Data Analyst and Scientist in Brazil🇧🇷</span>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Menu */}
         <motion.div className="flex flex-col h-[50%] w-[600px] gap-10 font-light justify-center items-center bg-woodsmoke-950 rounded-lg underline underline-offset-8 decoration-white decoration-double" id="PrincipalColor">
-          <motion.span className="cursor-pointer"
-          // onClick={toProfile}
-          >Profile</motion.span>
+          <motion.span className="cursor-pointer">
+            Profile
+          </motion.span>
           <span className="cursor-pointer">About me</span>
           <span className="cursor-pointer">Jobs & Feedback</span>
         </motion.div>
       </motion.div>
+
+      {/* Profile */}
+      <div>
+        <motion.div
+        className="flex justify-evenly h-dvh items-center bg-red-500"
+        whileInView={() => {handleValidKeyInView(2)}}
+        viewport={{ once: false,  amount: 0.7 }}
+        >
+
+          {/* <div
+          className="bg-blue-700"
+          
+          >
+          testando
+          </div> */}
+        </motion.div>
+      </div>
+
+
+
+
     </DynamicBackground>
   );
 };
 
 export default Home;
+
