@@ -110,7 +110,7 @@ const Home: React.FC = () => {
               {list.map((item, index) => (
                 <motion.div
                   key={index}
-                  className={`mt-2 cursor-pointer hover:text-${colorTextTheme.replace('#', '')}`}
+                  className={`mt-2 cursor-pointer`}
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
@@ -133,7 +133,7 @@ const Home: React.FC = () => {
                   onClick={() => {
                     handleColorTheme('#f6a168');
                     handleColorTextTheme('#d2d2d2');
-                    handleColorTextH1Theme('white');
+                    handleColorTextH1Theme('#ef8e7d');
                   }}
                 >
                   <motion.div className="bg-Personalize1_blue w-5 h-5"> ‎ </motion.div>
