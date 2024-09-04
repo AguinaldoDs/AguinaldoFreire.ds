@@ -4,7 +4,7 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { BsGear } from "react-icons/bs";
-import { useState } from "react"; 
+import { useState } from "react";
 import { useRouter } from 'next/navigation';
 
 // Biblioteca externa
@@ -47,8 +47,6 @@ const Home: React.FC = () => {
     setH1ColorTheme(value === colorH1Theme ? '#529552' : value);
   };
 
-  const router = useRouter();
-  const toProfile = ()=>{router.push('/Routes/Home/sub-Routes/Profile')}
 
   return (
     <DynamicBackground
@@ -65,10 +63,11 @@ const Home: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="flex relative font-light h-auto p-2 rounded-lg gap-3 mt-2 border-solid bottom-1 justify-start w-full"
+          className="flex relative font-light h-auto rounded-lg gap-3 border-solid bottom-1
+                     justify-start w-full"
         >
-          <div className="fixed flex gap-20 w-max ml-9 p-2 justify-between items-center rounded-t-lg rounded-r-lg">
-            <div 
+          <div className="fixed flex gap-20 w-max ml-9 mt-10 p-2 justify-between items-center rounded-t-lg rounded-r-lg">
+            <div
               id="icon"
               className="cursor-pointer border-solid border-b-[1px] p-1" onClick={() => { window.open('https://www.linkedin.com/in/aguinaldo-freire-95bb5a181/', '_blank') }}>
               <FaLinkedin size={40} />
@@ -79,30 +78,30 @@ const Home: React.FC = () => {
               <FaGithub size={40} />
             </div>
             <div
-               id="icon" 
-               className="cursor-pointer border-solid border-b-[1px] p-1" onClick={() => { window.open('https://mail.google.com/mail/?view=cm&fs=1&to=aguinaldofreire.ds@gmail.com', '_blank') }}>
+              id="icon"
+              className="cursor-pointer border-solid border-b-[1px] p-1" onClick={() => { window.open('https://mail.google.com/mail/?view=cm&fs=1&to=aguinaldofreire.ds@gmail.com', '_blank') }}>
               <SiGmail size={40} />
             </div>
           </div>
 
           <motion.div
-          id="PrincipalColor"
-          className="fixed cursor-pointer right-0 mr-9 p-1 text-center"
-          animate={{ rotate: validConfig ? 180 : 0 }}
-          transition={{ duration: 0.5 }}
-          onClick={handleValidConfig}
-        >
-          <BsGear size={40} />
-        </motion.div>
+            id="PrincipalColor"
+            className="fixed cursor-pointer right-0 mr-9 mt-10 p-3 text-center"
+            animate={{ rotate: validConfig ? 180 : 0 }}
+            transition={{ duration: 0.5 }}
+            onClick={handleValidConfig}
+          >
+            <BsGear size={40} />
+          </motion.div>
         </motion.div>
 
-        
+
 
         <AnimatePresence>
           {validConfig && (
             <motion.div
               id="UpOptionConfigs"
-              className={`fixed flex-col text-center right-0 mr-24 mt-10 p-2 w-[20%] bg-woodsmoke-950 rounded-lg font-extralight`}
+              className={`fixed flex-col text-center right-0 mr-24 mt-[10%] p-2 w-[20%] bg-woodsmoke-950 rounded-lg font-extralight`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -131,11 +130,11 @@ const Home: React.FC = () => {
               <div>
                 <span>Azul/Rosa:</span>
                 <div className="flex cursor-pointer"
-                 onClick={() => {
-                  handleColorTheme('#f6a168');
-                  handleColorTextTheme('#d2d2d2');
-                  handleColorTextH1Theme('white');
-                }}
+                  onClick={() => {
+                    handleColorTheme('#f6a168');
+                    handleColorTextTheme('#d2d2d2');
+                    handleColorTextH1Theme('white');
+                  }}
                 >
                   <motion.div className="bg-Personalize1_blue w-5 h-5"> ‎ </motion.div>
                   <motion.div className="bg-Personalize1_pink w-5 h-5"> ‎ </motion.div>
@@ -147,9 +146,9 @@ const Home: React.FC = () => {
       </div>
 
       {/* ref.1 (aclopa welcome e opções ) */}
-      <motion.div className="flex justify-evenly">
+      <motion.div className="flex justify-evenly h-dvh items-center">
         {/* Welcome */}
-        <div className="flex p-10 w-max h-auto font-extralight mt-10 rounded-lg bg-woodsmoke-950">
+        <div className="flex p-10 w-max h-[50%] font-extralight rounded-lg bg-woodsmoke-950">
           <motion.div
             initial={{ y: "20%" }}
             animate={{ y: "0%" }}
@@ -157,15 +156,15 @@ const Home: React.FC = () => {
             transition={{ duration: 0.7 }}
             className="p-10"
           >
-            <h1 className="text-8xl" 
-             id="PrincipalColor">Welcome!</h1>
+            <h1 className="text-8xl"
+              id="PrincipalColor">Welcome!</h1>
             <p className="mt-5">I'm Aguinaldo,</p>
             <span className="mt-5">A 23yo Data Analyst and Scientist in Brazil🇧🇷</span>
           </motion.div>
         </div>
 
         {/* Menu */}
-        <motion.div className="flex flex-col mt-10 w-[600px] gap-10 font-light justify-center items-center bg-woodsmoke-950 rounded-lg underline underline-offset-8 decoration-white decoration-double" id="PrincipalColor">
+        <motion.div className="flex flex-col h-[50%] w-[600px] gap-10 font-light justify-center items-center bg-woodsmoke-950 rounded-lg underline underline-offset-8 decoration-white decoration-double" id="PrincipalColor">
           <motion.span className="cursor-pointer"
           // onClick={toProfile}
           >Profile</motion.span>
