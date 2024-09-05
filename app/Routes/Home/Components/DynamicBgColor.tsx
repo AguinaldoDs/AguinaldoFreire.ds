@@ -27,9 +27,6 @@ const DynamicBackground = styled.main`
       background-color: ${(props) => props.$h1Color};
   }
 
-
-
-
   #icon {
     border-color: ${(props) => props.$h1Color};
     color: ${(props) => props.$h1Color};

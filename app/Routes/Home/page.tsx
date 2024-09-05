@@ -40,7 +40,6 @@ const Home: React.FC = () => {
     } else {
       const targetRef = targetRefs[key - 1].current;
       targetRef?.scrollIntoView({ behavior: "smooth" });
-      console.log("está é a key:", key);
     }
   };
 
@@ -105,7 +104,8 @@ const Home: React.FC = () => {
               id="icon"
               className="cursor-pointer border-solid border-b-[1px] p-1"
               onClick={() => {
-                window.open("https://github.com/AguinaldoDs", "_blank");
+                window.open("https://github.com/AguinaldoDs", 
+                            "_blank");
               }}
             >
               <FaGithub size={40} />
@@ -114,9 +114,8 @@ const Home: React.FC = () => {
               id="icon"
               className="cursor-pointer border-solid border-b-[1px] p-1"
               onClick={() => {
-                window.open(
-                  "https://mail.google.com/mail/?view=cm&fs=1&to=aguinaldofreire.ds@gmail.com",
-                  "_blank"
+                window.open("https://mail.google.com/mail/?view=cm&fs=1&to=aguinaldofreire.ds@gmail.com",
+                            "_blank"
                 );
               }}
             >
@@ -127,7 +126,7 @@ const Home: React.FC = () => {
           <motion.div
             id="PrincipalColorFI"
             className="fixed cursor-pointer right-0 mr-9 mt-10 p-3 text-center"
-            animate={{ rotate: validConfig ? 180 : 0 }}
+            animate={{ rotate: validConfig ? 90 : 0 }}
             transition={{ duration: 0.5 }}
             onClick={handleValidConfig}
           >
@@ -148,6 +147,7 @@ const Home: React.FC = () => {
               {list.map((item, index) => (
                 <motion.div
                   key={index}
+                  id="icon"
                   className="mt-2 cursor-pointer"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -162,29 +162,101 @@ const Home: React.FC = () => {
         </AnimatePresence>
 
         {validPersonlizeOption && (
-          <motion.div className="fixed inset-0 flex items-center justify-center pointer-events-none z-[1000]">
-            <motion.div className="p-5 border-solid border-[1px] bg-woodsmoke-950 w-[500px] h-[300px] rounded-md font-light text-sm pointer-events-auto">
-              <h3>Selecione o conjunto de cores do novo tema:</h3>
-              <div>
-                <span>Azul/Rosa:</span>
+          <motion.div className="fixed inset-0 flex items-center justify-center
+                                 pointer-events-none z-[1000]">
+            <motion.div className="w-[500px] h-auto bg-opacity-5 text-slate-50
+                                   pointer-events-auto rounded-xl font-light text-sm
+                                 bg-white/10 backdrop-blur"
+                        id="">
+          <motion.div 
+           
+           className=" w-full rounded-t-xl"
+           id="scrollPage"
+           >
+          <button
+            className="flex p-3 text-white rounded-full h-full text-4xl
+                       items-center justify-center ml-[85%]"
+                      
+            aria-label="Fechar"
+            onClick={()=>{setValuePersonlizeOption(false)}}
+          >
+            &#10005; {/* Código HTML para o símbolo "X" */}
+          </button>                    
+          </motion.div>
+          
+          {/* primeira cor */}
+          <div
+           className="h-full p-14">
+              <h3
+               className="text-2xl"
+              >Selecione o conjunto de cores para o novo tema:</h3>
+              <div
+               className=" mt-3"
+              >
+                <span>Verde/Preto (Padrão):</span>
                 <div
-                  className="flex cursor-pointer"
+                  className="flex cursor-pointer w-max justify-center items-center"
                   onClick={() => {
-                    handleColorTheme("#f6a168");
-                    handleColorTextTheme("#d2d2d2");
-                    handleColorTextH1Theme("#ef8e7d");
+                    handleColorTheme("Black");
+                    handleColorTextTheme("White");
+                    handleColorTextH1Theme("#529552");
                   }}
                 >
-                  <motion.div className="bg-Personalize1_blue w-5 h-5">
-                    {" "}
-                    ‎{" "}
+                  <motion.div className="bg-black w-5 h-5 rounded-full">
+                    {" "}{" "}
                   </motion.div>
-                  <motion.div className="bg-Personalize1_pink w-5 h-5">
-                    {" "}
-                    ‎{" "}
+                  <motion.div className="bg-[#529552] w-5 h-5 rounded-full">
+                    {" "}{" "}
                   </motion.div>
                 </div>
               </div>
+
+              {/* segunda cor */}
+              <div
+               className=" mt-3"
+              >
+                <span>Cinza/Gelo:</span>
+                <div
+                  className="flex cursor-pointer w-max justify-center items-center"
+                  onClick={() => {
+                    handleColorTheme("#1B1B1E");
+                    handleColorTextH1Theme("#6C757D");
+                    handleColorTextTheme("#CED4DA");
+                  }}
+                >
+                  <motion.div className="bg-[#1B1B1E] w-5 h-5 rounded-full">
+                    {" "}{" "}
+                  </motion.div>
+                  <motion.div className="bg-[#CED4DA] w-5 h-5 rounded-full">
+                    {" "}{" "}
+                  </motion.div>
+                </div>
+              </div>
+            {/* Terceira cor */}
+            <div
+               className=" mt-3"
+              >
+                <span>Areia/Bege:</span>
+                <div
+                  className="flex cursor-pointer w-max justify-center items-center"
+                  onClick={() => {
+                    handleColorTheme("#8D6748");
+                    handleColorTextH1Theme("#D9C3A1");
+                    handleColorTextTheme("#C4A69F");
+                  }}
+                >
+                  <motion.div className="bg-[#8D6748] w-5 h-5 rounded-full">
+                    {" "}{" "}
+                  </motion.div>
+                  <motion.div className="bg-[#C4A69F] w-5 h-5 rounded-full">
+                    {" "}{" "}
+                  </motion.div>
+                </div>
+              </div>
+
+            </div>
+
+
             </motion.div>
           </motion.div>
         )}
@@ -223,7 +295,7 @@ const Home: React.FC = () => {
             whileInView={() => handleValidKeyInView(1)}
             viewport={{ once: false, amount: 0.5 }}
           >
-            <h1 className="text-8xl" id="PrincipalColor">
+            <h1 className="text-8xl" id="PrincipalColorFI">
               Welcome!
             </h1>
             <p className="mt-5">I'm Aguinaldo,</p>
@@ -236,7 +308,7 @@ const Home: React.FC = () => {
         {/* Menu */}
         <motion.div
           className="flex flex-col h-[50%] w-[600px] gap-10 font-light justify-center items-center bg-woodsmoke-950 rounded-lg underline underline-offset-8 decoration-white decoration-double"
-          id="PrincipalColor"
+          
         >
           <motion.span className="cursor-pointer">Profile</motion.span>
           <span className="cursor-pointer">About me</span>
@@ -268,4 +340,3 @@ const Home: React.FC = () => {
 
 export default Home;
 
-// a
