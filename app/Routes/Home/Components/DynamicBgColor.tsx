@@ -12,21 +12,29 @@ const fadeIn = keyframes`
 
 // Define o componente DynamicBackground com animação e transição
 const DynamicBackground = styled.main`
-  background-color: ${(props) => props.$bgColor || 'black'};
-  color: ${(props) => props.$textColor || '#529552'};
-  transition: background-color 0.2s ease; /* Transição suave para a cor de fundo */
-  animation: ${fadeIn} 0.1s ease-out; /* Animação de fade-in */
 
-  #PrincipalColor {
+  #fistInterface {
+  background-color: ${(props) => props.$bgColor};
+  color: ${(props) => props.$textColor};
+  transition: background-color 0.2s ease;
+  animation: ${fadeIn} 0.1s ease-out;}
+
+  #PrincipalColorFI {
     color: ${(props) => props.$h1Color || 'white'};
   }
 
- #icon {
-    border-color: ${(props) => props.$h1Color};
-  }
- #zzz {
+  #scrollPage {
       background-color: ${(props) => props.$h1Color};
- }
+  }
+
+
+
+
+  #icon {
+    border-color: ${(props) => props.$h1Color};
+    color: ${(props) => props.$h1Color};
+  }
+ 
 
 `;
 
