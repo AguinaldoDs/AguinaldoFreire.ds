@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { BsGear } from "react-icons/bs";
 import { useState, useEffect, useRef, RefObject } from "react";
+import Image from 'next/image';
 
 // Biblioteca externa
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,6 +14,12 @@ import DynamicBackground from "./Components/DynamicBgColor";
 const Home: React.FC = () => {
   // Lista de opções de seleção
   const list = ["Personalizar sistema", "Acessibilidade", "Idioma"];
+  const p_Profile = [
+    "Analista de Dados e MIS com mais de dois anos de experiência em manipulação e análise de dados.",
+    "Especialista em Python, MSSQL, Business Intelligence (BI) e R.",
+    "Além de desenvolvedor Web, dominando React Next, Node.js e Tailwind."
+  ];
+
 
   // States
   const [validConfig, setValidConfig] = useState(false);
@@ -35,7 +42,7 @@ const Home: React.FC = () => {
 
   // Função para rolar até o elemento
   const scrollToDiv = (key: number) => {
-    if (key == null || key < 1 || key > 5) {
+    if (key == null || key < 0 || key > 5) {
       console.log("Key inválida");
     } else {
       const targetRef = targetRefs[key - 1].current;
@@ -87,7 +94,8 @@ const Home: React.FC = () => {
           className="flex relative font-light h-auto rounded-lg gap-3 border-solid bottom-1
                      justify-start w-full"
         >
-          <div className="fixed flex gap-20 w-max ml-9 mt-10 p-2 justify-between items-center rounded-t-lg rounded-r-lg">
+          <div className="fixed flex gap-20 w-max ml-9 mt-10 p-2 justify-between items-center rounded-t-lg 
+                          rounded-r-lg">
             <div
               id="icon"
               className="cursor-pointer border-solid border-b-[1px] p-1"
@@ -98,14 +106,14 @@ const Home: React.FC = () => {
                 );
               }}
             >
-              {/* <FaLinkedin size={40} /> */}
+              <FaLinkedin size={40} />
             </div>
             <div
               id="icon"
               className="cursor-pointer border-solid border-b-[1px] p-1"
               onClick={() => {
-                window.open("https://github.com/AguinaldoDs", 
-                            "_blank");
+                window.open("https://github.com/AguinaldoDs",
+                  "_blank");
               }}
             >
               <FaGithub size={40} />
@@ -115,11 +123,11 @@ const Home: React.FC = () => {
               className="cursor-pointer border-solid border-b-[1px] p-1"
               onClick={() => {
                 window.open("https://mail.google.com/mail/?view=cm&fs=1&to=aguinaldofreire.ds@gmail.com",
-                            "_blank"
+                  "_blank"
                 );
               }}
             >
-              {/* <SiGmail size={40} /> */}
+              <SiGmail size={40} />
             </div>
           </div>
 
@@ -167,94 +175,94 @@ const Home: React.FC = () => {
             <motion.div className="w-[500px] h-auto bg-opacity-5 text-slate-50
                                    pointer-events-auto rounded-xl font-light text-sm
                                  bg-white/10 backdrop-blur"
-                        id="">
-          <motion.div 
-           
-           className=" w-full rounded-t-xl"
-           id="scrollPage"
-           >
-          <button
-            className="flex p-3 text-white rounded-full h-full text-4xl
+              id="">
+              <motion.div
+
+                className=" w-full rounded-t-xl"
+                id="scrollPage"
+              >
+                <button
+                  className="flex p-3 text-white rounded-full h-full text-4xl
                        items-center justify-center ml-[85%]"
-                      
-            aria-label="Fechar"
-            onClick={()=>{setValuePersonlizeOption(false)}}
-          >
-            &#10005; {/* Código HTML para o símbolo "X" */}
-          </button>                    
-          </motion.div>
-          
-          {/* primeira cor */}
-          <div
-           className="h-full p-14">
-              <h3
-               className="text-2xl"
-              >Selecione o conjunto de cores para o novo tema:</h3>
-              <div
-               className=" mt-3"
-              >
-                <span>Verde/Preto (Padrão):</span>
-                <div
-                  className="flex cursor-pointer w-max justify-center items-center"
-                  onClick={() => {
-                    handleColorTheme("Black");
-                    handleColorTextTheme("White");
-                    handleColorTextH1Theme("#529552");
-                  }}
-                >
-                  <motion.div className="bg-black w-5 h-5 rounded-full">
-                    {" "}{" "}
-                  </motion.div>
-                  <motion.div className="bg-[#529552] w-5 h-5 rounded-full">
-                    {" "}{" "}
-                  </motion.div>
-                </div>
-              </div>
 
-              {/* segunda cor */}
-              <div
-               className=" mt-3"
-              >
-                <span>Cinza/Gelo:</span>
-                <div
-                  className="flex cursor-pointer w-max justify-center items-center"
-                  onClick={() => {
-                    handleColorTheme("#1B1B1E");
-                    handleColorTextH1Theme("#6C757D");
-                    handleColorTextTheme("#CED4DA");
-                  }}
+                  aria-label="Fechar"
+                  onClick={() => { setValuePersonlizeOption(false) }}
                 >
-                  <motion.div className="bg-[#1B1B1E] w-5 h-5 rounded-full">
-                    {" "}{" "}
-                  </motion.div>
-                  <motion.div className="bg-[#CED4DA] w-5 h-5 rounded-full">
-                    {" "}{" "}
-                  </motion.div>
-                </div>
-              </div>
-            {/* Terceira cor */}
-            <div
-               className=" mt-3"
-              >
-                <span>Areia/Bege:</span>
-                <div
-                  className="flex cursor-pointer w-max justify-center items-center"
-                  onClick={() => {
-                    handleColorTheme("#8D6748");
-                    handleColorTextH1Theme("#D9C3A1");
-                    handleColorTextTheme("#C4A69F");
-                  }}
-                >
-                  <motion.div className="bg-[#8D6748] w-5 h-5 rounded-full">
-                    {" "}{" "}
-                  </motion.div>
-                  <motion.div className="bg-[#C4A69F] w-5 h-5 rounded-full">
-                    {" "}{" "}
-                  </motion.div>
-                </div>
-              </div>
+                  &#10005; {/* Código HTML para o símbolo "X" */}
+                </button>
+              </motion.div>
 
-            </div>
+              {/* primeira cor */}
+              <div
+                className="h-full p-14">
+                <h3
+                  className="text-2xl"
+                >Selecione o conjunto de cores para o novo tema:</h3>
+                <div
+                  className=" mt-3"
+                >
+                  <span>Verde/Preto (Padrão):</span>
+                  <div
+                    className="flex cursor-pointer w-max justify-center items-center"
+                    onClick={() => {
+                      handleColorTheme("Black");
+                      handleColorTextTheme("White");
+                      handleColorTextH1Theme("#529552");
+                    }}
+                  >
+                    <motion.div className="bg-black w-5 h-5 rounded-full">
+                      {" "}{" "}
+                    </motion.div>
+                    <motion.div className="bg-[#529552] w-5 h-5 rounded-full">
+                      {" "}{" "}
+                    </motion.div>
+                  </div>
+                </div>
+
+                {/* segunda cor */}
+                <div
+                  className=" mt-3"
+                >
+                  <span>Cinza/Gelo:</span>
+                  <div
+                    className="flex cursor-pointer w-max justify-center items-center"
+                    onClick={() => {
+                      handleColorTheme("#1B1B1E");
+                      handleColorTextH1Theme("#6C757D");
+                      handleColorTextTheme("#CED4DA");
+                    }}
+                  >
+                    <motion.div className="bg-[#1B1B1E] w-5 h-5 rounded-full">
+                      {" "}{" "}
+                    </motion.div>
+                    <motion.div className="bg-[#CED4DA] w-5 h-5 rounded-full">
+                      {" "}{" "}
+                    </motion.div>
+                  </div>
+                </div>
+                {/* Terceira cor */}
+                <div
+                  className=" mt-3"
+                >
+                  <span>Areia/Bege:</span>
+                  <div
+                    className="flex cursor-pointer w-max justify-center items-center"
+                    onClick={() => {
+                      handleColorTheme("#8D6748");
+                      handleColorTextH1Theme("#D9C3A1");
+                      handleColorTextTheme("#C4A69F");
+                    }}
+                  >
+                    <motion.div className="bg-[#8D6748] w-5 h-5 rounded-full">
+                      {" "}{" "}
+                    </motion.div>
+                    <motion.div className="bg-[#C4A69F] w-5 h-5 rounded-full">
+                      {" "}{" "}
+                    </motion.div>
+                  </div>
+                </div>
+
+              </div>
 
 
             </motion.div>
@@ -308,32 +316,147 @@ const Home: React.FC = () => {
         {/* Menu */}
         <motion.div
           className="flex flex-col h-[50%] w-[600px] gap-10 font-light justify-center items-center bg-woodsmoke-950 rounded-lg underline underline-offset-8 decoration-white decoration-double"
-          
+
         >
-          <motion.span className="cursor-pointer">Profile</motion.span>
+          <motion.span className="cursor-pointer"
+            onClick={() => scrollToDiv(2)}
+          >Profile</motion.span>
           <span className="cursor-pointer">About me</span>
           <span className="cursor-pointer">Jobs & Feedback</span>
         </motion.div>
       </motion.div>
 
       {/* Profile */}
-      <div>
+      <motion.div
+        id="fistInterface"
+        ref={targetRefs[1]}
+        className="flex justify-evenly h-dvh items-center"
+        whileInView={() => {
+          handleValidKeyInView(2);
+        }}
+        viewport={{ once: false, amount: 0.7 }}
+      >
+      <div className="flex  w-full justify-evenly">
         <motion.div
-          ref={targetRefs[1]}
-          className="flex justify-evenly h-dvh items-center bg-red-500"
-          whileInView={() => {
-            handleValidKeyInView(2);
-          }}
-          viewport={{ once: false, amount: 0.7 }}
+          className="p-5 bg-slate-50 w-60 h-60 relative overflow-hidden cursor-pointer rounded-lg"
+          whileHover={{ rotate: -20 }}
         >
-          {/* <div
-          className="bg-blue-700"
-          
-          >
-          testando
-          </div> */}
+          <Image
+            src="/3x4.png"
+            alt="Descrição da imagem"
+            layout="fill"
+            objectFit="cover"
+            className="absolute top-0 left-0 z-50"
+          />
+        </motion.div>
+
+        
+
+        <motion.div className=" flex flex-col justify-center items-start">
+          {p_Profile.map((p,i)=>(
+              <motion.p
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2, delay: i * 0.1 }}
+              viewport={{ once: true }}
+            >
+              {p}
+            </motion.p>
+          ))}
         </motion.div>
       </div>
+      </motion.div>
+  {/* ABOUT ME */}
+      <motion.div
+        ref={targetRefs[2]}
+        className="flex justify-evenly h-dvh items-center bg-red-400"
+        whileInView={() => {handleValidKeyInView(3)}}
+        viewport={{ once: false, amount: 0.7 }}
+       >
+        <div className="flex w-full ">
+          <div className="flex flex-col justify-center items-start font-light gap-10">
+            <div className="flex gap-10">
+              <div className="flex justify-center items-center">
+                <Image
+                  src="/Images/sql.svg"
+                  alt="Descrição da imagem"
+                  width={60}
+                  height={60}/>
+              </div>
+              <div className="">
+                <p>Em meados 2022 iniciei minha carreira como Analista de Dados</p>
+                <p>em uma empresa no ramo de telecobrança, onde desenvolvi grandes </p>
+                <p>habilidades com MSSQL,na criação de procedures, triggers,</p>
+                <p>views e trabalhos agendados.</p>
+              </div>
+            </div>
+
+            <div className="mt-2">
+              <div className="flex gap-10">
+                <div className="flex justify-center items-center">
+                    <Image
+                      src="/Images/bi.svg"
+                      alt="Descrição da imagem"
+                      width={60}
+                      height={60}/>
+                  </div>
+                <div>
+                  <p>Além de Power BI e Tableu para montagem de dashboards e apresentar</p> 
+                  <p>informações visuais que auxiliam na tomada de decisões.</p>
+                  <p>Em ambas as ferramentas, trabalhei com a automação de relatórios,</p>
+                  <p>agendamento de atualizações e aplicação de filtros interativos para</p>
+                  <p>fornecer uma visão clara e personalizada dos dados. Esses processos não</p>
+                  <p>apenas melhoraram a eficiência das análises, mas também ajudaram a empresa</p>
+                  <p>a responder rapidamente a mudanças e a tomar decisões baseadas em dados.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-2">
+              <div className="flex gap-10">
+                  <div className="flex justify-center items-center">
+                      <Image
+                        src="/Images/py2.svg"
+                        alt="Descrição da imagem"
+                        width={60}
+                        height={60}/>
+                    </div>
+                  <div>
+                    <p>Outra grande ferramenta com a qual criei domínio foi a linguagem Python,</p>
+                    <p>permitindo agilizar importações de informações e automatizar um processo manual</p>
+                    <p>que era feito na empresa, economizando minutos importantes do meu dia.</p>
+                  </div>
+              </div>
+            </div>
+
+            <div className="mt-2">
+              <div className="flex gap-10">
+                    <div className="flex justify-center items-center">
+                        <Image
+                          src="/Images/trf.svg"
+                          alt="Descrição da imagem"
+                          width={60}
+                          height={60}/>
+                      </div>
+                    <div>
+                      <p>Meu maior desafio nessa empresa foi a implantação de um novo cliente do zero.</p>
+                      <p>Fiz a modelagem das ETLs, criação das rotinas e as visões para acompanhamento dos </p>
+                      <p>times operacionais.</p>
+                      <p>Recebi grandes responsabilidades e consegui fazer todas as entregas usando o método ágil</p>
+                      <p>para tratar os graus de prioridades.</p>
+                    </div>
+              </div>
+            </div>
+          {/* End here */}
+          </div>
+{/* IMAGENS AQUI PART 2 TELA  */}
+      
+
+          <div> testando </div>
+
+        </div>
+      </motion.div>
     </DynamicBackground>
   );
 };
