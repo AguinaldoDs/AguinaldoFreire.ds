@@ -9,7 +9,10 @@ import Image from 'next/image';
 
 // Biblioteca externa
 import { motion, AnimatePresence } from "framer-motion";
-import DynamicBackground from "./handles/DynamicBgColor";
+import DynamicBackground from "./components/handles/DynamicBgColor";
+
+// Componentes
+import ImageCarousel from "./components/handles/slide"
 
 const Home: React.FC = () => {
   // Lista de opções de seleção
@@ -87,7 +90,7 @@ const Home: React.FC = () => {
 
       {/* CONTACT ME & CONFIG */}
       <div className="flex items-center select-none ">
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -140,7 +143,7 @@ const Home: React.FC = () => {
           >
             <BsGear size={40} />
           </motion.div>
-        </motion.div>
+        </motion.div> */}
 
         <AnimatePresence>
           {validConfig && (
@@ -488,15 +491,26 @@ const Home: React.FC = () => {
   </motion.div>
        {/* JOBs */}
        <motion.div
-        id="fistInterface"
         ref={targetRefs[3]}
-        className="flex justify-evenly h-dvh items-center"
+        className="flex flex-col h-dvh bg-red-500"
         whileInView={() => {
           handleValidKeyInView(4);
         }}
         viewport={{ once: false, amount: 0.7 }}
       >
-        JOBSSSSS
+          {/* projetos mesmo */}
+          <div className="flex w-full bg-blue-500 h-[50%]">
+          <div className="container mx-auto p-4">
+          <h1 className="text-2xl font-bold mb-4">Carrossel de Imagens</h1>
+          <ImageCarousel />
+          </div>
+          </div>
+
+          {/* feedback rolando */}
+          <div>
+            div dois
+          </div>
+
       </motion.div>
     </DynamicBackground>
   );
