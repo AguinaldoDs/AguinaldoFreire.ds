@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 // Biblioteca externa
 import { motion, AnimatePresence } from "framer-motion";
-import DynamicBackground from "./Components/DynamicBgColor";
+import DynamicBackground from "./handles/DynamicBgColor";
 
 const Home: React.FC = () => {
   // Lista de opções de seleção
@@ -271,7 +271,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* ref - header: map position */}
-      <div className="fixed flex-col right-0 bottom-0 mb-9 mr-14">
+      <div className="fixed flex-col right-0 bottom-0 mb-9 mr-14 z-50">
         {[1, 2, 3, 4, 5].map((number, index) => (
           <p
             key={index}
@@ -321,7 +321,9 @@ const Home: React.FC = () => {
           <motion.span className="cursor-pointer"
             onClick={() => scrollToDiv(2)}
           >Profile</motion.span>
-          <span className="cursor-pointer">About me</span>
+          <span className="cursor-pointer"
+           onClick={() => {scrollToDiv(3)}}
+          >About me</span>
           <span className="cursor-pointer">Jobs & Feedback</span>
         </motion.div>
       </motion.div>
@@ -370,12 +372,13 @@ const Home: React.FC = () => {
   {/* ABOUT ME */}
       <motion.div
         ref={targetRefs[2]}
-        className="flex justify-evenly h-dvh items-center bg-red-400"
+        id="fistInterface"
+        className="flex justify-evenly h-dvh items-center"
         whileInView={() => {handleValidKeyInView(3)}}
         viewport={{ once: false, amount: 0.7 }}
        >
-        <div className="flex w-full ">
-          <div className="flex flex-col justify-center items-start font-light gap-10">
+        <div className="flex w-full justify-evenly">
+          <div className="flex flex-col justify-center items-start font-light text-xs gap-5 w-[50%] ">
             <div className="flex gap-10">
               <div className="flex justify-center items-center">
                 <Image
@@ -448,14 +451,52 @@ const Home: React.FC = () => {
                     </div>
               </div>
             </div>
-          {/* End here */}
           </div>
+          {/* End here */}
 {/* IMAGENS AQUI PART 2 TELA  */}
       
+  <div className="flex gap-2"> 
+    <div className="flex flex-col">    
+      <figure className="w-[300px] h-max relative overflow-hidden ">
+        <Image 
+          src="/brad.jpeg"
+          alt="Premiação Bradesco - Procv 2023"
+          width={300} 
+          height={300} 
+          className="object-cover rounded-lg"
+        />
+        <figcaption className="text-center text-sm mt-2 text-gray-600">
+          1° lugar no Prêmio - Bradesco PRCV 2023
+        </figcaption>
+      </figure>
+    </div> 
 
-          <div> testando </div>
-
-        </div>
+    <figure className="w-[300px] h-max relative overflow-hidden ">
+      <Image 
+        src="/bv2.jpeg"
+        alt="Premiação BV - Procv 2024"
+        width={300} 
+        height={300} 
+        className="object-cover rounded-lg"
+      />
+      <figcaption className="text-center text-sm mt-2 text-gray-600">
+        Premiação BV - Fodona 2024
+      </figcaption>
+      </figure>
+     </div>   
+    </div>
+  </motion.div>
+       {/* JOBs */}
+       <motion.div
+        id="fistInterface"
+        ref={targetRefs[3]}
+        className="flex justify-evenly h-dvh items-center"
+        whileInView={() => {
+          handleValidKeyInView(4);
+        }}
+        viewport={{ once: false, amount: 0.7 }}
+      >
+        JOBSSSSS
       </motion.div>
     </DynamicBackground>
   );
