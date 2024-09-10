@@ -90,7 +90,7 @@ const Home: React.FC = () => {
 
       {/* CONTACT ME & CONFIG */}
       <div className="flex items-center select-none ">
-        {/* <motion.div
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -143,7 +143,7 @@ const Home: React.FC = () => {
           >
             <BsGear size={40} />
           </motion.div>
-        </motion.div> */}
+        </motion.div>
 
         <AnimatePresence>
           {validConfig && (
@@ -372,6 +372,9 @@ const Home: React.FC = () => {
         </motion.div>
       </div>
       </motion.div>
+
+
+
   {/* ABOUT ME */}
       <motion.div
         ref={targetRefs[2]}
@@ -380,77 +383,89 @@ const Home: React.FC = () => {
         whileInView={() => {handleValidKeyInView(3)}}
         viewport={{ once: false, amount: 0.7 }}
        >
-        <div className="flex w-full justify-evenly">
-          <div className="flex flex-col justify-center items-start font-light text-xs gap-5 w-[50%] ">
+        <div className="flex w-full h-full justify-evenly p-1">
+          <div className="flex flex-col justify-center font-semibold text-sm gap-1 h-full">
+            <h1 className="flex text-3xl mb-2 "> O Inicio... </h1>
             <div className="flex gap-10">
               <div className="flex justify-center items-center">
                 <Image
                   src="/Images/sql.svg"
                   alt="Descrição da imagem"
-                  width={60}
-                  height={60}/>
+                  width={70}
+                  height={70}/>
               </div>
-              <div className="">
-                <p>Em meados 2022 iniciei minha carreira como Analista de Dados</p>
-                <p>em uma empresa no ramo de telecobrança, onde desenvolvi grandes </p>
-                <p>habilidades com MSSQL,na criação de procedures, triggers,</p>
+              <div className=" rounded-lg p-2">
+                <p>Em meados de 2022, iniciei minha carreira como</p>
+                <p>Analista de Dados em uma empresa no ramo de</p>
+                <p>telecobrança, onde desenvolvi grandes habilidades</p>
+                <p>com MSSQL, na criação de procedures, triggers,</p>
                 <p>views e trabalhos agendados.</p>
               </div>
             </div>
 
-            <div className="mt-2">
+            <div className="">
               <div className="flex gap-10">
                 <div className="flex justify-center items-center">
                     <Image
                       src="/Images/bi.svg"
                       alt="Descrição da imagem"
-                      width={60}
-                      height={60}/>
+                      width={70}
+                      height={70}/>
                   </div>
-                <div>
-                  <p>Além de Power BI e Tableu para montagem de dashboards e apresentar</p> 
-                  <p>informações visuais que auxiliam na tomada de decisões.</p>
-                  <p>Em ambas as ferramentas, trabalhei com a automação de relatórios,</p>
-                  <p>agendamento de atualizações e aplicação de filtros interativos para</p>
-                  <p>fornecer uma visão clara e personalizada dos dados. Esses processos não</p>
-                  <p>apenas melhoraram a eficiência das análises, mas também ajudaram a empresa</p>
-                  <p>a responder rapidamente a mudanças e a tomar decisões baseadas em dados.</p>
+                  <div className=" rounded-lg p-2">
+                  <p>Além de Power BI e Tableau para montagem de</p>
+                  <p>dashboards e apresentar informações visuais que</p>
+                  <p>auxiliam na tomada de decisões. Em ambas as</p>
+                  <p>ferramentas, trabalhei com a automação de</p>
+                  <p>relatórios, agendamento de atualizações e</p>
+                  <p>aplicação de filtros interativos para fornecer uma</p>
+                  <p>visão clara e personalizada dos dados. Esses</p>
+                  <p>processos não apenas melhoraram a eficiência das</p>
+                  <p>análises, mas também ajudaram a empresa a</p>
+                  <p>responder rapidamente a mudanças e a tomar</p>
+                  <p>decisões baseadas em dados.</p>
+
                 </div>
               </div>
             </div>
 
-            <div className="mt-2">
+            <div className="">
               <div className="flex gap-10">
                   <div className="flex justify-center items-center">
                       <Image
                         src="/Images/py2.svg"
                         alt="Descrição da imagem"
-                        width={60}
-                        height={60}/>
+                        width={70}
+                        height={70}/>
                     </div>
-                  <div>
-                    <p>Outra grande ferramenta com a qual criei domínio foi a linguagem Python,</p>
-                    <p>permitindo agilizar importações de informações e automatizar um processo manual</p>
-                    <p>que era feito na empresa, economizando minutos importantes do meu dia.</p>
+                    <div className=" rounded-lg p-2">
+                    <p>Outra grande ferramenta com a qual criei domínio foi</p>
+                    <p>a linguagem Python, permitindo agilizar importações</p>
+                    <p>de informações e automatizar um processo manual</p>
+                    <p>que era feito na empresa, economizando minutos</p>
+                    <p>importantes do meu dia.</p>
+
                   </div>
               </div>
             </div>
 
-            <div className="mt-2">
+            <div className="">
               <div className="flex gap-10">
                     <div className="flex justify-center items-center">
                         <Image
                           src="/Images/trf.svg"
                           alt="Descrição da imagem"
-                          width={60}
-                          height={60}/>
+                          width={70}
+                          height={70}/>
                       </div>
-                    <div>
-                      <p>Meu maior desafio nessa empresa foi a implantação de um novo cliente do zero.</p>
-                      <p>Fiz a modelagem das ETLs, criação das rotinas e as visões para acompanhamento dos </p>
-                      <p>times operacionais.</p>
-                      <p>Recebi grandes responsabilidades e consegui fazer todas as entregas usando o método ágil</p>
-                      <p>para tratar os graus de prioridades.</p>
+                      <div className=" rounded-lg p-2">
+                      <p>Meu maior desafio nessa empresa foi a implantação</p>
+                      <p>de um novo cliente do zero. Fiz a modelagem das ETLs,</p>
+                      <p>criação das rotinas e visões para acompanhamento</p>
+                      <p>dos times operacionais. Recebi grandes responsabilidades</p>
+                      <p>e consegui fazer todas as entregas usando o método</p>
+                      <p>ágil para tratar os graus de prioridades.</p>
+
                     </div>
               </div>
             </div>
@@ -498,30 +513,21 @@ const Home: React.FC = () => {
         }}
         viewport={{ once: false, amount: 0.7 }}
       >
-          {/* projetos mesmo */}
-          <div className="flex w-full bg-blue-500 h-[50%]">
-          <div className="container mx-auto p-4">
-          <h1 className="text-2xl font-bold mb-4">Carrossel de Imagens</h1>
-          <ImageCarousel />
-          </div>
-          </div>
+      <iframe
+        title="Book - Bradesco"
+        width="1140"
+        height="541.25"
+        src="https://app.powerbi.com/reportEmbed?reportId=9ecbff9f-be43-40e1-b7d6-de46a752377c&autoAuth=true&ctid=384cff76-c263-4b39-89b9-52c24400bafc"
+        
+        allowFullScreen={true}
+      ></iframe>
 
-          {/* feedback rolando */}
-          <div>
-            div dois
-          </div>
+
 
       </motion.div>
 
 
- <iframe
-      title="Book - Bradesco"
-      width="1140"
-      height="541.25"
-      src="https://app.powerbi.com/reportEmbed?reportId=9ecbff9f-be43-40e1-b7d6-de46a752377c&autoAuth=true&ctid=384cff76-c263-4b39-89b9-52c24400bafc"
-      
-      allowFullScreen={true}
-    ></iframe>
+
 
 
     </DynamicBackground>
