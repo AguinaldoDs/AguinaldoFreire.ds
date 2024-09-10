@@ -512,6 +512,18 @@ const Home: React.FC = () => {
           </div>
 
       </motion.div>
+
+
+ <iframe
+      title="Book - Bradesco"
+      width="1140"
+      height="541.25"
+      src="https://app.powerbi.com/reportEmbed?reportId=9ecbff9f-be43-40e1-b7d6-de46a752377c&autoAuth=true&ctid=384cff76-c263-4b39-89b9-52c24400bafc"
+      
+      allowFullScreen={true}
+    ></iframe>
+
+
     </DynamicBackground>
   );
 };
