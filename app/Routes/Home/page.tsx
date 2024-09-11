@@ -94,14 +94,14 @@ const Home: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="flex relative font-light h-auto rounded-lg gap-3 border-solid bottom-1
-                     justify-start w-full"
+          className="flex relative font-light h-auto rounded-lg gap-3
+                     justify-start w-full "
         >
-          <div className="fixed flex gap-20 w-max ml-9 mt-10 p-2 justify-between items-center rounded-t-lg 
-                          rounded-r-lg">
+          <div className="absolute flex gap-20 w-max ml-9 mt-10 p-2 justify-between items-center">
+
             <div
               id="icon"
-              className="cursor-pointer border-solid border-b-[1px] p-1"
+              className="relative cursor-pointer"
               onClick={() => {
                 window.open(
                   "https://www.linkedin.com/in/aguinaldo-freire-95bb5a181/",
@@ -110,33 +110,35 @@ const Home: React.FC = () => {
               }}
             >
               <FaLinkedin size={40} />
+              <span className="relative left-1/2 -translate-x-1/2 text-lg">.</span>
             </div>
+
             <div
               id="icon"
-              className="cursor-pointer border-solid border-b-[1px] p-1"
+              className="group relative cursor-pointer  hover:text-green-400"
               onClick={() => {
-                window.open("https://github.com/AguinaldoDs",
-                  "_blank");
-              }}
-            >
+                window.open("https://github.com/AguinaldoDs", "_blank");
+              }}>
               <FaGithub size={40} />
+              <span className="relative left-1/2 -translate-x-1/2 text-lg group-hover:text-green-400 ">.</span>
             </div>
+
             <div
               id="icon"
-              className="cursor-pointer border-solid border-b-[1px] p-1"
+              className="group relative cursor-pointer hover:text-green-400"
               onClick={() => {
-                window.open("https://mail.google.com/mail/?view=cm&fs=1&to=aguinaldofreire.ds@gmail.com",
-                  "_blank"
-                );
+                window.open("https://mail.google.com/mail/?view=cm&fs=1&to=aguinaldofreire.ds@gmail.com", "_blank");
               }}
             >
               <SiGmail size={40} />
+              <span className="relative ml-[50%] -translate-x-[50%] text-lg group-hover:text-green-400 transition">.</span>
             </div>
+
           </div>
 
           <motion.div
             id="PrincipalColorFI"
-            className="fixed cursor-pointer right-0 mr-9 mt-10 p-3 text-center"
+            className="absolute cursor-pointer right-0 mr-9 mt-10 p-3 text-center"
             animate={{ rotate: validConfig ? 90 : 0 }}
             transition={{ duration: 0.5 }}
             onClick={handleValidConfig}
@@ -384,97 +386,58 @@ const Home: React.FC = () => {
         viewport={{ once: false, amount: 0.7 }}
        >
         <div className="flex w-full h-full justify-evenly p-1">
-          <div className="flex flex-col justify-center font-semibold text-sm gap-1 h-full">
-            <h1 className="flex text-3xl mb-2 "> O Inicio... </h1>
-            <div className="flex gap-10">
-              <div className="flex justify-center items-center">
-                <Image
-                  src="/Images/sql.svg"
-                  alt="Descrição da imagem"
-                  width={70}
-                  height={70}/>
-              </div>
+          <div className="flex flex-col justify-center font-extralight text-xs h-full">
+
+            <div className="flex gap-5">
               <div className=" rounded-lg p-2">
                 <p>Em meados de 2022, iniciei minha carreira como</p>
-                <p>Analista de Dados em uma empresa no ramo de</p>
-                <p>telecobrança, onde desenvolvi grandes habilidades</p>
-                <p>com MSSQL, na criação de procedures, triggers,</p>
-                <p>views e trabalhos agendados.</p>
+                <p>Analista de Dados na Toledo Piza Avogados. </p>
+                <p>Onde descobri minha paixão por dados.</p>
               </div>
             </div>
 
-            <div className="">
-              <div className="flex gap-10">
-                <div className="flex justify-center items-center">
-                    <Image
-                      src="/Images/bi.svg"
-                      alt="Descrição da imagem"
-                      width={70}
-                      height={70}/>
-                  </div>
+              <div className="flex gap-5">
                   <div className=" rounded-lg p-2">
-                  <p>Além de Power BI e Tableau para montagem de</p>
-                  <p>dashboards e apresentar informações visuais que</p>
-                  <p>auxiliam na tomada de decisões. Em ambas as</p>
-                  <p>ferramentas, trabalhei com a automação de</p>
-                  <p>relatórios, agendamento de atualizações e</p>
-                  <p>aplicação de filtros interativos para fornecer uma</p>
-                  <p>visão clara e personalizada dos dados. Esses</p>
-                  <p>processos não apenas melhoraram a eficiência das</p>
-                  <p>análises, mas também ajudaram a empresa a</p>
-                  <p>responder rapidamente a mudanças e a tomar</p>
-                  <p>decisões baseadas em dados.</p>
-
+                  <p>Minha primeira interessão com MSSQl, foi </p>
+                  <p>o ponto de partida para buscar a melhor entrega. </p>          
                 </div>
               </div>
-            </div>
 
-            <div className="">
-              <div className="flex gap-10">
-                  <div className="flex justify-center items-center">
-                      <Image
-                        src="/Images/py2.svg"
-                        alt="Descrição da imagem"
-                        width={70}
-                        height={70}/>
-                    </div>
-                    <div className=" rounded-lg p-2">
-                    <p>Outra grande ferramenta com a qual criei domínio foi</p>
-                    <p>a linguagem Python, permitindo agilizar importações</p>
-                    <p>de informações e automatizar um processo manual</p>
-                    <p>que era feito na empresa, economizando minutos</p>
-                    <p>importantes do meu dia.</p>
+              <div className="flex gap-5">
+               <div className=" rounded-lg p-2 ">
+                  <p>Logo incie meus estudos com ferramentas de </p>
+                  <p>visualização. Power Bi, Tableu e R viraram </p>
+                  <p>minhas principais ferramentas. </p>
+                </div>
+              </div>
 
+              <div className="flex gap-5">
+                <div className=" rounded-lg p-2">
+                  <p>Com a necessidade </p>
+                  <p>de informações e automatizar um processo manual</p>
+                  <p>que era feito na empresa, economizando minutos</p>
+                  <p>importantes do meu dia.</p>
+                </div>
+              </div>
+           
+              <div className="flex gap-5">
+                <div className=" rounded-lg p-2">
+                    <p>Meu maior desafio nessa empresa foi a implantação</p>
+                    <p>de um novo cliente do zero. Fiz a modelagem das ETLs,</p>
+                    <p>criação das rotinas e visões para acompanhamento</p>
+                    <p>dos times operacionais. Recebi grandes responsabilidades</p>
+                    <p>e consegui fazer todas as entregas usando o método</p>
+                    <p>ágil para tratar os graus de prioridades.</p>
                   </div>
               </div>
             </div>
-
-            <div className="">
-              <div className="flex gap-10">
-                    <div className="flex justify-center items-center">
-                        <Image
-                          src="/Images/trf.svg"
-                          alt="Descrição da imagem"
-                          width={70}
-                          height={70}/>
-                      </div>
-                      <div className=" rounded-lg p-2">
-                      <p>Meu maior desafio nessa empresa foi a implantação</p>
-                      <p>de um novo cliente do zero. Fiz a modelagem das ETLs,</p>
-                      <p>criação das rotinas e visões para acompanhamento</p>
-                      <p>dos times operacionais. Recebi grandes responsabilidades</p>
-                      <p>e consegui fazer todas as entregas usando o método</p>
-                      <p>ágil para tratar os graus de prioridades.</p>
-
-                    </div>
-              </div>
-            </div>
-          </div>
+         
           {/* End here */}
 {/* IMAGENS AQUI PART 2 TELA  */}
       
   <div className="flex gap-2"> 
-    <div className="flex flex-col">    
+
+    <div className="flex flex-col justify-evenly">    
       <figure className="w-[300px] h-max relative overflow-hidden ">
         <Image 
           src="/brad.jpeg"
@@ -487,8 +450,24 @@ const Home: React.FC = () => {
           1° lugar no Prêmio - Bradesco PRCV 2023
         </figcaption>
       </figure>
+
+      <figure className="w-[300px] h-max relative overflow-hidden ">
+        <Image 
+          src="/premios.png"
+          alt="Premiação Bradesco - Procv 2023"
+          width={300} 
+          height={300} 
+          className="object-cover rounded-lg"
+        />
+        <figcaption className="text-center text-sm mt-2 text-gray-600">
+          1° lugar no Prêmio - Bradesco PRCV 2023
+        </figcaption>
+      </figure>
+
+
     </div> 
 
+  <div className="flex justify-center items-center">
     <figure className="w-[300px] h-max relative overflow-hidden ">
       <Image 
         src="/bv2.jpeg"
@@ -496,12 +475,14 @@ const Home: React.FC = () => {
         width={300} 
         height={300} 
         className="object-cover rounded-lg"
-      />
-      <figcaption className="text-center text-sm mt-2 text-gray-600">
-        Premiação BV - Fodona 2024
-      </figcaption>
-      </figure>
-     </div>   
+       />
+       <figcaption className="text-center text-sm mt-2 text-gray-600">
+         Premiação BV - Fodona 2024
+       </figcaption>
+       </figure>
+      </div>   
+
+     </div>
     </div>
   </motion.div>
        {/* JOBs */}
