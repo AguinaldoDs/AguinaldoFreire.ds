@@ -386,7 +386,7 @@ const Home: React.FC = () => {
         viewport={{ once: false, amount: 0.7 }}
        >
         <div className="flex w-full h-full justify-evenly p-1">
-          <div className="flex flex-col justify-center font-extralight text-xs h-full">
+          <div className="flex flex-col justify-center font-mono text-sm h-full">
 
             <div className="flex gap-5">
               <div className=" rounded-lg p-2">
@@ -413,10 +413,11 @@ const Home: React.FC = () => {
 
               <div className="flex gap-5">
                 <div className=" rounded-lg p-2">
-                  <p>Com a necessidade </p>
-                  <p>de informações e automatizar um processo manual</p>
-                  <p>que era feito na empresa, economizando minutos</p>
-                  <p>importantes do meu dia.</p>
+                  <p>Quando concretizei meus conhecimentos em Python.</p>
+                  <p>Minha vida de analista melhorou de forma incrivel,</p>
+                  <p>a facilidade de conectividade e manipulação, me</p>
+                  <p>permitiram automatizar diversas rotinas e manipular</p>
+                  <p>bases de dados que levavam horas para serem finalizadas.</p>
                 </div>
               </div>
            
@@ -437,7 +438,7 @@ const Home: React.FC = () => {
       
   <div className="flex gap-2"> 
 
-    <div className="flex flex-col justify-evenly">    
+    {/* <div className="flex flex-col justify-evenly">    
       <figure className="w-[300px] h-max relative overflow-hidden ">
         <Image 
           src="/brad.jpeg"
@@ -480,7 +481,7 @@ const Home: React.FC = () => {
          Premiação BV - Fodona 2024
        </figcaption>
        </figure>
-      </div>   
+      </div>    */}
 
      </div>
     </div>
@@ -494,14 +495,14 @@ const Home: React.FC = () => {
         }}
         viewport={{ once: false, amount: 0.7 }}
       >
-      <iframe
+      {/* <iframe
         title="Book - Bradesco"
         width="1140"
         height="541.25"
         src="https://app.powerbi.com/reportEmbed?reportId=9ecbff9f-be43-40e1-b7d6-de46a752377c&autoAuth=true&ctid=384cff76-c263-4b39-89b9-52c24400bafc"
         
         allowFullScreen={true}
-      ></iframe>
+      ></iframe> */}
 
 
 
