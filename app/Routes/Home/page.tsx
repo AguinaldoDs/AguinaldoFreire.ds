@@ -448,8 +448,8 @@ const Home: React.FC = () => {
     <motion.div
      className="flex absolute p-20 rounded-full justify-center items-center"
      initial={{x:0}}
-     animate={{y: ['0%','250%','0%'],
-               x: ['60%','100%','200%','0%']
+     animate={{y: ['0%','250%','100%','0%'],
+               x: ['0%','-20%','-70%','100%','200%','0%']
      }}
      transition={{
                   duration: 10,
