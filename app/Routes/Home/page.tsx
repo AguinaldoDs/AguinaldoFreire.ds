@@ -29,7 +29,7 @@ const Home: React.FC = () => {
   const [validPersonlizeOption, setValuePersonlizeOption] = useState(false);
 
   // Cores e temas
-  const [colorTheme, setColorTheme] = useState("black");
+  const [colorTheme, setColorTheme] = useState("#1C1C1C");
   const [colorTextTheme, setColorTextTheme] = useState("white");
   const [colorH1Theme, setH1ColorTheme] = useState("#529552");
   const [validKeyinView, setValidKeyinView] = useState(0);
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
   };
 
   const handleColorTheme = (value: string) => {
-    setColorTheme(value === colorTheme ? "black" : value);
+    setColorTheme(value === colorTheme ? "#1C1C1C" : value);
   };
 
   const handleColorTextTheme = (value: string) => {
@@ -381,7 +381,7 @@ const Home: React.FC = () => {
       <motion.div
         ref={targetRefs[2]}
         id="fistInterface"
-        className="flex justify-evenly h-dvh items-center"
+        className="flex justify-evenly h-dvh items-center "
         whileInView={() => {handleValidKeyInView(3)}}
         viewport={{ once: false, amount: 0.7 }}
        >
@@ -436,52 +436,54 @@ const Home: React.FC = () => {
           {/* End here */}
 {/* IMAGENS AQUI PART 2 TELA  */}
       
-  <div className="flex gap-2"> 
+  <div className="flex"> 
+    <Image
+    src="/Images/fckman.svg"
+    alt="Descrição da imagem"
+    width={600}
+    height={600}
+    className="z-50"
+    />
 
-    {/* <div className="flex flex-col justify-evenly">    
-      <figure className="w-[300px] h-max relative overflow-hidden ">
-        <Image 
-          src="/brad.jpeg"
-          alt="Premiação Bradesco - Procv 2023"
-          width={300} 
-          height={300} 
-          className="object-cover rounded-lg"
-        />
-        <figcaption className="text-center text-sm mt-2 text-gray-600">
-          1° lugar no Prêmio - Bradesco PRCV 2023
-        </figcaption>
-      </figure>
+    <motion.div
+     className="flex absolute p-20 rounded-full justify-center items-center"
+     initial={{x:0}}
+     animate={{y: ['0%','250%','0%'],
+               x: ['60%','100%','200%','0%']
+     }}
+     transition={{
+                  duration: 10,
+                  ease: "easeInOut",
+                  repeat:Infinity
+     }}
+     >
+      <Image
+      src="/Images/bi.svg"
+      alt="Descrição da imagem"
+      width={100}
+      height={100}
+      className="flex absolute"/>
+    </motion.div>
 
-      <figure className="w-[300px] h-max relative overflow-hidden ">
-        <Image 
-          src="/premios.png"
-          alt="Premiação Bradesco - Procv 2023"
-          width={300} 
-          height={300} 
-          className="object-cover rounded-lg"
-        />
-        <figcaption className="text-center text-sm mt-2 text-gray-600">
-          1° lugar no Prêmio - Bradesco PRCV 2023
-        </figcaption>
-      </figure>
+    {/* <Image
+    src="/Images/js.svg"
+    alt="Descrição da imagem"
+    width={100}
+    height={100}
+    className="flex absolute right-0"
+    /> */}
 
-
-    </div> 
-
-  <div className="flex justify-center items-center">
-    <figure className="w-[300px] h-max relative overflow-hidden ">
-      <Image 
-        src="/bv2.jpeg"
-        alt="Premiação BV - Procv 2024"
-        width={300} 
-        height={300} 
-        className="object-cover rounded-lg"
-       />
-       <figcaption className="text-center text-sm mt-2 text-gray-600">
-         Premiação BV - Fodona 2024
-       </figcaption>
-       </figure>
-      </div>    */}
+{/* <motion.div 
+    className="flex absolute justify-center items-center rounded-3xl p-20 h-max"
+     >
+  <Image
+    src="/Images/next.svg"
+    alt="Descrição da imagem"
+    width={100}
+    height={100}
+    className="flex absolute"
+    />
+    </motion.div> */}
 
      </div>
     </div>
