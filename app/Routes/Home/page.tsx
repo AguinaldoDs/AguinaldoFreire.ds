@@ -448,12 +448,11 @@ const Home: React.FC = () => {
     <motion.div
      className="flex absolute p-20 rounded-full justify-center items-center"
      initial={{x:0}}
-     animate={{y: ['0%','250%','100%','0%'],
-               x: ['0%','-20%','-70%','100%','200%','0%']
+     animate={{y: ['0%','100%','0%','100%','0%']
      }}
      transition={{
-                  duration: 10,
-                  ease: "easeInOut",
+                  duration: 7,
+                  ease: "linear",
                   repeat:Infinity
      }}
      >
@@ -465,25 +464,55 @@ const Home: React.FC = () => {
       className="flex absolute"/>
     </motion.div>
 
-    {/* <Image
-    src="/Images/js.svg"
-    alt="Descrição da imagem"
-    width={100}
-    height={100}
-    className="flex absolute right-0"
-    /> */}
-
-{/* <motion.div 
-    className="flex absolute justify-center items-center rounded-3xl p-20 h-max"
+    <motion.div
+     className="flex absolute ml-40 p-20 rounded-full justify-center items-center"
+     initial={{x:0}}
+     transition={{
+                  duration: 7,
+                  ease: "linear",
+                  repeat:Infinity
+     }}
      >
-  <Image
-    src="/Images/next.svg"
-    alt="Descrição da imagem"
-    width={100}
-    height={100}
-    className="flex absolute"
-    />
-    </motion.div> */}
+      <Image
+      src="/Images/js.svg"
+      alt="Descrição da imagem"
+      width={100}
+      height={100}
+      className="flex absolute rounded-md"/>
+    </motion.div>
+
+    <motion.div
+     className="flex absolute ml-80 p-20 rounded-full justify-center items-center"
+     initial={{x:0}}
+     transition={{
+                  duration: 7,
+                  ease: "linear",
+                  repeat:Infinity
+     }}
+     >
+      <Image
+      src="/Images/py2.svg"
+      alt="Descrição da imagem"
+      width={100}
+      height={100}
+      className="flex absolute rounded-md"/>
+    </motion.div>
+    <motion.div
+     className="flex absolute ml-100 p-20 rounded-full justify-center items-center"
+     initial={{x:0}}
+     transition={{
+                  duration: 7,
+                  ease: "linear",
+                  repeat:Infinity
+     }}
+     >
+      <Image
+      src="/Images/node.svg"
+      alt="Descrição da imagem"
+      width={100}
+      height={100}
+      className="flex absolute rounded-md"/>
+    </motion.div>
 
      </div>
     </div>
