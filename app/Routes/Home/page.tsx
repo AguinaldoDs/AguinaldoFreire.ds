@@ -79,6 +79,14 @@ const Home: React.FC = () => {
     setH1ColorTheme(value === colorH1Theme ? "#529552" : value);
   };
 
+
+  const [explosao, setExplosao] = useState(false)
+  const handleExplosao = () => {setExplosao(!explosao),
+                                setgiro360(!giro360);
+                                console.log(giro360)}
+
+  const [giro360, setgiro360] = useState(false)
+
   return (
     <DynamicBackground
       className="flex flex-col w-full h-[6000px] overflow-y-auto"
@@ -381,37 +389,75 @@ const Home: React.FC = () => {
       <motion.div
         ref={targetRefs[2]}
         id="fistInterface"
-        className="flex justify-evenly h-dvh items-center "
+        className="flex flex-col h-dvh "
         whileInView={() => {handleValidKeyInView(3)}}
         viewport={{ once: false, amount: 0.7 }}
        >
-        <div className="flex w-full h-full justify-evenly p-1">
-          <div className="flex flex-col justify-center font-mono text-sm h-full">
-
-            <div className="flex gap-5">
-              <div className=" rounded-lg p-2">
-                <p>Em meados de 2022, iniciei minha carreira como</p>
-                <p>Analista de Dados na Toledo Piza Avogados. </p>
-                <p>Onde descobri minha paixão por dados.</p>
-              </div>
-            </div>
-
+            <div>
               <div className="flex gap-5">
-                  <div className=" rounded-lg p-2">
-                  <p>Minha primeira interessão com MSSQl, foi </p>
-                  <p>o ponto de partida para buscar a melhor entrega. </p>          
+                <div className=" rounded-lg p-2">
+                  <p>Em meados de 2022, iniciei minha carreira como</p>
+                  <p>Analista de Dados na Toledo Piza Avogados. </p>
+                  <p>Onde descobri minha paixão por dados.</p>
                 </div>
               </div>
 
-              <div className="flex gap-5">
-               <div className=" rounded-lg p-2 ">
-                  <p>Logo incie meus estudos com ferramentas de </p>
-                  <p>visualização. Power Bi, Tableu e R viraram </p>
-                  <p>minhas principais ferramentas. </p>
+                <div className="flex gap-5">
+                    <div className=" rounded-lg p-2">
+                    <p>Minha primeira interessão com MSSQl, foi </p>
+                    <p>o ponto de partida para buscar a melhor entrega. </p>          
+                  </div>
+                </div>
+
+                <div className="flex gap-5">
+                <div className=" rounded-lg p-2 ">
+                    <p>Logo incie meus estudos com ferramentas de </p>
+                    <p>visualização. Power Bi, Tableu e R viraram </p>
+                    <p>minhas principais ferramentas. </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex gap-5">
+              {explosao ?
+               <motion.div
+              className="flex relative rounded-full p-20 opacity-0"
+              initial={{x:0}}
+              animate={{y: ['0%','4%','0%','4%','0%']
+              }}
+              transition={{
+                            duration: 5,
+                            ease: "linear",
+                            repeat:Infinity
+              }}
+              >
+                <Image
+                src="/Images/bi.svg"
+                alt="Descrição da imagem"
+                width={100}
+                height={100}
+                className="flex absolute"/>
+              </motion.div> :
+
+              <motion.div
+              className="flex relative rounded-full p-20"
+              initial={{x:0}}
+              animate={{y: ['0%','4%','0%','4%','0%']
+              }}
+              transition={{
+                            duration: 5,
+                            ease: "linear",
+                            repeat:Infinity
+              }}
+              >
+                <Image
+                src="/Images/bi.svg"
+                alt="Descrição da imagem"
+                width={100}
+                height={100}
+                className="flex absolute"/>
+              </motion.div>}
+
+              {/* <div className="flex gap-5">
                 <div className=" rounded-lg p-2">
                   <p>Quando concretizei meus conhecimentos em Python.</p>
                   <p>Minha vida de analista melhorou de forma incrivel,</p>
@@ -430,92 +476,29 @@ const Home: React.FC = () => {
                     <p>e consegui fazer todas as entregas usando o método</p>
                     <p>ágil para tratar os graus de prioridades.</p>
                   </div>
-              </div>
-            </div>
+              </div> */}
+          
          
           {/* End here */}
 {/* IMAGENS AQUI PART 2 TELA  */}
       
-  <div className="flex"> 
+  <motion.div className="flex absolute ml-[30%]"
+     onClick={handleExplosao}
+     animate={{ y: [0, 24, 0],
+                rotate: giro360 ? [360,360,360] : 0
+     }}
+     transition={{ duration: 0.5,
+                   ease: "linear",
+                   repeat:1 }}>
     <Image
     src="/Images/fckman.svg"
     alt="Descrição da imagem"
     width={600}
     height={600}
-    className="z-50"
+    className="z-50 cursor-grabbing"
     />
 
-    <motion.div
-     className="flex absolute p-20 rounded-full justify-center items-center"
-     initial={{x:0}}
-     animate={{y: ['0%','100%','0%','100%','0%']
-     }}
-     transition={{
-                  duration: 7,
-                  ease: "linear",
-                  repeat:Infinity
-     }}
-     >
-      <Image
-      src="/Images/bi.svg"
-      alt="Descrição da imagem"
-      width={100}
-      height={100}
-      className="flex absolute"/>
-    </motion.div>
-
-    <motion.div
-     className="flex absolute ml-40 p-20 rounded-full justify-center items-center"
-     initial={{x:0}}
-     transition={{
-                  duration: 7,
-                  ease: "linear",
-                  repeat:Infinity
-     }}
-     >
-      <Image
-      src="/Images/js.svg"
-      alt="Descrição da imagem"
-      width={100}
-      height={100}
-      className="flex absolute rounded-md"/>
-    </motion.div>
-
-    <motion.div
-     className="flex absolute ml-80 p-20 rounded-full justify-center items-center"
-     initial={{x:0}}
-     transition={{
-                  duration: 7,
-                  ease: "linear",
-                  repeat:Infinity
-     }}
-     >
-      <Image
-      src="/Images/py2.svg"
-      alt="Descrição da imagem"
-      width={100}
-      height={100}
-      className="flex absolute rounded-md"/>
-    </motion.div>
-    <motion.div
-     className="flex absolute ml-100 p-20 rounded-full justify-center items-center"
-     initial={{x:0}}
-     transition={{
-                  duration: 7,
-                  ease: "linear",
-                  repeat:Infinity
-     }}
-     >
-      <Image
-      src="/Images/node.svg"
-      alt="Descrição da imagem"
-      width={100}
-      height={100}
-      className="flex absolute rounded-md"/>
-    </motion.div>
-
-     </div>
-    </div>
+     </motion.div>
   </motion.div>
        {/* JOBs */}
        <motion.div
