@@ -420,14 +420,16 @@ const Home: React.FC = () => {
 
               {explosao ?
                <motion.div
-              className="flex relative rounded-full p-20 opacity-0"
+              className="flex relative rounded-full p-20 bg-blue-400"
               initial={{x:0}}
-              animate={{y: ['0%','4%','0%','4%','0%']
+              animate={{y: 0,
+                        x: 50,
+                        rotate: 360
               }}
               transition={{
-                            duration: 5,
+                            duration: 0.1,
                             ease: "linear",
-                            repeat:Infinity
+                            repeat:1
               }}
               >
                 <Image
