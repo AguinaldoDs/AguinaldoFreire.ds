@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      borderWidth: {
+        '0.1': '0.001px', // Adicionando suporte para 0.25px
+      },
       textDecorationThickness: {
         'default': '1px', // Espessura padrão do sublinhado
         'thick': '2px', // Espessura personalizada
