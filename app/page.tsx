@@ -26,13 +26,13 @@ export default function Home() {
   };
 
   return (
-    <main className="flex w-dvw h-[6000px] justify-center
+    <main className="flex w-dvw h-dvh justify-center
                     bg-slate-950 text-slate-100 font-extralight">
       <title>Welcome!</title>
-      <div className="flex justify-center w-full max-w-[800px] py-5 px-5 select-none"> 
+      <div className="flex justify-center w-full max-w-[1280px] py-5 px-5 select-none">
         {/* Primeiro componente superior com contact me */}
-        <div className="mt-5 fixed flex w-[90%] max-w-[900px] h-max rounded-md p-3 border border-gray-900 
-                        justify-between bg-red-950">
+        <div className=" mt-5 fixed flex w-[90%] max-w-[1280px] h-max rounded-md p-3 border border-gray-900 
+                        justify-between backdrop-blur-md bg-opacity-70 z-50">
           <div className="flex justify-center items-center space-x-1 px-6 py-1 rounded-md
                           text-2xl bg-slate-800 font-semibold cursor-pointer ">
             @jnr.1914
@@ -74,33 +74,60 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='flex'>
-          <div className="flex flex-col w-96 sm:w-11/12 h-max rounded-xl px-7 py-3 relative mt-32 border-0.1 border-gray-900 text-slate-300">
-            <h1 className="font-medium text-xl">Aguinaldo Freire</h1>
-            <div className="mt-5 space-y-3">
-              <p>👋🏻 Olá, sou o Aguinaldo, desenvolvedor FullStack.</p>
-              <p>Domino o desenvolvimento de interfaces responsivas com <strong>React</strong> e <strong>Next.js</strong>,</p>
-              <p>além de APIs usando <strong>Node.js</strong>, <strong>Python</strong> e <strong>PHP</strong>.</p>
-              <p>Tenho conhecimentos em banco de dados (<strong>MySQL</strong>, <strong>PostgreSQL</strong>, <strong>MongoDB</strong>) e infraestrutura em Cloud (<strong>AWS</strong>, <strong>GCP</strong>).</p>
-            </div>
-
-            <div className='flex w-full space-x-2 mt-2'>
-              <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4
-              cursor-pointer p-2 rounded-full hover:bg-slate-900 transition">
-                <FaGithub className='w-6 h-6' />
+        <div className='w-full h-max flex'>
+          <div className='flex w-96 w-min-96'>
+            <div className="flex flex-col w-96 sm:w-11/12 h-max rounded-xl px-7 py-3 relative mt-32 border-0.1 border-gray-900 text-slate-300">
+              <h1 className="font-medium text-xl">Aguinaldo Freire</h1>
+              <div className="mt-5 space-y-3">
+                <p>👋🏻 Olá, sou o Aguinaldo, desenvolvedor FullStack.</p>
+                <p>Domino o desenvolvimento de interfaces responsivas com <strong>React</strong> e <strong>Next.js</strong>,</p>
+                <p>além de APIs usando <strong>Node.js</strong>, <strong>Python</strong> e <strong>PHP</strong>.</p>
+                <p>Tenho conhecimentos em banco de dados (<strong>MySQL</strong>, <strong>PostgreSQL</strong>, <strong>MongoDB</strong>) e infraestrutura em Cloud (<strong>AWS</strong>, <strong>GCP</strong>).</p>
               </div>
 
-              <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 
+              <div className='flex w-full space-x-2 mt-2'>
+                <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4
               cursor-pointer p-2 rounded-full hover:bg-slate-900 transition">
-                <HiOutlineNewspaper className='w-6 h-6' />
-              </div>
+                  <FaGithub className='w-6 h-6' />
+                </div>
 
-              <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 
+                <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 
               cursor-pointer p-2 rounded-full hover:bg-slate-900 transition">
-                <FaRegCalendarMinus className='w-6 h-6' />
+                  <HiOutlineNewspaper className='w-6 h-6' />
+                </div>
+
+                <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 
+              cursor-pointer p-2 rounded-full hover:bg-slate-900 transition">
+                  <FaRegCalendarMinus className='w-6 h-6' />
+                </div>
               </div>
             </div>
           </div>
+
+          <div className='flex flex-col w-max mt-32 p-5 text-4xl font-thin'>
+            <div className='flex text-4xl'>
+            Inovando com soluções digitais full-stack.
+              <motion.div
+                animate={{ rotate: [0, 360] }}
+                transition={{
+                  duration: 7,
+                  ease: "linear",
+                  repeat: Infinity,
+                  repeatType: "loop" // Garante que a animação se repita em loop
+                }}
+                style={{ originX: 0.5, originY: 0.5 }} // Centraliza a rotação
+                className="flex w-max h-max "
+              >
+                🤙🏻
+              </motion.div>
+            </div>
+            <div className='text-lg py-1 pb-4 opacity-30 border-b-0.1'>
+              Web3 & Full-Stack Developer
+            </div>
+
+          </div>
+
+
         </div>
       </div>
     </main>
