@@ -26,19 +26,27 @@ export default function Home() {
   // States
   const [language, setLanguage] = useState('en');
   const [menu, setMenu] = useState(false);
-
   const handleSetMenu = () => {
     setMenu(!menu);
     console.log(menu);
   };
 
+  const [graphicView,setGraphicView] = useState(0)
+  const handleSetGraphichView = (id: number) => {
+    setGraphicView(id)
+    console.log(id)
+  }
+
+
+
+
   return (
-    <main className="flex w-dvw h-full justify-center
+    <main className="flex w-full h-full justify-center
                     bg-slate-950 text-slate-100 font-extralight">
       <title>Welcome!</title>
-      <div className="flex justify-center w-full max-w-[1280px] py-5 px-5 select-none text-slate-200">
+      <div className="flex justify-center max-w-[1180px] py-5 select-none text-slate-200">
         {/* Primeiro componente superior com contact me */}
-        <div className=" mt-5 fixed flex w-[90%] max-w-[1280px] h-max rounded-md p-3 border border-gray-900 
+        <div className=" mt-5 fixed flex w-[90%] max-w-[1180px] h-max rounded-md p-3 border border-gray-900 
                         justify-between backdrop-blur-md bg-opacity-70 z-50">
           <div className="flex justify-center items-center space-x-1 px-6 py-1 rounded-md
                           text-2xl bg-slate-800 font-semibold cursor-pointer ">
@@ -80,8 +88,6 @@ export default function Home() {
             )}
           </div>
         </div>
-
-        <div className='w-full h-max flex'>
           <div className='flex w-96 w-min-96'>
             <div className="flex flex-col w-96 sm:w-11/12 h-max rounded-xl px-7 py-3 relative mt-32 border-0.1 border-gray-900 text-slate-300">
               <h1 className="font-medium text-xl">Aguinaldo Freire</h1>
@@ -112,7 +118,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className='flex flex-col w-max mt-32 p-5 text-4xl font-thin'>
+          <div className='flex flex-col  mt-32 text-4xl font-thin '>
             <div className='flex text-4xl'>
               Inovando com soluções digitais para Dados.
               {/* <motion.div
@@ -149,7 +155,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className='mt-10 text-2xl font-normal'>
+            <div className='mt-10 text-2xl font-normal p-5'>
               <div className='px-2'>
               Experiencias
               </div>
@@ -160,20 +166,26 @@ export default function Home() {
                 Ultimos Trabalhos
               </div>
 
-              <div className='font-extralight space-y-4 mt-2'>
+              <div className='font-extralight space-y-4 mt-2 w-full'>
                 <div className='border-0.1 rounded-2xl p-6 border-gray-900
-                  cursor-pointer hover:bg-slate-900 transition-all'>
+                  cursor-pointer hover:bg-slate-900 transition-all'
+                onMouseEnter={()=>{handleSetGraphichView(5)}}
+                onMouseLeave={()=>{handleSetGraphichView(0)}}
+                  >
                   <h1 className='text-xl font-normal '>Previsão de Vendas</h1>
                   <p className='text-sm'>Ferramentas: Python, ARIMA, XGBoost</p>
                   <p className='text-sm'>Resultado: Aumento de 15% na precisão das previsões, otimizando estoque e custos.</p>
+
+                  {graphicView === 5 ? <PercentageChart percentage={75} /> : null}
+
                 </div>
-                <div className='border-0.1 rounded-2xl p-6 border-gray-900
+                 <div className='border-0.1 rounded-2xl p-6 border-gray-900
                   cursor-pointer hover:bg-slate-900 transition-all'>
                   <h1 className='text-xl font-normal '>Segmentação de Mercado</h1>
                   <p className='text-sm'>Ferramentas: SQL, R, K-Means</p>
                   <p className='text-sm'>Resultado: Identificação de 4 novos segmentos, aumento de 20% na taxa de conversão.</p>
                 </div>
-               
+
                 <div className='border-0.1 rounded-2xl p-6 border-gray-900
                   cursor-pointer hover:bg-slate-900 transition-all'>
                   <h1 className='text-xl font-normal '>Análise de Sentimento em Redes Sociais</h1>
@@ -191,14 +203,9 @@ export default function Home() {
                   <h1 className='text-xl font-normal '>Análise de Risco de Crédito</h1>
                   <p className='text-sm'>Ferramentas: SAS, Machine Learning</p>
                   <p className='text-sm'>Resultado: Redução de 12% na inadimplência com modelo preditivo assertivo.</p>
-                </div>
+                </div>  
               </div>
-              <div>
-
-              </div>
-              <div>
-
-              </div>
+             
             </div>
           </div>
 
@@ -206,12 +213,8 @@ export default function Home() {
 
         </div>
 
-        <div className="flex justify-center items-center h-screen">
-      <PercentageChart percentage={75} />
-    </div>
 
 
-      </div>
     </main>
   );
 }
