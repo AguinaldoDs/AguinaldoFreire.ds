@@ -48,7 +48,7 @@ const LineChart = () => {
           text: 'Percentual',
         },
         min: 0, // Definir o mínimo da escala y como 0
-        max: 15, // Definir o máximo da escala y como 20
+        max: 20, // Definir o máximo da escala y como 20
       },
     },
     // Adicionando o plugin de renderização customizada para os pontos

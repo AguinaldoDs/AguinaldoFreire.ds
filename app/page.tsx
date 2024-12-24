@@ -19,7 +19,9 @@ import { HiOutlineNewspaper } from "react-icons/hi2";
 import { FaRegCalendarMinus } from "react-icons/fa6";
 
 //Components
-import PercentageChart from './componentes/graphic/graphic';
+import PercentageChart from './componentes/graphic/line';
+
+import BarChart from './componentes/graphic/other';
 
 
 export default function Home() {
@@ -167,44 +169,95 @@ export default function Home() {
               </div>
 
               <div className='font-extralight space-y-4 mt-2 w-full'>
-                <div className='border-0.1 rounded-2xl p-6 border-gray-900
-                  cursor-pointer hover:bg-slate-900 transition-all'
-                onMouseEnter={()=>{handleSetGraphichView(5)}}
-                onMouseLeave={()=>{handleSetGraphichView(0)}}
-                  >
-                  <h1 className='text-xl font-normal '>Previsão de Vendas</h1>
-                  <p className='text-sm'>Ferramentas: Python, ARIMA, XGBoost</p>
-                  <p className='text-sm'>Resultado: Aumento de 15% na precisão das previsões, otimizando estoque e custos.</p>
+  <motion.div 
+    className='border-0.1 rounded-2xl p-6 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
+    onMouseEnter={() => { handleSetGraphichView(1) }}
+    onMouseLeave={() => { handleSetGraphichView(0) }}
+    initial={{ opacity: 0, scale: 0.95 }}  // Inicializa com um pequeno scale
+    animate={{ opacity: 1, scale: graphicView === 1 ? 1 : 0.95 }}  // Aumenta ou diminui o scale conforme a condição
+    transition={{ duration: 0.4, ease: "easeInOut" }}  // Transição suave
+  >
+    <h1 className='text-xl font-normal'>Previsão de Vendas</h1>
+    <p className='text-sm'>Ferramentas: Python, ARIMA, XGBoost</p>
+    <p className='text-sm'>Resultado: Aumento de 15% na precisão das previsões, otimizando estoque e custos.</p>
 
-                  {graphicView === 5 ? <PercentageChart percentage={75} /> : null}
+    {graphicView === 1 ?
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease: "easeIn" }}
+      >
+        <PercentageChart />
+      </motion.div>
+      : null}
+  </motion.div>
 
-                </div>
-                 <div className='border-0.1 rounded-2xl p-6 border-gray-900
-                  cursor-pointer hover:bg-slate-900 transition-all'>
-                  <h1 className='text-xl font-normal '>Segmentação de Mercado</h1>
-                  <p className='text-sm'>Ferramentas: SQL, R, K-Means</p>
-                  <p className='text-sm'>Resultado: Identificação de 4 novos segmentos, aumento de 20% na taxa de conversão.</p>
-                </div>
+  <motion.div 
+    className='border-0.1 rounded-2xl p-6 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
+    onMouseEnter={() => { handleSetGraphichView(2) }}
+    onMouseLeave={() => { handleSetGraphichView(0) }}
+    initial={{ opacity: 0, scale: 0.95 }}  // Inicializa com um pequeno scale
+    animate={{ opacity: 1, scale: graphicView === 2 ? 1 : 0.95 }}  // Aumenta ou diminui o scale conforme a condição
+    transition={{ duration: 0.4, ease: "easeInOut" }}  // Transição suave
+  >
+    <h1 className='text-xl font-normal'>Segmentação de Mercado</h1>
+    <p className='text-sm'>Ferramentas: SQL, R, K-Means</p>
+    <p className='text-sm'>Resultado: Identificação de 4 novos segmentos, aumento de 20% na taxa de conversão.</p>
 
-                <div className='border-0.1 rounded-2xl p-6 border-gray-900
-                  cursor-pointer hover:bg-slate-900 transition-all'>
-                  <h1 className='text-xl font-normal '>Análise de Sentimento em Redes Sociais</h1>
-                  <p className='text-sm'>Ferramentas: Python, NLP, TensorFlow</p>
-                  <p className='text-sm'>Resultado: Resposta rápida a crises de imagem, mitigando impactos negativos.</p>
-                </div>
-                <div className='border-0.1 rounded-2xl p-6 border-gray-900
-                  cursor-pointer hover:bg-slate-900 transition-all'>
-                  <h1 className='text-xl font-normal '>Otimização Logística com Big Data</h1>
-                  <p className='text-sm'>Ferramentas: Hadoop, Spark, SQL</p>
-                  <p className='text-sm'>Resultado: Redução de 25% nos custos logísticos, melhoria na entrega e eficiência.</p>
-                </div>
-                <div className='border-0.1 rounded-2xl p-6 border-gray-900
-                  cursor-pointer hover:bg-slate-900 transition-all'>
-                  <h1 className='text-xl font-normal '>Análise de Risco de Crédito</h1>
-                  <p className='text-sm'>Ferramentas: SAS, Machine Learning</p>
-                  <p className='text-sm'>Resultado: Redução de 12% na inadimplência com modelo preditivo assertivo.</p>
-                </div>  
-              </div>
+    {graphicView === 2 ?
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease: "easeIn" }}
+      >
+        <BarChart />
+      </motion.div>
+      : null}
+  </motion.div>
+
+  {/* Análise de Sentimento em Redes Sociais */}
+  <motion.div
+    className='border-0.1 rounded-2xl p-6 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
+    onMouseEnter={() => { handleSetGraphichView(6) }}
+    onMouseLeave={() => { handleSetGraphichView(0) }}
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={{ opacity: 1, scale: graphicView === 6 ? 1 : 0.95 }}
+    transition={{ duration: 0.6, ease: "easeInOut" }}
+  >
+    <h1 className='text-xl font-normal'>Análise de Sentimento em Redes Sociais</h1>
+    <p className='text-sm'>Ferramentas: Python, NLP, TensorFlow</p>
+    <p className='text-sm'>Resultado: Resposta rápida a crises de imagem, mitigando impactos negativos.</p>
+  </motion.div>
+
+  {/* Otimização Logística com Big Data */}
+  <motion.div
+    className='border-0.1 rounded-2xl p-6 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
+    onMouseEnter={() => { handleSetGraphichView(7) }}
+    onMouseLeave={() => { handleSetGraphichView(0) }}
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={{ opacity: 1, scale: graphicView === 7 ? 1 : 0.95 }}
+    transition={{ duration: 0.6, ease: "easeInOut" }}
+  >
+    <h1 className='text-xl font-normal'>Otimização Logística com Big Data</h1>
+    <p className='text-sm'>Ferramentas: Hadoop, Spark, SQL</p>
+    <p className='text-sm'>Resultado: Redução de 25% nos custos logísticos, melhoria na entrega e eficiência.</p>
+  </motion.div>
+
+  {/* Análise de Risco de Crédito */}
+  <motion.div
+    className='border-0.1 rounded-2xl p-6 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
+    onMouseEnter={() => { handleSetGraphichView(8) }}
+    onMouseLeave={() => { handleSetGraphichView(0) }}
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={{ opacity: 1, scale: graphicView === 8 ? 1 : 0.95 }}
+    transition={{ duration: 0.6, ease: "easeInOut" }}
+  >
+    <h1 className='text-xl font-normal'>Análise de Risco de Crédito</h1>
+    <p className='text-sm'>Ferramentas: SAS, Machine Learning</p>
+    <p className='text-sm'>Resultado: Redução de 12% na inadimplência com modelo preditivo assertivo.</p>
+  </motion.div>
+</div>
+
              
             </div>
           </div>
