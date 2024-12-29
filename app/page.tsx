@@ -40,9 +40,12 @@ export default function Home() {
 
   const [graphicView, setGraphicView] = useState(0)
   const handleSetGraphichView = (id: number) => {
-    setGraphicView(id)
-    console.log(id)
+    
+      setGraphicView(0);
+      setGraphicView(id);
+      console.log(id);
   }
+  
 
   const router = useRouter();
 
@@ -50,21 +53,6 @@ export default function Home() {
     router.push(`#${param}`);
   };
   
-  // useEffect(() => {
-  //   // Verifica se a URL tem um hash
-  //   if (window.location.hash) {
-  //     const element = document.querySelector(window.location.hash);
-  //     if (element) {
-  //       // Realiza o scroll até o elemento encontrado
-  //       window.scrollTo({
-  //         top: element.offsetTop,
-  //         behavior: 'smooth',  // Faz o scroll de forma suave
-  //       });
-  //     }
-  //   }
-  // }, [router.asPath]);
-
-
 
   return (
     <main className="flex w-full h-full justify-center
@@ -224,12 +212,12 @@ export default function Home() {
               Ultimos Trabalhos
             </div>
 
-            <div className='font-extralight space-y-4 mt-2 w-full'>
+            <div className='font-extralight space-y-4 mt-2 w-full'
+            onMouseLeave={() => { handleSetGraphichView(0) }}>
               <motion.div
-                className='border-0.1 rounded-2xl p-6 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
+                className='border-0.1 rounded-2xl p-6 pb-20 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
                 onMouseEnter={() => { handleSetGraphichView(1) }}
-                onMouseLeave={() => { handleSetGraphichView(0) }}
-                initial={{ opacity: 0, scale: 1 }}  // Inicializa com um pequeno scale
+                initial={{ opacity: 0, scale: 0.1 }}  // Inicializa com um pequeno scale
                 animate={{ opacity: 1, scale: graphicView === 1 ? 1.05 : 1 }}  // Aumenta ou diminui o scale conforme a condição
                 transition={{ duration: 0.4, ease: "easeInOut" }}  // Transição suave
               >
@@ -239,8 +227,8 @@ export default function Home() {
 
                 {graphicView === 1 ? (
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0}}
+                    animate={{ opacity: 1}}
                     transition={{ duration: 1, ease: "easeIn" }}
                   >
                     <PercentageChart />
@@ -248,9 +236,8 @@ export default function Home() {
               </motion.div>
 
               <motion.div
-                className='border-0.1 rounded-2xl p-6 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
+                className='border-0.1 rounded-2xl p-6 pb-20 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
                 onMouseEnter={() => { handleSetGraphichView(2) }}
-                onMouseLeave={() => { handleSetGraphichView(0) }}
                 initial={{ opacity: 0, scale: 1 }}  // Inicializa com um pequeno scale
                 animate={{ opacity: 1, scale: graphicView === 2 ? 1.05 : 1 }}   // Aumenta ou diminui o scale conforme a condição
                 transition={{ duration: 0.4, ease: "easeInOut" }}  // Transição suave
@@ -271,9 +258,8 @@ export default function Home() {
 
               {/* Análise de Sentimento em Redes Sociais */}
               <motion.div
-                className='border-0.1 rounded-2xl p-6 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
+                className='border-0.1 rounded-2xl p-6 pb-20 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
                 onMouseEnter={() => { handleSetGraphichView(3) }}
-                onMouseLeave={() => { handleSetGraphichView(0) }}
                 initial={{ opacity: 0, scale: 1 }}
                 animate={{ opacity: 1, scale: graphicView === 3 ? 1.05 : 1 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
@@ -293,9 +279,8 @@ export default function Home() {
 
               {/* Otimização Logística com Big Data */}
               <motion.div
-                className='border-0.1 rounded-2xl p-6 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
+                className='border-0.1 rounded-2xl p-6 pb-20 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
                 onMouseEnter={() => { handleSetGraphichView(4) }}
-                onMouseLeave={() => { handleSetGraphichView(0) }}
                 initial={{ opacity: 0, scale: 1 }}
                 animate={{ opacity: 1, scale: graphicView === 4 ? 1.05 : 1 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
@@ -316,9 +301,8 @@ export default function Home() {
 
               {/* Análise de Risco de Crédito */}
               <motion.div
-                className='border-0.1 rounded-2xl p-6 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
+                className='border-0.1 rounded-2xl p-6 pb-20 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
                 onMouseEnter={() => { handleSetGraphichView(5) }}
-                onMouseLeave={() => { handleSetGraphichView(0) }}
                 initial={{ opacity: 0, scale: 1 }}
                 animate={{ opacity: 1, scale: graphicView === 5 ? 1.05 : 1 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}

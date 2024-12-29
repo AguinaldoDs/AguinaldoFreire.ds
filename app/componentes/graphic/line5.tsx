@@ -52,7 +52,8 @@ const LineChart_5 = () => {
 
   return (
     <div className="flex flex-col items-center transition-all duration-1000">
-    <motion.div style={{ width: '400px', height: '200px' }}>
+    <motion.div style={{ width: '400px', height: '200px' }}
+     initial={{scale:0.1,}}>
       <Line data={data} options={options} />
     </motion.div>
   </div>
