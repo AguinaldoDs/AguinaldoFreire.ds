@@ -1,9 +1,6 @@
-'use client'
-
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend, Title } from 'chart.js';
-import { motion } from 'framer-motion'
 
 // Registrar os elementos necessários para o gráfico de linhas
 ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend, Title);
@@ -11,15 +8,15 @@ ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip,
 const LineChart = () => {
   // Configuração dos dados para o gráfico de linhas
   const data = {
-    labels: ['2022', '2023', '2024'], // Labels para os pontos do gráfico
+    labels: ['2020', '2021', '2022', '2023', '2024'], // Labels para os pontos do gráfico
     datasets: [
       {
-        label: 'Percentual', // Nome da linha
-        data: [5, 7.5, 15], // Os valores desejados para o gráfico
+        label: 'Mitigação de Impactos Negativos (%)', // Nome da linha
+        data: [20, 40, 60, 75, 90], // Os valores fictícios para o gráfico
         borderColor: '#1ca39e', // Cor da linha
         backgroundColor: '#1ca39e', // Cor de fundo da linha (transparente)
         borderWidth: 1, // Largura da linha
-        tension: 0.9, // Curvatura da linha (0 é linha reta)
+        tension: 0.4, // Curvatura da linha (0 é linha reta)
       },
     ],
   };
@@ -30,12 +27,6 @@ const LineChart = () => {
     plugins: {
       tooltip: {
         enabled: true, // Habilita o tooltip (se quiser desabilitar, mude para false)
-      },
-      // Custom plugin para desenhar os valores acima de cada ponto
-      annotation: {
-        annotations: {
-          // Você pode adicionar uma linha, caixa, ou outras formas, mas vamos focar no texto
-        },
       },
     },
     scales: {
@@ -48,10 +39,10 @@ const LineChart = () => {
       y: {
         title: {
           display: true,
-          text: 'Percentual',
+          text: 'Percentual de Mitigação',
         },
         min: 0, // Definir o mínimo da escala y como 0
-        max: 20, // Definir o máximo da escala y como 20
+        max: 100, // Definir o máximo da escala y como 100
       },
     },
     // Adicionando o plugin de renderização customizada para os pontos
@@ -72,9 +63,9 @@ const LineChart = () => {
 
   return (
     <div className="flex flex-col items-center transition-all duration-1000">
-      <motion.div style={{ width: '400px', height: '200px' }}>
+      <div style={{ width: '400px', height: '200px' }}>
         <Line data={data} options={options} />
-      </motion.div>
+      </div>
     </div>
   );
 };
