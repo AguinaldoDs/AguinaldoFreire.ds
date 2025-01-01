@@ -6,13 +6,38 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 // Registrar os elementos necessários para o gráfico de barras
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend, Title, ChartDataLabels);
 
-const BarChartWithInfo = () => {
+const BarChartWithInfo = ({ language }) => {
+  // Traduções de acordo com o idioma selecionado
+  const translations = {
+    pt: {
+      xAxisLabel: 'Informação',
+      yAxisLabel: 'Percentual',
+      datasetLabel: 'Taxa de Conversão (%)',
+      annotationText: 'Identificação de 4 novos segmentos',
+    },
+    en: {
+      xAxisLabel: 'Information',
+      yAxisLabel: 'Percentage',
+      datasetLabel: 'Conversion Rate (%)',
+      annotationText: 'Identification of 4 new segments',
+    },
+    es: {
+      xAxisLabel: 'Información',
+      yAxisLabel: 'Porcentaje',
+      datasetLabel: 'Tasa de Conversión (%)',
+      annotationText: 'Identificación de 4 nuevos segmentos',
+    },
+  };
+
+  // Seleciona a tradução com base no idioma fornecido
+  const t = translations[language] || translations['pt']; // Padrão é português
+
   // Configuração dos dados para o gráfico de barras
   const data = {
-    labels: ['Segmentos Identificados'], // Nome do eixo X
+    labels: [t.xAxisLabel], // Nome do eixo X, traduzido
     datasets: [
       {
-        label: 'Taxa de Conversão (%)', // Nome da barra
+        label: t.datasetLabel, // Nome da barra, traduzido
         data: [20], // O valor da taxa de conversão
         backgroundColor: '#1ca39e', // Cor das barras
         borderColor: '#1ca39e', // Cor da borda das barras
@@ -34,10 +59,10 @@ const BarChartWithInfo = () => {
         annotations: {
           segmentInfo: {
             type: 'label',
-            xValue: 'Segmentos Identificados',
+            xValue: t.xAxisLabel, // Texto da anotação (traduzido)
             yValue: 20,
             backgroundColor: 'rgba(0,0,0,0)',
-            content: 'Identificação de 4 novos segmentos', // Texto de anotação
+            content: t.annotationText, // Texto de anotação (traduzido)
             font: {
               size: 14,
               weight: 'bold',
@@ -54,16 +79,16 @@ const BarChartWithInfo = () => {
       x: {
         title: {
           display: true,
-          text: 'Informação',
+          text: t.xAxisLabel, // Título do eixo X, traduzido
         },
       },
       y: {
         title: {
           display: true,
-          text: 'Percentual',
+          text: t.yAxisLabel, // Título do eixo Y, traduzido
         },
-        min: 0, // Definir o mínimo da escala y como 0
-        max: 25, // Definir o máximo da escala y como 25
+        min: 0, // Definir o mínimo da escala Y como 0
+        max: 25, // Definir o máximo da escala Y como 25
       },
     },
     // Exibir a taxa de conversão acima da barra

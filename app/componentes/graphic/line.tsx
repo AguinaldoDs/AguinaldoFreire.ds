@@ -8,13 +8,38 @@ import { motion } from 'framer-motion'
 // Registrar os elementos necessários para o gráfico de linhas
 ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend, Title);
 
-const LineChart = () => {
+const LineChart = ({ language }) => {
+  // Traduções de acordo com o idioma selecionado
+  const translations = {
+    pt: {
+      xAxisLabel: 'Anos',
+      yAxisLabel: 'Percentual',
+      datasetLabel: 'Percentual',
+      tooltip: 'Clique para mais detalhes',
+    },
+    en: {
+      xAxisLabel: 'Years',
+      yAxisLabel: 'Percentage',
+      datasetLabel: 'Percentage',
+      tooltip: 'Click for more details',
+    },
+    es: {
+      xAxisLabel: 'Años',
+      yAxisLabel: 'Porcentaje',
+      datasetLabel: 'Porcentaje',
+      tooltip: 'Haz clic para más detalles',
+    },
+  };
+
+  // Definir os textos com base no idioma selecionado
+  const t = translations[language] || translations['pt']; // Default para português se o idioma não for encontrado
+
   // Configuração dos dados para o gráfico de linhas
   const data = {
     labels: ['2022', '2023', '2024'], // Labels para os pontos do gráfico
     datasets: [
       {
-        label: 'Percentual', // Nome da linha
+        label: t.datasetLabel, // Nome da linha, traduzido
         data: [5, 7.5, 15], // Os valores desejados para o gráfico
         borderColor: '#1ca39e', // Cor da linha
         backgroundColor: '#1ca39e', // Cor de fundo da linha (transparente)
@@ -30,11 +55,10 @@ const LineChart = () => {
     plugins: {
       tooltip: {
         enabled: true, // Habilita o tooltip (se quiser desabilitar, mude para false)
-      },
-      // Custom plugin para desenhar os valores acima de cada ponto
-      annotation: {
-        annotations: {
-          // Você pode adicionar uma linha, caixa, ou outras formas, mas vamos focar no texto
+        callbacks: {
+          label: function (tooltipItem) {
+            return `${tooltipItem.raw}%`; // Exibe o valor com percentual no tooltip
+          },
         },
       },
     },
@@ -42,19 +66,18 @@ const LineChart = () => {
       x: {
         title: {
           display: true,
-          text: 'Anos',
+          text: t.xAxisLabel, // Título do eixo X, traduzido
         },
       },
       y: {
         title: {
           display: true,
-          text: 'Percentual',
+          text: t.yAxisLabel, // Título do eixo Y, traduzido
         },
         min: 0, // Definir o mínimo da escala y como 0
         max: 20, // Definir o máximo da escala y como 20
       },
     },
-    // Adicionando o plugin de renderização customizada para os pontos
     plugins: {
       datalabels: {
         display: true,

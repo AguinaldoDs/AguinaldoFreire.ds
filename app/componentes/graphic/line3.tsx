@@ -5,13 +5,35 @@ import { Chart as ChartJS, LineElement, PointElement, CategoryScale, LinearScale
 // Registrar os elementos necessários para o gráfico de linhas
 ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend, Title);
 
-const LineChart = () => {
+const LineChart = ({ language }) => {
+  // Traduções de acordo com o idioma selecionado
+  const translations = {
+    pt: {
+      xAxisLabel: 'Anos',
+      yAxisLabel: 'Percentual de Mitigação',
+      datasetLabel: 'Mitigação de Impactos Negativos (%)',
+    },
+    en: {
+      xAxisLabel: 'Years',
+      yAxisLabel: 'Mitigation Percentage',
+      datasetLabel: 'Negative Impact Mitigation (%)',
+    },
+    es: {
+      xAxisLabel: 'Años',
+      yAxisLabel: 'Porcentaje de Mitigación',
+      datasetLabel: 'Mitigación de Impactos Negativos (%)',
+    },
+  };
+
+  // Selecionar as traduções com base no idioma fornecido
+  const t = translations[language] || translations['pt']; // Padrão é português
+
   // Configuração dos dados para o gráfico de linhas
   const data = {
     labels: ['2020', '2021', '2022', '2023', '2024'], // Labels para os pontos do gráfico
     datasets: [
       {
-        label: 'Mitigação de Impactos Negativos (%)', // Nome da linha
+        label: t.datasetLabel, // Nome da linha, traduzido
         data: [20, 40, 60, 75, 90], // Os valores fictícios para o gráfico
         borderColor: '#1ca39e', // Cor da linha
         backgroundColor: '#1ca39e', // Cor de fundo da linha (transparente)
@@ -33,19 +55,18 @@ const LineChart = () => {
       x: {
         title: {
           display: true,
-          text: 'Anos',
+          text: t.xAxisLabel, // Título do eixo X, traduzido
         },
       },
       y: {
         title: {
           display: true,
-          text: 'Percentual de Mitigação',
+          text: t.yAxisLabel, // Título do eixo Y, traduzido
         },
         min: 0, // Definir o mínimo da escala y como 0
         max: 100, // Definir o máximo da escala y como 100
       },
     },
-    // Adicionando o plugin de renderização customizada para os pontos
     plugins: {
       datalabels: {
         display: true,
