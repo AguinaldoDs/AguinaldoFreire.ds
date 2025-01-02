@@ -315,13 +315,10 @@ export default function Home() {
               <motion.div
                 className='border-0.1 rounded-2xl p-6 pb-20 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all'
                 onMouseEnter={() => { handleSetGraphichView(1) }}
-                initial={{ opacity: 0, scale: 0.1 }}  // Inicializa com um pequeno scale
-                animate={{ opacity: 1, scale: graphicView === 1 ? 1.05 : 1 }}  // Aumenta ou diminui o scale conforme a condição
-                transition={{ duration: 0.4, ease: "easeInOut" }}  // Transição suave
               >
                 {language === 'es' && (
                   <>
-                    <h1 className='flex text-xl font-normal gap-1'>Previsión de Ventas <GoGitMerge /></h1>
+                    <h1 className='flex text-xl font-normal gap-1'>Previsión de recuperación <GoGitMerge /></h1>
                     <p className='text-sm'>Herramientas: Python, ARIMA, XGBoost</p>
                     <p className='text-sm'>Resultado: Aumento del 15% en la precisión de las previsiones, optimizando inventarios y costos.</p>
                   </>
@@ -329,7 +326,7 @@ export default function Home() {
 
                 {language === 'en' && (
                   <>
-                    <h1 className='flex text-xl font-normal gap-1'>Sales Forecast <GoGitMerge /></h1>
+                    <h1 className='flex text-xl font-normal gap-1'>recovery Forecast <GoGitMerge /></h1>
                     <p className='text-sm'>Tools: Python, ARIMA, XGBoost</p>
                     <p className='text-sm'>Result: 15% increase in forecast accuracy, optimizing inventory and costs.</p>
                   </>
@@ -337,7 +334,7 @@ export default function Home() {
 
                 {language === 'pt' && (
                   <>
-                    <h1 className='flex text-xl font-normal gap-1'>Previsão de Vendas <GoGitMerge /></h1>
+                    <h1 className='flex text-xl font-normal gap-1'>Previsão de recuperação <GoGitMerge /></h1>
                     <p className='text-sm'>Ferramentas: Python, ARIMA, XGBoost</p>
                     <p className='text-sm'>Resultado: Aumento de 15% na precisão das previsões, otimizando estoque e custos.</p>
                   </>
@@ -424,7 +421,7 @@ export default function Home() {
                   <>
                     <h1 className='flex text-xl font-normal gap-1'>Análise de Sentimento em Redes Sociais <GoGitMerge /></h1>
                     <p className='text-sm'>Ferramentas: Python, NLP, TensorFlow</p>
-                    <p className='text-sm'>Resultado: Resposta rápida a crises de imagem, mitigando impactos negativos.</p>
+                    <p className='text-sm'>Resultado: Resposta rápida a crises de imagem, mitigando impactos negativos e ações judiciais.</p>
                   </>
                 )}
 
