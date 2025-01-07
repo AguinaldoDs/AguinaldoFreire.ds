@@ -52,6 +52,11 @@ export default function Home() {
   };
 
 
+  type Language = 'pt' | 'en' | 'es';
+  const validLanguages: Language[] = ['pt', 'en', 'es'];
+  const validatedLanguage = validLanguages.includes(language as Language) ? language as Language : 'pt';
+
+
   return (
     <main className="flex w-full h-full justify-center
                     bg-slate-950 text-slate-100 font-extralight">
