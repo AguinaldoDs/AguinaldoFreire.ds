@@ -109,19 +109,16 @@ export default function Home() {
           {menu && (
             <div className='flex w-20 rounded-lg mt-10 h-max py-1 flex-col justify-center items-center
              fixed right-0 bg-slate-900 px-1'>
-              <div className='cursor-pointer hover:bg-slate-950 w-full justify-center items-center flex
-              rounded-lg'
-              onClick={()=>{setLanguage('pt')}}> 
+              <div className='cursor-pointer hover:bg-slate-950 w-full justify-center items-center flex rounded-lg'
+                onClick={() => { setLanguage('pt') }}>
                 pt
               </div>
-              <div className='cursor-pointer hover:bg-slate-950 w-full justify-center items-center flex
-              rounded-lg'
-              onClick={()=>{setLanguage('es')}}> 
+              <div className='cursor-pointer hover:bg-slate-950 w-full justify-center items-center flex rounded-lg'
+                onClick={() => { setLanguage('es') }}>
                 es
               </div>
-              <div className='cursor-pointer hover:bg-slate-950 w-full justify-center items-center flex
-              rounded-lg'
-              onClick={()=>{setLanguage('en')}}> 
+              <div className='cursor-pointer hover:bg-slate-950 w-full justify-center items-center flex rounded-lg'
+                onClick={() => { setLanguage('en') }}>
                 en
               </div>
             </div>
@@ -168,27 +165,43 @@ export default function Home() {
           </div>
 
           <div className='flex w-full space-x-2 mt-8'>
-            <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 cursor-pointer p-2 rounded-full hover:bg-slate-900 transition text-sm">
-              <FaGithub className='w-6 h-6' />
-              <a
-                href="https://github.com/AguinaldoDs"
-                target="_blank"
-                rel="noopener noreferrer">
+            <a
+              href="https://github.com/AguinaldoDs"
+              target="_blank"
+              rel="noopener noreferrer">
+              <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 cursor-pointer p-2 rounded-full hover:bg-slate-900 transition text-sm">
+                <FaGithub className='w-6 h-6' />
                 <p>{language === 'en' ? 'GitHub' : language === 'es' ? 'GitHub' : 'GitHub'}</p>
+              </div>
+            </a>
+
+
+            <a
+              href={language === 'en' ? "https://drive.google.com/file/d/1YDuY7iGa3z8pKFGzLB2d9Dy0oGvYxNKQ/view?usp=sharing"
+                : language === 'pt' ? "https://drive.google.com/file/d/1BTzUikswR5MbD0w8vIUwIrlvg5DPp9BU/view?usp=sharing"
+                  : "https://drive.google.com/file/d/1ib26xQTM0g4PRkmvLSgCJpmPBqtevCSU/view?usp=sharing"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 cursor-pointer p-2 rounded-full hover:bg-slate-900 transition">
+                <HiOutlineNewspaper className="w-6 h-6" />
+                <p className="text-sm">
+                  {language === 'en' ? 'Resume' : language === 'pt' ? 'Resumo' : 'Resumen'}
+                </p>
+              </div>
+            </a>
+
+              <a
+                href={"https://calendly.com/aguinaldofreire-ds/30min"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 cursor-pointer p-2 rounded-full hover:bg-slate-900 transition">
+                  <FaRegCalendarMinus className='w-6 h-6' />
+                  <p className='text-sm'>{language === 'en' ? 'Agenda' : language === 'es' ? 'Agenda' : 'Agenda'}</p>
+                </div>
               </a>
-            </div>
-
-            <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 cursor-pointer p-2 rounded-full hover:bg-slate-900 transition">
-              <HiOutlineNewspaper className='w-6 h-6' />
-              <p className='text-sm'>{language === 'en' ? 'Resume' : language === 'es' ? 'Resumen' : 'Resumo'}</p>
-            </div>
-
-            <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 cursor-pointer p-2 rounded-full hover:bg-slate-900 transition">
-              <FaRegCalendarMinus className='w-6 h-6' />
-              <p className='text-sm'>{language === 'en' ? 'Agenda' : language === 'es' ? 'Agenda' : 'Agenda'}</p>
-            </div>
           </div>
-
 
 
 
