@@ -3,14 +3,27 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend, Title } from 'chart.js';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-// Registrar os elementos necessários para o gráfico de linhas
-ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend, Title);
+// Registrar os elementos necessários para o gráfico de linhas e o plugin de datalabels
+ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend, Title, ChartDataLabels);
 
-const LineChart_4 = ({ language }) => {
+type Language = 'pt' | 'en' | 'es';
+
+interface TranslationTexts {
+  xAxisLabel: string;
+  yAxisLabel: string;
+  datasetLabel: string;
+}
+
+interface LineChartProps {
+  language: Language;
+}
+
+const LineChart_4 = ({ language }: LineChartProps) => {
   // Traduções de acordo com o idioma selecionado
-  const translations = {
+  const translations: Record<Language, TranslationTexts> = {
     pt: {
       xAxisLabel: 'Ano',
       yAxisLabel: 'Percentual de Redução',
@@ -41,7 +54,7 @@ const LineChart_4 = ({ language }) => {
         borderColor: '#ff6347', // Cor da linha (laranja avermelhado)
         backgroundColor: 'rgba(255, 99, 71, 0.2)', // Cor de fundo suave (transparente)
         borderWidth: 2, // Largura da linha
-        tension: 0.4, // Curvatura da linha (moderada)
+        tension: 4, // Curvatura da linha (moderada)
       },
     ],
   };
@@ -52,6 +65,17 @@ const LineChart_4 = ({ language }) => {
     plugins: {
       tooltip: {
         enabled: true, // Habilita o tooltip (se quiser desabilitar, mude para false)
+      },
+      datalabels: {
+        display: true,
+        color: '#ff6347', // Cor do texto
+        font: {
+          weight: 'bold' as const, // Certifique-se de que 'bold' seja considerado um valor constante
+          size: 12,
+        },
+        anchor: 'end' as const, // Posição do texto em relação ao ponto
+        align: 'top' as const,  // Alinhar o texto acima do ponto
+        formatter: (value: number) => `${value}%`, // Formatar o valor como percentual
       },
     },
     scales: {

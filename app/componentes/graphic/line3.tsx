@@ -1,13 +1,29 @@
+'use client'
+
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend, Title } from 'chart.js';
+import { motion } from 'framer-motion';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-// Registrar os elementos necessários para o gráfico de linhas
-ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend, Title);
+// Registrar os elementos necessários para o gráfico de linhas e o plugin de datalabels
+ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend, Title, ChartDataLabels);
 
-const LineChart = ({ language }) => {
+type Language = 'pt' | 'en' | 'es';
+
+interface TranslationTexts {
+  xAxisLabel: string;
+  yAxisLabel: string;
+  datasetLabel: string;
+}
+
+interface LineChartProps {
+  language: Language;
+}
+
+const LineChart = ({ language }: LineChartProps) => {
   // Traduções de acordo com o idioma selecionado
-  const translations = {
+  const translations: Record<Language, TranslationTexts> = {
     pt: {
       xAxisLabel: 'Anos',
       yAxisLabel: 'Percentual de Mitigação',
@@ -50,6 +66,17 @@ const LineChart = ({ language }) => {
       tooltip: {
         enabled: true, // Habilita o tooltip (se quiser desabilitar, mude para false)
       },
+      datalabels: {
+        display: true,
+        color: '#1ca39e', // Cor do texto
+        font: {
+          weight: 'bold' as const, // Certifique-se de que 'bold' seja considerado um valor constante
+          size: 12,
+        },
+        anchor: 'end' as const, // Posição do texto em relação ao ponto
+        align: 'top' as const,  // Alinhar o texto acima do ponto
+        formatter: (value: number) => `${value}%`, // Formatar o valor como percentual
+      },
     },
     scales: {
       x: {
@@ -67,26 +94,13 @@ const LineChart = ({ language }) => {
         max: 100, // Definir o máximo da escala y como 100
       },
     },
-    plugins: {
-      datalabels: {
-        display: true,
-        color: '#1ca39e', // Cor do texto
-        font: {
-          weight: 'bold',
-          size: 12,
-        },
-        anchor: 'end', // Posição do texto em relação ao ponto
-        align: 'top',  // Alinhar o texto acima do ponto
-        formatter: (value) => `${value}%`, // Formatar o valor como percentual
-      },
-    },
   };
 
   return (
     <div className="flex flex-col items-center transition-all duration-1000">
-      <div style={{ width: '400px', height: '200px' }}>
+      <motion.div style={{ width: '400px', height: '200px' }}>
         <Line data={data} options={options} />
-      </div>
+      </motion.div>
     </div>
   );
 };

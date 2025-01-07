@@ -1,14 +1,29 @@
+'use client'
+
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend, Title } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-// Registrar os elementos necessários para o gráfico de barras
+// Registrar os elementos necessários para o gráfico de barras e o plugin de datalabels
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend, Title, ChartDataLabels);
 
-const BarChartWithInfo = ({ language }) => {
+type Language = 'pt' | 'en' | 'es';
+
+interface TranslationTexts {
+  xAxisLabel: string;
+  yAxisLabel: string;
+  datasetLabel: string;
+  annotationText: string;
+}
+
+interface BarChartWithInfoProps {
+  language: Language;
+}
+
+const BarChartWithInfo = ({ language }: BarChartWithInfoProps) => {
   // Traduções de acordo com o idioma selecionado
-  const translations = {
+  const translations: Record<Language, TranslationTexts> = {
     pt: {
       xAxisLabel: 'Informação',
       yAxisLabel: 'Percentual',
@@ -54,7 +69,17 @@ const BarChartWithInfo = ({ language }) => {
       tooltip: {
         enabled: true, // Habilita o tooltip
       },
-      // Anotação para mostrar informações extras
+      datalabels: {
+        display: true,
+        color: '#ffffff', // Cor do texto
+        font: {
+          weight: 'bold' as const, // Certifique-se de que 'bold' seja considerado um valor constante
+          size: 14,
+        },
+        anchor: 'end' as const, // Posição do texto em relação à barra
+        align: 'top' as const, // Alinhar o texto acima da barra
+        formatter: (value: number) => `${value}%`, // Formatar o valor como percentual
+      },
       annotation: {
         annotations: {
           segmentInfo: {
@@ -65,7 +90,7 @@ const BarChartWithInfo = ({ language }) => {
             content: t.annotationText, // Texto de anotação (traduzido)
             font: {
               size: 14,
-              weight: 'bold',
+              weight: 'bold' as const,
               family: 'Arial',
               color: '#1ca39e',
             },
@@ -89,20 +114,6 @@ const BarChartWithInfo = ({ language }) => {
         },
         min: 0, // Definir o mínimo da escala Y como 0
         max: 25, // Definir o máximo da escala Y como 25
-      },
-    },
-    // Exibir a taxa de conversão acima da barra
-    plugins: {
-      datalabels: {
-        display: true,
-        color: '#ffffff', // Cor do texto
-        font: {
-          weight: 'bold',
-          size: 14,
-        },
-        anchor: 'end', // Posição do texto em relação à barra
-        align: 'top', // Alinhar o texto acima da barra
-        formatter: (value) => `${value}%`, // Formatar o valor como percentual
       },
     },
   };

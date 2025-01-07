@@ -1,3 +1,5 @@
+'use client'
+
 import { 
   FaPython, FaDatabase, FaChartBar, FaCloud, FaGithub, FaRobot, FaBrain, FaCog, 
   FaCloudUploadAlt, FaUsers, FaSearch, FaFilter, FaTasks, FaTable, FaTrello, 
@@ -5,9 +7,42 @@ import {
   FaDocker, FaServer, FaAws, FaCloudSun, FaTools
 } from 'react-icons/fa';
 
-export default function An1({ language }) {
+type Language = 'pt' | 'en' | 'es';
+
+interface Labels {
+  Python: string;
+  BancoDeDados: string;
+  GraficoDeBarras: string;
+  Nuvem: string;
+  GitHub: string;
+  Robo: string;
+  Cerebro: string;
+  Ferramentas: string;
+  UploadParaNuvem: string;
+  Equipe: string;
+  Pesquisa: string;
+  Filtro: string;
+  Tarefas: string;
+  Tabela: string;
+  Trello: string;
+  Relatorio: string;
+  Informacao: string;
+  BranchDeCodigo: string;
+  MovimentoDeDados: string;
+  Docker: string;
+  Servidor: string;
+  AWS: string;
+  InfraestruturaNaNuvem: string;
+  FerramentasDeInfraestrutura: string;
+}
+
+interface An1Props {
+  language: Language;
+}
+
+export default function An1({ language }: An1Props) {
   // Mapeamento de labels por idioma
-  const labels = {
+  const labels: Record<Language, Labels> = {
     pt: {
       Python: "Python",
       BancoDeDados: "Banco de Dados",
