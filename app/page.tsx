@@ -30,7 +30,18 @@ import LineChart_4 from "./componentes/graphic/line4";
 
 export default function Home() {
   // States
-  const [language, setLanguage] = useState("pt");
+  type Language = "en" | "es" | "pt";
+  const [language, setLanguage] = useState<Language>("pt");  // Agora 'language' é do tipo 'Language'
+
+
+  const handleLanguageChange = (param: string) => {
+    if (param === "en" || param === "es" || param === "pt") {
+      setLanguage(param);  // Agora estamos verificando se 'param' é um valor válido antes de passá-lo
+    } else {
+      console.warn("Idioma inválido");
+    }
+  };
+
   const [menu, setMenu] = useState(false);
   const handleSetMenu = () => {
     setMenu(!menu);
@@ -50,12 +61,6 @@ export default function Home() {
   const handleScroll = (param: string) => {
     router.push(`#${param}`);
   };
-
-
-  type Language = 'pt' | 'en' | 'es';
-  const validLanguages: Language[] = ['pt', 'en', 'es'];
-  const validatedLanguage = validLanguages.includes(language as Language) ? language as Language : 'pt';
-
 
   return (
     <main className="flex w-full h-full justify-center
@@ -115,15 +120,15 @@ export default function Home() {
             <div className="flex w-20 rounded-lg mt-10 h-max py-1 flex-col justify-center items-center
              fixed right-0 bg-slate-900 px-1">
               <div className="cursor-pointer hover:bg-slate-950 w-full justify-center items-center flex rounded-lg"
-                onClick={() => { setLanguage("pt") }}>
+                onClick={() => { handleLanguageChange("pt") }}>
                 pt
               </div>
               <div className="cursor-pointer hover:bg-slate-950 w-full justify-center items-center flex rounded-lg"
-                onClick={() => { setLanguage("es") }}>
+                onClick={() => { handleLanguageChange("es") }}>
                 es
               </div>
               <div className="cursor-pointer hover:bg-slate-950 w-full justify-center items-center flex rounded-lg"
-                onClick={() => { setLanguage("en") }}>
+                onClick={() => { handleLanguageChange("en") }}>
                 en
               </div>
             </div>
@@ -196,16 +201,16 @@ export default function Home() {
               </div>
             </a>
 
-              <a
-                href={"https://calendly.com/aguinaldofreire-ds/30min"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 cursor-pointer p-2 rounded-full hover:bg-slate-900 transition">
-                  <FaRegCalendarMinus className="w-6 h-6" />
-                  <p className="text-sm">{language === "en" ? "Agenda" : language === "es" ? "Agenda" : "Agenda"}</p>
-                </div>
-              </a>
+            <a
+              href={"https://calendly.com/aguinaldofreire-ds/30min"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 cursor-pointer p-2 rounded-full hover:bg-slate-900 transition">
+                <FaRegCalendarMinus className="w-6 h-6" />
+                <p className="text-sm">{language === "en" ? "Agenda" : language === "es" ? "Agenda" : "Agenda"}</p>
+              </div>
+            </a>
           </div>
 
 
@@ -567,11 +572,8 @@ export default function Home() {
               Construído por Aguinaldo Freire • Feito com Next.js, TypeScript, Shadcn UI (Tailwind CSS) • Deployed em Vercel.
             </div>
           )}
-
         </div>
-
       </div>
-
     </main>
   );
 }

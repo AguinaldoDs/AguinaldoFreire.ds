@@ -7,7 +7,7 @@ import {
   FaDocker, FaServer, FaAws, FaCloudSun, FaTools
 } from 'react-icons/fa';
 
-type Language = 'pt' | 'en' | 'es';
+type Language = "en" | "es" | "pt";
 
 interface Labels {
   Python: string;
