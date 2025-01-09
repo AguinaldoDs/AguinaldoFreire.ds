@@ -139,11 +139,12 @@ export default function Home() {
 
 
       {/* bem bolado aqui */}
-      <div className="flex flex-col md:flex-row justify-center max-w-[1280px] py-5 select-none text-slate-200">
+      <div className="flex flex-col md:flex-row justify-center max-w-[1280px]
+       select-none px-3 text-slate-200">
 
 
         <div className="flex justify-center flex-col h-max rounded-xl px-7 py-3 top-32 mt-32 border-0.1
-                   border-gray-900 text-slate-300 w-full md:w-96">
+                   border-gray-900 text-slate-300 w-full md:w-96 sm:w-[80%]">
           <h1 className="font-medium text-xl">Aguinaldo Freire</h1>
           <div className="mt-5 space-y-3">
 
