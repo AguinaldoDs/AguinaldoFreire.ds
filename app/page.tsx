@@ -72,20 +72,21 @@ export default function Home() {
 
 
       <div className=" mt-5 fixed flex w-[90%] max-w-[1280px] h-max rounded-md p-3 border border-gray-900 
-                        justify-between backdrop-blur-md bg-opacity-70 z-50">
+                        justify-center sm:justify-between space-x-2 backdrop-blur-md bg-opacity-70 z-50 ">
 
         <a
           href="https://www.instagram.com/jnr.1914/"
           target="_blank"
-          rel="noopener noreferrer" >
-          <div className="flex justify-center items-center space-x-1 px-6 py-1 rounded-md
-                          text-2xl bg-slate-800 font-semibold cursor-pointer ">
+          rel="noopener noreferrer"
+          className="" >
+          <div className="flex justify-center items-center py-1 rounded-md
+                          text-2xl bg-slate-800 font-semibold cursor-pointer px-2 ">
             @jnr.1914
           </div>
         </a>
 
 
-        <div className="flex space-x-3 font-semibold text-1xl select-none">
+        <div className="flex font-semibold text-1xl select-none space-x-2">
           <div className="flex justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 rounded-md
                     cursor-pointer hover:bg-slate-900 transition"
             onClick={() => { handleScroll("home") }}>
@@ -107,7 +108,7 @@ export default function Home() {
             <p className="hidden sm:block">{language === "en" ? "Contact" : language === "es" ? "Contacto" : "Contato"}</p>
           </div>
 
-          <div className="flex justify-center items-center space-x-1 px-4 rounded-md
+          <div className="flex justify-center items-center rounded-md
                     cursor-pointer" onClick={handleSetMenu}>
             <motion.div
               animate={{ rotate: menu ? 90 : 0 }}
