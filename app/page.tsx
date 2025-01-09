@@ -89,21 +89,21 @@ export default function Home() {
         <div className="flex font-semibold text-1xl select-none space-x-2">
           <div className="flex justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 rounded-md
                     cursor-pointer hover:bg-slate-900 transition"
-            onClick={() => { handleScroll("home") }}>
+            onClick={() => { handleScroll("home")}}>
             <GoHome className="h-6 w-6" />
             <p className="hidden sm:block">{language === "en" ? "Home" : language === "es" ? "Inicio" : "Home"}</p>
           </div>
 
           <div className="flex justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 rounded-md
                     cursor-pointer hover:bg-slate-900 transition"
-            onClick={() => { handleScroll("projetos") }}>
+            onClick={() => { handleScroll("projetos")}}>
             <PiProjectorScreenLight className="h-6 w-6" />
             <p className="hidden sm:block">{language === "en" ? "Projects" : language === "es" ? "Proyectos" : "Projetos"}</p>
           </div>
 
           <div className="flex justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 rounded-md
                     cursor-pointer hover:bg-slate-900 transition"
-            onClick={() => { handleScroll("contato") }}>
+            onClick={() => { handleScroll("contato")}}>
             <MdOutlineMarkEmailUnread className="h-6 w-6" />
             <p className="hidden sm:block">{language === "en" ? "Contact" : language === "es" ? "Contacto" : "Contato"}</p>
           </div>
@@ -140,7 +140,7 @@ export default function Home() {
 
       {/* bem bolado aqui */}
       <div className="flex flex-col md:flex-row justify-center max-w-[1280px]
-       select-none px-3 text-slate-200">
+       select-none  text-slate-200">
 
 
         <div className="flex justify-center flex-col h-max rounded-xl px-7 py-3 top-32 mt-32 border-0.1
