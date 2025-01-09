@@ -90,21 +90,21 @@ export default function Home() {
                     cursor-pointer hover:bg-slate-900 transition"
             onClick={() => { handleScroll("home") }}>
             <GoHome className="h-6 w-6" />
-            <p>{language === "en" ? "Home" : language === "es" ? "Inicio" : "Home"}</p>
+            <p className="hidden sm:block">{language === "en" ? "Home" : language === "es" ? "Inicio" : "Home"}</p>
           </div>
 
           <div className="flex justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 rounded-md
                     cursor-pointer hover:bg-slate-900 transition"
             onClick={() => { handleScroll("projetos") }}>
             <PiProjectorScreenLight className="h-6 w-6" />
-            <p>{language === "en" ? "Projects" : language === "es" ? "Proyectos" : "Projetos"}</p>
+            <p className="hidden sm:block">{language === "en" ? "Projects" : language === "es" ? "Proyectos" : "Projetos"}</p>
           </div>
 
           <div className="flex justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 rounded-md
                     cursor-pointer hover:bg-slate-900 transition"
             onClick={() => { handleScroll("contato") }}>
             <MdOutlineMarkEmailUnread className="h-6 w-6" />
-            <p>{language === "en" ? "Contact" : language === "es" ? "Contacto" : "Contato"}</p>
+            <p className="hidden sm:block">{language === "en" ? "Contact" : language === "es" ? "Contacto" : "Contato"}</p>
           </div>
 
           <div className="flex justify-center items-center space-x-1 px-4 rounded-md
@@ -138,8 +138,11 @@ export default function Home() {
 
 
       {/* bem bolado aqui */}
-      <div className="flex justify-center max-w-[1280px] py-5 select-none text-slate-200">
-        <div className="flex justify-center flex-col w-[400px] h-max rounded-xl px-7 py-3 sticky top-32 mt-32 border-0.1 border-gray-900 text-slate-300">
+      <div className="flex flex-col md:flex-row justify-center max-w-[1280px] py-5 select-none text-slate-200">
+
+
+        <div className="flex justify-center flex-col h-max rounded-xl px-7 py-3 top-32 mt-32 border-0.1
+                   border-gray-900 text-slate-300 w-full md:w-96">
           <h1 className="font-medium text-xl">Aguinaldo Freire</h1>
           <div className="mt-5 space-y-3">
 
@@ -174,11 +177,12 @@ export default function Home() {
             )}
           </div>
 
-          <div className="flex w-full space-x-2 mt-8">
+          <div className="flex w-full justify-evenly space-x-2 mt-8">
             <a
               href="https://github.com/AguinaldoDs"
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+              className="w-full">
               <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 cursor-pointer p-2 rounded-full hover:bg-slate-900 transition text-sm">
                 <FaGithub className="w-6 h-6" />
                 <p>{language === "en" ? "GitHub" : language === "es" ? "GitHub" : "GitHub"}</p>
@@ -192,6 +196,7 @@ export default function Home() {
                   : "https://drive.google.com/file/d/1ib26xQTM0g4PRkmvLSgCJpmPBqtevCSU/view?usp=sharing"}
               target="_blank"
               rel="noopener noreferrer"
+              className="w-full"
             >
               <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 cursor-pointer p-2 rounded-full hover:bg-slate-900 transition">
                 <HiOutlineNewspaper className="w-6 h-6" />
@@ -205,6 +210,7 @@ export default function Home() {
               href={"https://calendly.com/aguinaldofreire-ds/30min"}
               target="_blank"
               rel="noopener noreferrer"
+              className="w-full"
             >
               <div className="flex w-full justify-center items-center space-x-1 border-0.1 border-gray-900 px-4 cursor-pointer p-2 rounded-full hover:bg-slate-900 transition">
                 <FaRegCalendarMinus className="w-6 h-6" />
@@ -212,12 +218,9 @@ export default function Home() {
               </div>
             </a>
           </div>
-
-
-
         </div>
 
-        <div className="flex flex-col px-3 mt-32 text-4xl font-thin ">
+        <div className="flex w-full flex-col px-3 mt-32 text-4xl font-thin ">
 
           {language === "es" && (
             <>
