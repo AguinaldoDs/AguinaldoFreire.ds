@@ -473,24 +473,24 @@ export default function Home() {
                 {language === "es" && (
                   <>
                     <h1 className="flex text-xl font-normal gap-1">Optimización Logística con Big Data <GoGitMerge /></h1>
-                    <p className="text-sm">Herramientas: Hadoop, Spark, SQL</p>
-                    <p className="text-sm">Resultado: Reducción del 25% en los costos logísticos, mejora en la entrega y eficiencia.</p>
+                    <p className="text-sm">Herramientas: Hadoop, Spark, SQL, PyWin32</p>
+                    <p className="text-sm">Resultado: Reducción en los costos logísticos, mejora en la entrega y eficiencia.</p>
                   </>
                 )}
 
                 {language === "en" && (
                   <>
                     <h1 className="flex text-xl font-normal gap-1">Logistics Optimization with Big Data <GoGitMerge /></h1>
-                    <p className="text-sm">Tools: Hadoop, Spark, SQL</p>
-                    <p className="text-sm">Result: 25% reduction in logistics costs, improvement in delivery and efficiency.</p>
+                    <p className="text-sm">Tools: Hadoop, Spark, SQL, PyWin32</p>
+                    <p className="text-sm">Result: Reduction in logistics costs, improvement in delivery and efficiency.</p>
                   </>
                 )}
 
                 {language === "pt" && (
                   <>
                     <h1 className="flex text-xl font-normal gap-1">Otimização Logística com Big Data <GoGitMerge /></h1>
-                    <p className="text-sm">Ferramentas: Hadoop, Spark, SQL</p>
-                    <p className="text-sm">Resultado: Redução de 25% nos custos logísticos, melhoria na entrega e eficiência.</p>
+                    <p className="text-sm">Ferramentas: Hadoop, Spark, SQL, PyWin32</p>
+                    <p className="text-sm">Resultado: Redução nos custos e tempo de logísticos, melhoria na entrega e eficiência.</p>
                   </>
                 )}
 
@@ -544,8 +544,7 @@ export default function Home() {
 
             {language === "pt" && (
               <div
-                className="border-0.1 rounded-2xl p-6 border-gray-900 hover:bg-slate-900
-    text-sm flex"
+                className="border-0.1 rounded-2xl p-6 border-gray-900 hover:bg-slate-900 text-sm flex"
                 id="contato">
                 A melhor maneira de entrar em contato comigo é através:
                 <a

@@ -1,13 +1,13 @@
 'use client'
 
 import React from 'react';
-import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend, Title } from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend, Title } from 'chart.js';
 import { motion } from 'framer-motion';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-// Registrar os elementos necessários para o gráfico de linhas e o plugin de datalabels
-ChartJS.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend, Title, ChartDataLabels);
+// Registrar os elementos necessários para o gráfico de barras e o plugin de datalabels
+ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend, Title, ChartDataLabels);
 
 type Language = 'pt' | 'en' | 'es';
 
@@ -17,11 +17,11 @@ interface TranslationTexts {
   datasetLabel: string;
 }
 
-interface LineChartProps {
+interface BarChartProps {
   language: Language;
 }
 
-const LineChart_4 = ({ language }: LineChartProps) => {
+const BarChart_4 = ({ language }: BarChartProps) => {
   // Traduções de acordo com o idioma selecionado
   const translations: Record<Language, TranslationTexts> = {
     pt: {
@@ -49,12 +49,11 @@ const LineChart_4 = ({ language }: LineChartProps) => {
     labels: ['2022', '2023', '2024'], // Labels para os anos
     datasets: [
       {
-        label: t.datasetLabel, // Nome da linha, traduzido
-        data: [0, -5, -25], // A redução de custos: 0%, -5% e -25% ao longo do tempo
-        borderColor: '#ff6347', // Cor da linha (laranja avermelhado)
-        backgroundColor: 'rgba(255, 99, 71, 0.2)', // Cor de fundo suave (transparente)
-        borderWidth: 2, // Largura da linha
-        tension: 4, // Curvatura da linha (moderada)
+        label: t.datasetLabel, // Nome da barra, traduzido
+        data: [23, 20, 2], // A redução de custos: 0%, -5% e -25% ao longo do tempo
+        backgroundColor: '#ff6347', // Cor das barras
+        borderColor: '#ff6347', // Cor da borda da barra
+        borderWidth: 1, // Largura da borda
       },
     ],
   };
@@ -73,8 +72,8 @@ const LineChart_4 = ({ language }: LineChartProps) => {
           weight: 'bold' as const, // Certifique-se de que 'bold' seja considerado um valor constante
           size: 12,
         },
-        anchor: 'end' as const, // Posição do texto em relação ao ponto
-        align: 'top' as const,  // Alinhar o texto acima do ponto
+        anchor: 'end' as const, // Posição do texto em relação à barra
+        align: 'top' as const,  // Alinhar o texto acima da barra
         formatter: (value: number) => `${value}%`, // Formatar o valor como percentual
       },
     },
@@ -90,19 +89,19 @@ const LineChart_4 = ({ language }: LineChartProps) => {
           display: true,
           text: t.yAxisLabel, // Título do eixo Y, traduzido
         },
-        min: -30, // Definir o mínimo da escala Y como -30 (para mostrar a redução)
-        max: 0, // Definir o máximo da escala Y como 0 (sem valores positivos)
+        min: 0, // Definir o mínimo da escala Y
+        max: 30, // Definir o máximo da escala Y para um valor maior que a maior redução
       },
     },
   };
 
   return (
     <div className="flex flex-col items-center transition-all duration-1000">
-      <motion.div style={{ width: '400px', height: '200px' }}>
-        <Line data={data} options={options} />
+      <motion.div style={{ width: '400px', height: '300px' }}>
+        <Bar data={data} options={options} />
       </motion.div>
     </div>
   );
 };
 
-export default LineChart_4;
+export default BarChart_4;
