@@ -139,10 +139,7 @@ export default function Home() {
 
 
       {/* bem bolado aqui */}
-      <div className="flex flex-col md:flex-row justify-center max-w-[1280px]
-       select-none  text-slate-200">
-
-
+      <div className="flex flex-col md:flex-row justify-center max-w-[1280px] select-none  text-slate-200">
         <div className="flex justify-center flex-col h-max rounded-xl px-7 py-3 top-32 mt-32 border-0.1
                    border-gray-900 text-slate-300 w-full md:w-96 sm:w-[80%]">
           <h1 className="font-medium text-xl">Aguinaldo Freire</h1>
@@ -153,7 +150,7 @@ export default function Home() {
               <>
                 <p>👋🏻 Olá, sou o Aguinaldo, Analista de Dados.</p>
                 <p>
-                  Trabalho com análise de dados usando <strong>Python</strong>, <strong>SQL</strong>, e
+                  Trabalho com análise e arquitetura de dados usando <strong>Python</strong>, <strong>SQL</strong>, e
                   ferramentas de BI como <strong>Power BI</strong> e <strong>Tableau</strong>.
                 </p>
                 <p>
@@ -165,14 +162,14 @@ export default function Home() {
             {language === "en" && (
               <>
                 <p>👋🏻 Hello, Im Aguinaldo, a Data Analyst.</p>
-                <p> I work with data analysis using <strong>Python</strong>, <strong>SQL</strong>, and BI tools like <strong>Power BI</strong> and <strong>Tableau</strong>.</p>
+                <p> I work with data analysis and architecture using <strong>Python</strong>, <strong>SQL</strong>, and BI tools like <strong>Power BI</strong> and <strong>Tableau</strong>.</p>
                 <p> I have experience with <strong>MySQL</strong>, <strong>PostgreSQL</strong>, <strong>MongoDB</strong>, and Cloud with <strong>AWS</strong> and <strong>GCP</strong>.</p>
               </>
             )}
 
             {language === "es" && (
               <><p>👋🏻 Hola, soy Aguinaldo, Analista de Datos.</p>
-                <p>Trabajo con análisis de datos usando <strong>Python</strong>, <strong>SQL</strong>, y herramientas de BI como <strong>Power BI</strong> y <strong>Tableau</strong>.</p>
+                <p>Trabajo con análisis de datos y arquitectura usando <strong>Python</strong>, <strong>SQL</strong>, y herramientas de BI como <strong>Power BI</strong> y <strong>Tableau</strong>.</p>
                 <p>Tengo experiencia con <strong>MySQL</strong>, <strong>PostgreSQL</strong>, <strong>MongoDB</strong> y en la nube con <strong>AWS</strong> y <strong>GCP</strong>.
                 </p>
               </>
