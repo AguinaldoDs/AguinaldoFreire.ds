@@ -194,7 +194,7 @@ export default function Home() {
 
             <a
               href={language === "en" ? "https://drive.google.com/file/d/1YDuY7iGa3z8pKFGzLB2d9Dy0oGvYxNKQ/view?usp=sharing"
-                : language === "pt" ? "https://drive.google.com/file/d/1BTzUikswR5MbD0w8vIUwIrlvg5DPp9BU/view?usp=sharing"
+                : language === "pt" ? "https://drive.google.com/file/d/1WIqJrZXDIU8e4dHnLx2qMFy3G81kixcu/view?usp=sharing"
                   : "https://drive.google.com/file/d/1ib26xQTM0g4PRkmvLSgCJpmPBqtevCSU/view?usp=sharing"}
               target="_blank"
               rel="noopener noreferrer"
