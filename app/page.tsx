@@ -108,6 +108,7 @@ export default function Home() {
             <p className="hidden sm:block">{language === "en" ? "Contact" : language === "es" ? "Contacto" : "Contato"}</p>
           </div>
 
+{/*
           <div className="flex justify-center items-center rounded-md
                     cursor-pointer" onClick={handleSetMenu}>
             <motion.div
@@ -116,6 +117,7 @@ export default function Home() {
               <GoGear className="h-6 w-6" />
             </motion.div>
           </div>
+*/}
 
           {menu && (
             <div className="flex w-20 rounded-lg mt-10 h-max py-1 flex-col justify-center items-center
@@ -247,10 +249,10 @@ export default function Home() {
           {language === "pt" && (
             <>
               <div className="flex text-4xl">
-                Inovando com soluções digitais para Dados.
+                Inovando com soluções digitais para Sistemas.
               </div>
               <div className="text-lg font-normal py-1 pb-4 opacity-30 border-b-0.1">
-                Analista & Arquiteto de Dados
+                Full Stack Developer — Next.js · React · Node.js · TypeScript · SQL
               </div>
             </>
           )}
@@ -311,7 +313,7 @@ export default function Home() {
                 </div>
 
                 <div className="">
-                  <div>+15 Projetos</div>
+                  <div>+10 Projetos</div>
                   <p className="text-sm text-slate-500">Projetos & Serviços</p>
                 </div>
               </>
@@ -339,8 +341,11 @@ export default function Home() {
             <div className="font-extralight space-y-4 mt-2 w-full"
               onMouseLeave={() => { handleSetGraphichView(0) }}>
               <motion.div
-                className="border-0.1 rounded-2xl p-6 pb-20 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all"
+                className="border-0.1 rounded-2xl p-6 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all"
                 onMouseEnter={() => { handleSetGraphichView(1) }}
+                initial={{ opacity: 0, scale: 1 }}  // Inicializa com um pequeno scale
+                animate={{ opacity: 1, scale: graphicView === 1 ? 1.05 : 1 }}   // Aumenta ou diminui o scale conforme a condição
+                transition={{ duration: 0.4, ease: "easeInOut" }} 
               >
                 {language === "es" && (
                   <>
@@ -360,25 +365,38 @@ export default function Home() {
 
                 {language === "pt" && (
                   <>
-                    <h1 className="flex text-xl font-normal gap-1">Previsão de recuperação <GoGitMerge /></h1>
-                    <p className="text-sm">Ferramentas: Python, ARIMA, XGBoost</p>
-                    <p className="text-sm">Resultado: Aumento de 15% na precisão das previsões, otimizando estoque e custos.</p>
+                    <h1 className="flex items-center text-xl font-normal gap-1">
+                      Sistema de Gerenciamento de Layouts de SMS <GoGitMerge className="text-blue-400" />
+                      <p className="text-xs text-gray-600">(private)</p>
+                    </h1>
+                    <div className="space-y-2">
+                      <p className="text-sm text-gray-300">
+                        <strong>Tecnologias:</strong> Next.js, Node.js, MSSQL Server
+                      </p>
+                      <p className="text-sm text-gray-300">
+                        <strong>Resultados:</strong> Otimização de 70% no fluxo de processamento, implementação de self-service para operações rotineiras e redução de etapas manuais.
+                      </p>
+                      <p className="text-sm text-gray-300">
+                        <strong>Impacto:</strong> Autonomia para equipe comercial e ganho de 15h semanais para realocação em demandas estratégicas.
+                      </p>
+                    </div>
                   </>
                 )}
 
+                
 
-                {graphicView === 1 ? (
+                {/* {graphicView === 1 ? (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, ease: "easeIn" }}
                   >
                     <PercentageChart language={language} />
-                  </motion.div>) : null}
+                  </motion.div>) : null} */}
               </motion.div>
 
               <motion.div
-                className="border-0.1 rounded-2xl p-6 pb-20 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all"
+                className="border-0.1 rounded-2xl p-6 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all"
                 onMouseEnter={() => { handleSetGraphichView(2) }}
                 initial={{ opacity: 0, scale: 1 }}  // Inicializa com um pequeno scale
                 animate={{ opacity: 1, scale: graphicView === 2 ? 1.05 : 1 }}   // Aumenta ou diminui o scale conforme a condição
@@ -401,14 +419,26 @@ export default function Home() {
                 )}
 
                 {language === "pt" && (
-                  <>
-                    <h1 className="flex text-xl font-normal gap-1">Segmentação de Mercado <GoGitMerge /></h1>
-                    <p className="text-sm">Ferramentas: SQL, R, K-Means</p>
-                    <p className="text-sm">Resultado: Identificação de 4 novos segmentos, aumento de 20% na taxa de conversão.</p>
+                   <>
+                    <h1 className="flex items-center text-xl font-normal gap-1">
+                      Solução para agendamento de Calendario <GoGitMerge className="text-blue-400" />
+                      <p className="text-xs text-gray-600">(private)</p>
+                    </h1>
+                    <div className="space-y-2">
+                      <p className="text-sm text-gray-300">
+                        <strong>Tecnologias:</strong> Next.js, Node.js, MSSQL Server, Shell
+                      </p>
+                      <p className="text-sm text-gray-300">
+                        <strong>Resultados:</strong> Redução de 65% no tempo de agendamentos, autoatendimento completo (CRUD) e eliminação de 4 etapas manuais do processo.
+                      </p>
+                      <p className="text-sm text-gray-300">
+                        <strong>Impacto:</strong> Liberação de 18h semanais para a equipe comercial (+120% de produtividade) com controle total de agendas, incluindo edição em massa e regras de conflito.
+                        </p>
+                    </div>
                   </>
                 )}
 
-
+{/* 
                 {graphicView === 2 ? (
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -416,11 +446,40 @@ export default function Home() {
                     transition={{ duration: 1, ease: "easeIn" }}
                   >
                     <BarChart language={language} />
-                  </motion.div>) : null}
+                  </motion.div>) : null} */}
+              </motion.div>
+
+              <motion.div
+                className="border-0.1 rounded-2xl p-6 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all"
+                onMouseEnter={() => { handleSetGraphichView(3) }}
+                initial={{ opacity: 0, scale: 1 }}  // Inicializa com um pequeno scale
+                animate={{ opacity: 1, scale: graphicView === 3 ? 1.05 : 1 }}   // Aumenta ou diminui o scale conforme a condição
+                transition={{ duration: 0.4, ease: "easeInOut" }}  // Transição suave
+              >
+              
+                {language === "pt" && (
+                   <>
+                    <h1 className="flex items-center text-xl font-normal gap-1">
+                      Meu portifólio Web <GoGitMerge className="text-blue-400" />
+                      <p className="text-xs text-gray-600">(public)</p>
+                    </h1>
+                    <div className="space-y-2">
+                      <p className="text-sm text-gray-300">
+                        <strong>Tecnologias:</strong> Next.js, Tailwind CSS, Framer Motion
+                      </p>
+                      <p className="text-sm text-gray-300">
+                        <strong>Resultados:</strong> Design responsivo, animações fluidas, SEO otimizado.
+                      </p>
+                      <p className="text-sm text-gray-300">
+                        <strong>Conceito:</strong>  Minimalista porém impactante, com foco na usabilidade
+                        </p>
+                    </div>
+                  </>
+                )}
               </motion.div>
 
               {/* Análise de Sentimento em Redes Sociais */}
-              <motion.div
+              {/*<motion.div
                 className="border-0.1 rounded-2xl p-6 pb-20 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all"
                 onMouseEnter={() => { handleSetGraphichView(3) }}
                 initial={{ opacity: 0, scale: 1 }}
@@ -443,26 +502,24 @@ export default function Home() {
                   </>
                 )}
 
-                {language === "pt" && (
+                 {language === "pt" && (
                   <>
                     <h1 className="flex text-xl font-normal gap-1">Análise de Sentimento em Redes Sociais <GoGitMerge /></h1>
                     <p className="text-sm">Ferramentas: Python, NLP, TensorFlow</p>
                     <p className="text-sm">Resultado: Resposta rápida a crises de imagem, mitigando impactos negativos e ações judiciais.</p>
                   </>
-                )}
-
-                {graphicView === 3 ? (
+                )}  {graphicView === 3 ? (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, ease: "easeIn" }}
                   >
                     <LineChart language={language} />
-                  </motion.div>) : null}
-              </motion.div>
+                  </motion.div>) : null} 
+              </motion.div>*/}
 
               {/* Otimização Logística com Big Data */}
-              <motion.div
+              {/* <motion.div
                 className="border-0.1 rounded-2xl p-6 pb-20 border-gray-900 cursor-pointer hover:bg-slate-900 transition-all"
                 onMouseEnter={() => { handleSetGraphichView(4) }}
                 initial={{ opacity: 0, scale: 1 }}
@@ -486,13 +543,13 @@ export default function Home() {
                   </>
                 )}
 
-                {language === "pt" && (
+                {/* {language === "pt" && (
                   <>
                     <h1 className="flex text-xl font-normal gap-1">Otimização Logística com Big Data <GoGitMerge /></h1>
                     <p className="text-sm">Ferramentas: Hadoop, Spark, SQL, PyWin32</p>
                     <p className="text-sm">Resultado: Redução nos custos e tempo de logísticos, melhoria na entrega e eficiência.</p>
                   </>
-                )}
+                )} 
 
                 {graphicView === 4 ? (
                   <motion.div
@@ -501,8 +558,9 @@ export default function Home() {
                     transition={{ duration: 1, ease: "easeIn" }}
                   >
                     <LineChart_4 language={language} />
-                  </motion.div>) : null}
-              </motion.div>
+                  </motion.div>) : null} 
+              </motion.div> 
+              */}
 
               {/* Análise de Risco de Crédito */}
 
