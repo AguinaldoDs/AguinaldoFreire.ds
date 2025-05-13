@@ -147,16 +147,17 @@ export default function Home() {
 
 
             {language === "pt" && (
-              <>
-                <p>👋🏻 Olá, sou o Aguinaldo, Analista de Dados.</p>
-                <p>
-                  Trabalho com análise e arquitetura de dados usando <strong>Python</strong>, <strong>SQL</strong>, e
-                  ferramentas de BI como <strong>Power BI</strong> e <strong>Tableau</strong>.
-                </p>
-                <p>
-                  Tenho experiência em <strong>MySQL</strong>, <strong>PostgreSQL</strong>, <strong>MongoDB</strong> e em Cloud com <strong>AWS</strong> e <strong>GCP</strong>.
-                </p>
-              </>
+           <>
+            <p>👋🏻 Olá, sou o Aguinaldo, Desenvolvedor Full Stack.</p>
+            <p>
+              Trabalho com <strong>Next.js</strong>, <strong>React</strong>, <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>Tailwind CSS</strong> e <strong>MSSQL</strong>,
+              desenvolvendo aplicações web, APIs REST e soluções para o setor de cobrança.
+            </p>
+            <p>
+              Tenho experiência com <strong>Docker</strong>, <strong>Git</strong> e metodologias ágeis como <strong>Scrum</strong>, sempre focando em performance, organização e entrega contínua.
+            </p>
+          </>
+
             )}
 
             {language === "en" && (
